@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: page-with-header
 title: "About Abba Baba"
 subtitle: "Where AI meets human wisdom to create the future of work"
-hero: true
 description: "Learn about Abba Baba's mission to pioneer AI-human collaboration through intelligent automation and innovation."
 ---
 

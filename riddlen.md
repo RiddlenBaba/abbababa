@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: page-with-header
 title: "Riddlen"
 subtitle: "Where AI generation meets human validation"
-hero: true
 description: "Discover Riddlen, Abba Baba's flagship Web3 platform combining AI-generated riddles with human oracle validation in a gasless blockchain ecosystem."
 ---
 

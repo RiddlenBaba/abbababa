@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: page-with-header
 title: "Contact Us"
 subtitle: "Ready to transform your business with AI-human collaboration?"
-hero: true
 description: "Get in touch with Abba Baba to discuss workflow automation, marketing innovation, AI integration, or Riddlen platform opportunities."
 ---
 

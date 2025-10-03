@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<div class="blog-header">
+    <div class="container">
+        <h1 class="blog-title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <p class="blog-subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+
+        {% if page.enable_search %}
+        <div class="blog-search">
+            <input type="text" id="search-input" placeholder="Search {{ page.search_placeholder | default: 'content' }}..." class="search-input">
+            <button id="search-button" class="search-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="container">
+        <article class="page-article">
+            <div class="page-body">
+                {{ content }}
+            </div>
+        </article>
+    </div>
+</div>
+
+{% if page.enable_search %}
+<script>
+// Simple client-side search functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const searchableElements = document.querySelectorAll('.searchable, h1, h2, h3, p, li');
+
+    function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        searchableElements.forEach(element => {
+            const text = element.textContent.toLowerCase();
+            const parent = element.closest('.searchable-section') || element.parentElement;
+
+            if (searchTerm === '' || text.includes(searchTerm)) {
+                element.style.display = '';
+                if (parent) parent.style.display = '';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+    }
+
+    searchInput.addEventListener('input', performSearch);
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+});
+</script>
+{% endif %}

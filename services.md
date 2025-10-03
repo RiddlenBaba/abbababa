@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: page-with-header
 title: "Our Services"
 subtitle: "AI-powered solutions that transform how you work"
-hero: true
 description: "Discover Abba Baba's automation services: workflow optimization, marketing innovation, and AI integration consulting."
 ---
 

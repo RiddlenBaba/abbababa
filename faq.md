@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: page-with-header
 title: "Frequently Asked Questions"
 subtitle: "Everything you need to know about AI-human collaboration and our automation services"
-hero: true
+enable_search: true
+search_placeholder: "FAQ topics"
 description: "Get answers to common questions about Abba Baba's AI automation services, workflow optimization, pricing, implementation, and AI-human collaboration solutions."
 ---
 
