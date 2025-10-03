@@ -11,12 +11,14 @@
 
 // Site Header
 .site-header {
-    background-color: $white;
-    border-bottom: 1px solid $gray-200;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: $shadow-sm;
+    box-shadow: 0 4px 32px var(--shadow-color);
+    transition: all 0.3s ease;
 }
 
 .main-nav {
@@ -33,24 +35,74 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color: $gray-900;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
 
     &:hover {
         text-decoration: none;
         color: $primary-color;
+        transform: translateY(-1px);
     }
 
     .logo-text {
         font-size: 1.5rem;
         font-weight: $font-weight-bold;
         line-height: 1;
+        background: linear-gradient(135deg, $primary-color, $accent-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     .logo-tagline {
         font-size: 0.75rem;
-        color: $gray-500;
+        color: var(--text-muted);
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.1em;
+        opacity: 0.8;
+    }
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: $spacing-md;
+
+    &:hover {
+        border-color: $primary-color;
+        transform: rotate(180deg);
+        box-shadow: 0 0 20px rgba($primary-color, 0.3);
+    }
+
+    .theme-icon {
+        color: var(--text-primary);
+        transition: all 0.3s ease;
+    }
+
+    .sun-icon {
+        display: block;
+    }
+
+    .moon-icon {
+        display: none;
+    }
+}
+
+[data-theme="dark"] .theme-toggle {
+    .sun-icon {
+        display: none;
+    }
+
+    .moon-icon {
+        display: block;
     }
 }
 

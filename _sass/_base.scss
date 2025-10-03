@@ -14,12 +14,13 @@ body {
     font-family: $font-family-base;
     font-weight: $font-weight-normal;
     line-height: $line-height-base;
-    color: $gray-800;
-    background-color: $white;
+    color: var(--text-primary);
+    background: var(--bg-primary);
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 // Typography
@@ -27,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-heading;
     font-weight: $font-weight-bold;
     line-height: $line-height-heading;
-    color: $gray-900;
+    color: var(--text-primary);
     margin: 0 0 $spacing-md 0;
 }
 

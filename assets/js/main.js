@@ -1,5 +1,22 @@
-// Mobile navigation toggle
+// Dark/Light theme toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+
+    // Mobile navigation toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -96,9 +113,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    const animateElements = document.querySelectorAll('.value-card, .service-preview, .showcase-text, .showcase-visual');
+    const animateElements = document.querySelectorAll('.value-card, .service-preview, .showcase-text, .showcase-visual, .hero-content, .hero-visual');
     animateElements.forEach(el => {
         observer.observe(el);
+    });
+
+    // Add floating animation to AI-human graphic
+    const aiHumanGraphic = document.querySelector('.ai-human-graphic');
+    if (aiHumanGraphic) {
+        aiHumanGraphic.classList.add('animate-float');
+    }
+
+    // Add scroll reveal to sections
+    const scrollRevealElements = document.querySelectorAll('.value-proposition, .services-preview, .innovation-showcase');
+    scrollRevealElements.forEach(el => {
+        el.classList.add('scroll-reveal');
+    });
+
+    // Reveal elements on scroll
+    const scrollObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    scrollRevealElements.forEach(el => {
+        scrollObserver.observe(el);
     });
 });
 
