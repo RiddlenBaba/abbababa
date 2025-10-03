@@ -34,6 +34,7 @@
                     <li><a href="{{ '/about' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
                     <li><a href="{{ '/services' | relative_url }}" {% if page.url contains '/services' %}class="active"{% endif %}>Services</a></li>
                     <li><a href="{{ '/blog' | relative_url }}" {% if page.url contains '/blog' or layout == 'post' %}class="active"{% endif %}>Blog</a></li>
+                    <li><a href="{{ '/faq' | relative_url }}" {% if page.url == '/faq/' %}class="active"{% endif %}>FAQ</a></li>
                     <li><a href="{{ '/riddlen' | relative_url }}" {% if page.url == '/riddlen/' %}class="active"{% endif %}>Riddlen</a></li>
                     <li><a href="{{ '/contact' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
                     <li><a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Get Started</a></li>
