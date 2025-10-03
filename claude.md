@@ -208,6 +208,14 @@ Secondary CTAs:
 
 ## Technical Notes for Claude
 
+### Security & Privacy Guidelines
+**CRITICAL: DO NOT READ OR ACCESS PRIVATE FILES**
+- Never read `_config.private.yml` - contains sensitive API keys
+- Never read any files matching `*.private.*` pattern
+- Never access `.env` files or similar private configuration
+- If you need to reference private config structure, refer to the setup documentation instead
+- Respect gitignored files - they are private for security reasons
+
 ### When Working on This Project
 1. **Maintain brand voice**: Professional, innovative, human-centric
 2. **Focus on benefits**: Always translate features to user value
@@ -216,6 +224,7 @@ Secondary CTAs:
 5. **Performance matters**: Optimize everything for fast loading
 6. **Clear CTAs**: Every page should guide users to action
 7. **SEO awareness**: Use semantic HTML, proper headings, meta descriptions
+8. **Security first**: Never expose or log sensitive information
 
 ### File Organization
 - Keep layouts modular and reusable

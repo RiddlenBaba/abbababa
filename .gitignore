@@ -28,6 +28,11 @@ vendor/
 .env.test.local
 .env.production.local
 
+# Private configuration files
+_config.private.yml
+_config.local.yml
+config.private.yml
+
 # Formspree
 formspree.json
 

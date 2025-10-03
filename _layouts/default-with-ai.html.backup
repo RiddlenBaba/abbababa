@@ -121,10 +121,10 @@
                 this.chatIcon = document.querySelector('.chat-icon');
                 this.closeIcon = document.querySelector('.close-icon');
                 this.isOpen = false;
-                // Production version - uses contextual responses only
-                // API integration available in development version
-                this.apiKey = null;
-                this.apiProvider = 'fallback';
+                // WARNING: API keys in client-side code are visible to users
+                // For production, use server-side proxy or serverless functions
+                this.apiKey = '{{ site.openai_api_key }}' || '{{ site.claude_api_key }}';
+                this.apiProvider = '{{ site.ai_provider | default: "openai" }}';
 
                 this.init();
             }

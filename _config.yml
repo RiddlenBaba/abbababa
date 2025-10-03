@@ -43,6 +43,10 @@ crawl_priority_pages:
   - "/riddlen/"
   - "/contact/"
 
+# Custom Abba AI Chat Widget - Public Config
+# Private API keys are stored in _config.private.yml (gitignored)
+ai_provider: "openai"  # Choose: "openai" or "claude"
+
 # Navigation
 header_pages:
   - about.md
