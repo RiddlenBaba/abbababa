@@ -1,0 +1,13 @@
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>{{ include.title | default: "Ready to Transform Your Business?" }}</h2>
+            {% if include.description %}
+            <p>{{ include.description }}</p>
+            {% endif %}
+            <a href="{{ include.button_url | default: '/contact' | relative_url }}" class="btn btn-primary btn-large">
+                {{ include.button_text | default: "Get Started Today" }}
+            </a>
+        </div>
+    </div>
+</section>

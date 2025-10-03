@@ -1,0 +1,70 @@
+# Abba Baba - AI Human Collaboration Company
+title: "Abba Baba"
+description: "Pioneering AI-human collaboration through workflow automation, marketing innovation, and Web3 solutions. Get your time back."
+baseurl: ""
+url: "https://abbababa.com"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO
+author: Abba Baba
+twitter:
+  username: abbababa
+  card: summary_large_image
+
+# Navigation
+header_pages:
+  - about.md
+  - services.md
+  - riddlen.md
+  - contact.md
+
+# Contact
+email: baba@abbababa.com
+phone: "+1 (570) 212 - 9613"
+
+# Social
+github_username: RiddlenBaba
+linkedin_username: company/abbababa
+
+# Analytics (add when ready)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Collections
+collections:
+  services:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Abba Baba Team"
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "service"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - claude.md

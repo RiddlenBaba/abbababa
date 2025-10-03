@@ -1,0 +1,199 @@
+// Mobile Navigation
+@media (max-width: $breakpoint-md) {
+    .nav-toggle.active {
+        span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    }
+}
+
+// Hero responsive adjustments
+@media (max-width: $breakpoint-lg) {
+    .hero {
+        .container {
+            gap: $spacing-2xl;
+        }
+    }
+
+    .hero-cta {
+        justify-content: center;
+
+        @media (max-width: $breakpoint-sm) {
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+
+    .ai-human-graphic {
+        gap: $spacing-lg;
+
+        .ai-side,
+        .human-side {
+            padding: $spacing-lg;
+
+            span {
+                font-size: 1.5rem;
+            }
+        }
+
+        .connection {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// Values grid responsive
+@media (max-width: $breakpoint-sm) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-xl;
+    }
+
+    .value-card {
+        padding: $spacing-xl;
+    }
+}
+
+// Services grid responsive
+@media (max-width: $breakpoint-sm) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+
+    .service-preview {
+        padding: $spacing-lg;
+    }
+}
+
+// Innovation showcase responsive
+@media (max-width: $breakpoint-lg) {
+    .showcase-content {
+        gap: $spacing-2xl;
+        text-align: center;
+    }
+
+    .showcase-visual {
+        order: -1;
+    }
+
+    .riddlen-preview {
+        padding: $spacing-2xl;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+}
+
+// Footer responsive
+@media (max-width: $breakpoint-md) {
+    .footer-content {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+// Service pages responsive
+@media (max-width: $breakpoint-md) {
+    .service-benefits {
+        padding: $spacing-xl;
+    }
+}
+
+// Contact form responsive
+@media (max-width: $breakpoint-sm) {
+    .contact-form {
+        margin: $spacing-xl 0;
+
+        .form-group {
+            margin-bottom: $spacing-md;
+        }
+
+        input,
+        textarea,
+        select {
+            padding: $spacing-sm $spacing-md;
+        }
+    }
+}
+
+// Page content responsive
+@media (max-width: $breakpoint-md) {
+    .page-body {
+        h2 {
+            margin-top: $spacing-2xl;
+            margin-bottom: $spacing-md;
+        }
+
+        h3 {
+            margin-top: $spacing-xl;
+        }
+    }
+}
+
+// Typography responsive
+@media (max-width: $breakpoint-sm) {
+    .section-header {
+        h2 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: $font-size-base;
+        }
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: $font-size-lg;
+    }
+
+    .cta-section {
+        h2 {
+            font-size: 1.875rem;
+        }
+
+        p {
+            font-size: $font-size-base;
+        }
+    }
+}
+
+// Utility responsive classes
+@media (max-width: $breakpoint-md) {
+    .md\:text-center {
+        text-align: center;
+    }
+
+    .md\:hidden {
+        display: none;
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .sm\:text-center {
+        text-align: center;
+    }
+
+    .sm\:hidden {
+        display: none;
+    }
+
+    .sm\:block {
+        display: block;
+    }
+}
