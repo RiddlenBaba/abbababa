@@ -238,4 +238,4 @@ This website is proprietary to Abba Baba. All rights reserved.
 
 **Abba Baba** - Pioneering AI-human collaboration through intelligent automation and innovation.
 
-*For questions about this website or our services, contact us at hello@abbababa.com*
+*For questions about this website or our services, contact us at {{ site.email }}*

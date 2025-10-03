@@ -33,7 +33,7 @@ Following our conversation, we'll provide a detailed proposal outlining recommen
 - **[Riddlen Platform]({{ '/riddlen' | relative_url }})** - See AI-human collaboration in action
 
 ### Connect With Us
-- **Email:** [hello@abbababa.com](mailto:hello@abbababa.com)
+- **Email:** [{{ site.email }}](mailto:{{ site.email }})
 - **LinkedIn:** [company/abbababa](https://linkedin.com/company/abbababa)
 - **GitHub:** [abbababa](https://github.com/abbababa)
 
@@ -41,7 +41,7 @@ Following our conversation, we'll provide a detailed proposal outlining recommen
 
 ## Questions?
 
-If you have urgent questions or additional information to share, feel free to email us directly at [hello@abbababa.com](mailto:hello@abbababa.com).
+If you have urgent questions or additional information to share, feel free to email us directly at [{{ site.email }}](mailto:{{ site.email }}).
 
 ---
 

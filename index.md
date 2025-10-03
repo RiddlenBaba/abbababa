@@ -124,6 +124,28 @@ description: "Pioneering AI-human collaboration through workflow automation, mar
     </div>
 </section>
 
+## Latest Insights
+
+<div class="blog-preview">
+    {% for post in site.posts limit:2 %}
+    <article class="blog-preview-card">
+        <div class="blog-meta">
+            <time>{{ post.date | date: "%B %d, %Y" }}</time>
+            <span class="blog-category">{{ post.categories.first | capitalize }}</span>
+        </div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+    </article>
+    {% endfor %}
+
+    <div class="blog-cta">
+        <h3>Stay Informed</h3>
+        <p>Get the latest insights on AI-human collaboration, automation trends, and business transformation.</p>
+        <a href="{{ '/blog' | relative_url }}" class="btn btn-secondary">View All Posts</a>
+    </div>
+</div>
+
 {% include cta-section.html
     title="Ready to Get Your Time Back?"
     description="Join the AI-human collaboration revolution. Let's build something amazing together."

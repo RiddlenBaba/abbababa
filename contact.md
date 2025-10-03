@@ -36,8 +36,7 @@ Whether you're looking to automate workflows, innovate your marketing, integrate
 ## Contact Information
 
 ### Primary Contact
-**Email:** [hello@abbababa.com](mailto:hello@abbababa.com)
-**Phone:** {{ site.phone }}
+**Email:** [{{ site.email }}](mailto:{{ site.email }})
 
 ### Business Hours
 **Monday - Friday:** 9:00 AM - 6:00 PM EST
@@ -136,17 +135,6 @@ Yes. We specialize in connecting and automating workflows across your existing s
 
 ### What ongoing support do you provide?
 We offer comprehensive support including monitoring, optimization, troubleshooting, and expansion of automation systems as your business grows.
-
----
-
-## Office Location
-
-**Headquarters**
-123 Innovation Drive
-Tech Hub, CA 94105
-United States
-
-*Currently operating remotely with clients worldwide*
 
 ---
 

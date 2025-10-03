@@ -152,4 +152,4 @@ Participate in the tokenomics of validated AI content creation.
     title="Experience Riddlen"
     description="See AI-human collaboration in action. Play riddles, validate content, or explore enterprise solutions."
     button_text="Explore Riddlen"
-    button_url="https://riddlen.io" %}
+    button_url="https://riddlen.com" %}

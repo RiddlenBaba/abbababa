@@ -1,0 +1,172 @@
+<!-- Organization Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.title }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/assets/images/logo.png",
+  "email": "{{ site.email }}",
+  "sameAs": [
+    "https://linkedin.com/{{ site.linkedin_username }}",
+    "https://github.com/{{ site.github_username }}"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "{{ site.email }}",
+    "contactType": "customer service",
+    "availableLanguage": "English"
+  },
+  "foundingDate": "2024",
+  "keywords": "AI automation, workflow automation, AI-human collaboration, marketing automation, Web3 oracle network, business process automation, AI integration services",
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Workflow Automation",
+    "Marketing Automation",
+    "AI Integration",
+    "Human-AI Collaboration",
+    "Web3 Technology",
+    "Oracle Networks",
+    "Business Process Optimization"
+  ],
+  "areaServed": "Worldwide",
+  "serviceType": [
+    "AI Automation Services",
+    "Workflow Optimization",
+    "Marketing Automation",
+    "AI Integration Consulting",
+    "Web3 Oracle Networks"
+  ]
+}
+</script>
+
+<!-- Website Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ site.url }}/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}"
+  }
+}
+</script>
+
+{% if page.layout == 'service' %}
+<!-- Service Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ page.title }}",
+  "description": "{{ page.subtitle | default: page.description }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}"
+  },
+  "areaServed": "Worldwide",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "{{ site.url }}{{ page.url }}",
+    "servicePhone": "{{ site.phone }}",
+    "email": "{{ site.email }}"
+  },
+  "category": "AI Automation Services",
+  "serviceType": "{{ page.title }}"
+}
+</script>
+{% endif %}
+
+{% if page.url == '/faq/' %}
+<!-- FAQ Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Abba Baba?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Abba Baba is a pioneering AI-human collaboration company that builds intelligent automation solutions. We specialize in workflow automation, marketing automation, AI integration consulting, and our flagship Riddlen platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can I see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most clients see initial benefits within 2-4 weeks of implementation. Full ROI typically materializes within 60-90 days, with many clients saving 10-20 hours per week through automation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of businesses do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work with businesses of all sizes, from startups to enterprises. Our solutions are particularly effective for SaaS companies, professional services, e-commerce, healthcare, and manufacturing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does automation cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our solutions are tailored to each business. Typical investments range from $5,000-$15,000 for pilot projects, $15,000-$50,000 for comprehensive automation, and $50,000+ for enterprise solutions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Riddlen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Riddlen is our flagship Web3 platform that demonstrates AI-human collaboration. It features AI-generated riddles validated by human oracles, creating a decentralized validation network for AI-generated content."
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
+
+<!-- Breadcrumb Schema -->
+{% unless page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}"
+    }{% if page.url != '/' %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }{% endif %}
+  ]
+}
+</script>
+{% endunless %}
