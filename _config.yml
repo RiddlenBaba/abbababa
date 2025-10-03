@@ -99,3 +99,9 @@ exclude:
   - vendor/ruby/
   - README.md
   - claude.md
+  - scripts/
+  - scripts/venv/
+  - "*.py"
+  - "*.sh"
+  - LOCAL_DEVELOPMENT_NOTES.md
+  - GITHUB_ACTIONS_SETUP.md
