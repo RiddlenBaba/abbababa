@@ -60,7 +60,13 @@ class ContentResearchAgent:
 
         self.content_templates = {
             "trend_analysis": {
-                "title_format": "AI Trend Alert: {trend_name} and What It Means for Your Business",
+                "title_formats": [
+                    "AI Trend Alert: {trend_name} and What It Means for Your Business",
+                    "Breaking: {trend_name} Is Transforming Business Operations",
+                    "The {trend_name} Revolution: Why Your Business Should Pay Attention",
+                    "Industry Insight: How {trend_name} Creates Competitive Advantage",
+                    "Business Intelligence: {trend_name} and the Future of Work"
+                ],
                 "structure": [
                     "trend_overview",
                     "market_impact",
@@ -71,7 +77,13 @@ class ContentResearchAgent:
                 ]
             },
             "tool_spotlight": {
-                "title_format": "New AI Tool Spotlight: {tool_name} - Business Integration Guide",
+                "title_formats": [
+                    "New AI Tool Spotlight: {tool_name} - Business Integration Guide",
+                    "Tool Review: {tool_name} for Strategic Business Automation",
+                    "Deep Dive: {tool_name} and Its Impact on Modern Workflows",
+                    "Innovation Spotlight: {tool_name} Transforms How We Work",
+                    "Business Focus: Integrating {tool_name} for Maximum ROI"
+                ],
                 "structure": [
                     "tool_introduction",
                     "capabilities_analysis",
@@ -82,7 +94,13 @@ class ContentResearchAgent:
                 ]
             },
             "innovation_deep_dive": {
-                "title_format": "Innovation Deep Dive: How {innovation_name} Changes the Game",
+                "title_formats": [
+                    "Innovation Deep Dive: How {innovation_name} Changes the Game",
+                    "Strategic Analysis: {innovation_name} and Market Disruption",
+                    "Technology Watch: {innovation_name} Reshapes Business Landscape",
+                    "Future Forward: {innovation_name} and Competitive Strategy",
+                    "Market Intelligence: The {innovation_name} Opportunity"
+                ],
                 "structure": [
                     "innovation_explanation",
                     "industry_implications",
@@ -93,7 +111,13 @@ class ContentResearchAgent:
                 ]
             },
             "weekly_roundup": {
-                "title_format": "AI Weekly: {week_date} - Trends Every Business Leader Should Know",
+                "title_formats": [
+                    "AI Weekly: {week_date} - Trends Every Business Leader Should Know",
+                    "Weekly Intelligence: {week_date} AI Developments for Business",
+                    "Market Update: {week_date} - Key AI Innovations This Week",
+                    "Business Briefing: {week_date} AI Trends and Opportunities",
+                    "Strategic Roundup: {week_date} - AI News That Matters to Business"
+                ],
                 "structure": [
                     "week_highlights",
                     "breakthrough_analysis",
@@ -101,6 +125,40 @@ class ContentResearchAgent:
                     "actionable_insights",
                     "automation_opportunities",
                     "consultation_offer"
+                ]
+            },
+            "strategic_analysis": {
+                "title_formats": [
+                    "Strategic Perspective: {trend_name} and Enterprise Transformation",
+                    "Executive Brief: {trend_name} Impact on Business Strategy",
+                    "Leadership Insight: Navigating {trend_name} in Your Organization",
+                    "Business Strategy: Leveraging {trend_name} for Growth",
+                    "Enterprise Focus: {trend_name} Implementation Roadmap"
+                ],
+                "structure": [
+                    "trend_overview",
+                    "market_impact",
+                    "business_applications",
+                    "implementation_guide",
+                    "abba_baba_solution",
+                    "next_steps"
+                ]
+            },
+            "technology_watch": {
+                "title_formats": [
+                    "Technology Watch: {trend_name} Emerges as Game Changer",
+                    "Innovation Report: {trend_name} Transforms Industry Standards",
+                    "Tech Spotlight: {trend_name} Creates New Business Possibilities",
+                    "Emerging Technology: {trend_name} and Operational Excellence",
+                    "Digital Evolution: How {trend_name} Reshapes Business Models"
+                ],
+                "structure": [
+                    "trend_overview",
+                    "market_impact",
+                    "business_applications",
+                    "implementation_guide",
+                    "abba_baba_solution",
+                    "next_steps"
                 ]
             }
         }
@@ -164,7 +222,7 @@ class ContentResearchAgent:
             print(f"Article: {article['title'][:60]}...")
             print(f"  Business relevance: {business_relevance:.2f}, AI relevance: {ai_relevance:.2f}")
 
-            if business_relevance > 0.05 or ai_relevance > 0.05:  # Further lowered thresholds
+            if business_relevance > 0.08 or ai_relevance > 0.10:  # Higher quality threshold
                 insight = TrendInsight(
                     title=article["title"],
                     description=article["description"][:300] + "...",
@@ -251,7 +309,11 @@ class ContentResearchAgent:
         # Extract trend name from title
         trend_name = primary_insight.title.split(":")[0] if ":" in primary_insight.title else primary_insight.title
 
-        post_title = template["title_format"].format(
+        # Select a random title format for variety
+        import random
+        title_format = random.choice(template["title_formats"])
+
+        post_title = title_format.format(
             trend_name=trend_name,
             tool_name=trend_name,
             innovation_name=trend_name,
@@ -400,7 +462,7 @@ The future belongs to businesses that master AI-human collaboration. Let's build
         # Add consultation CTA at the end
         body_content += sections["consultation_cta"]
 
-        excerpt = f"Discover how {primary.title.lower()} can transform your business operations through strategic AI integration and intelligent automation."
+        excerpt = f"Strategic analysis of recent AI developments and their practical applications for business automation and workflow optimization."
 
         return {
             "body": body_content,
@@ -418,7 +480,14 @@ The future belongs to businesses that master AI-human collaboration. Let's build
         if insights:
             print(f"✨ Generated {len(insights)} business insights")
             print("📝 Creating blog post...")
-            blog_post = self.generate_blog_post(insights[:3])  # Use top 3 insights
+
+            # Randomly select template type for variety
+            import random
+            template_types = list(self.content_templates.keys())
+            selected_template = random.choice(template_types)
+            print(f"🎯 Using template: {selected_template}")
+
+            blog_post = self.generate_blog_post(insights[:3], selected_template)  # Use top 3 insights
             return blog_post
         else:
             print("❌ No relevant insights found in current cycle")
@@ -435,9 +504,12 @@ def main():
     blog_content = agent.run_research_cycle()
 
     if blog_content:
-        # Save to file with timestamp
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
-        filename = f"generated-post-{timestamp}.md"
+        # Save to _posts directory with proper Jekyll naming
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d")
+        filename = f"_posts/{timestamp}-ai-trends-weekly-analysis.md"
+
+        # Ensure _posts directory exists
+        os.makedirs("_posts", exist_ok=True)
 
         with open(filename, 'w') as f:
             f.write(blog_content)

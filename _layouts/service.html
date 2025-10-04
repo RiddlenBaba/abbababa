@@ -2,36 +2,6 @@
 layout: default
 ---
 
-<div class="service-content">
-    <div class="container">
-        <section class="service-hero">
-            <h1>{{ page.title }}</h1>
-            {% if page.subtitle %}
-            <p class="service-subtitle">{{ page.subtitle }}</p>
-            {% endif %}
-        </section>
-
-        <article class="service-details">
-            <div class="service-body">
-                {{ content }}
-            </div>
-
-            {% if page.benefits %}
-            <section class="service-benefits">
-                <h2>Key Benefits</h2>
-                <ul class="benefits-list">
-                    {% for benefit in page.benefits %}
-                    <li>{{ benefit }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
-            {% endif %}
-
-            {% include cta-section.html
-                title="Ready to Get Started?"
-                description="Transform your business with AI-powered automation."
-                button_text="Schedule Consultation"
-                button_url="/contact" %}
-        </article>
-    </div>
-</div>
+<main>
+    {{ content }}
+</main>

@@ -117,7 +117,7 @@
     span {
         width: 25px;
         height: 3px;
-        background-color: $gray-700;
+        background-color: var(--text-primary);
         margin: 3px 0;
         transition: $transition-fast;
     }
@@ -141,11 +141,11 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: $white;
+        background-color: var(--bg-primary);
         flex-direction: column;
         padding: $spacing-lg;
         box-shadow: $shadow-lg;
-        border-top: 1px solid $gray-200;
+        border-top: 1px solid var(--border-color);
 
         &.active {
             display: flex;
@@ -157,7 +157,7 @@
     }
 
     a {
-        color: $gray-700;
+        color: var(--text-primary);
         font-weight: $font-weight-medium;
         padding: $spacing-sm $spacing-md;
         border-radius: $border-radius-md;
@@ -166,7 +166,7 @@
         &:hover,
         &.active {
             color: $primary-color;
-            background-color: $gray-50;
+            background-color: var(--bg-secondary);
             text-decoration: none;
         }
     }
@@ -315,10 +315,11 @@ main {
 
 // Site Footer
 .site-footer {
-    background-color: $gray-900;
-    color: $white;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
     padding: $spacing-3xl 0 $spacing-lg 0;
     margin-top: $spacing-5xl;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -335,12 +336,12 @@ main {
 
 .footer-brand {
     h3 {
-        color: $white;
+        color: var(--text-primary);
         margin-bottom: $spacing-md;
     }
 
     p {
-        color: $gray-300;
+        color: var(--text-secondary);
         margin-bottom: $spacing-lg;
     }
 }
@@ -350,7 +351,7 @@ main {
     gap: $spacing-md;
 
     a {
-        color: $gray-400;
+        color: var(--text-muted);
         transition: $transition-fast;
 
         &:hover {
@@ -377,7 +378,7 @@ main {
 
 .footer-column {
     h4 {
-        color: $white;
+        color: var(--text-primary);
         font-size: 1rem;
         margin-bottom: $spacing-md;
     }
@@ -393,7 +394,7 @@ main {
     }
 
     a {
-        color: $gray-300;
+        color: var(--text-secondary);
         font-size: $font-size-sm;
 
         &:hover {
@@ -404,12 +405,12 @@ main {
 }
 
 .footer-bottom {
-    border-top: 1px solid $gray-700;
+    border-top: 1px solid var(--border-color);
     padding-top: $spacing-lg;
     text-align: center;
 
     p {
-        color: $gray-400;
+        color: var(--text-muted);
         font-size: $font-size-sm;
         margin: 0;
     }

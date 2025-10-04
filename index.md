@@ -74,19 +74,19 @@ description: "Pioneering AI-human collaboration through workflow automation, mar
             <div class="service-preview">
                 <h3>Workflow Automation</h3>
                 <p>Eliminate manual processes and reclaim hours every day with intelligent automation systems.</p>
-                <a href="{{ '/services#workflow' | relative_url }}" class="service-link">Learn More →</a>
+                <a href="{{ '/services/workflow-automation' | relative_url }}" class="service-link">See Real Examples →</a>
             </div>
 
             <div class="service-preview">
                 <h3>Marketing Automation</h3>
                 <p>Scale your marketing efforts with AI-powered campaigns that engage authentically.</p>
-                <a href="{{ '/services#marketing' | relative_url }}" class="service-link">Learn More →</a>
+                <a href="{{ '/services/marketing-automation' | relative_url }}" class="service-link">See Success Stories →</a>
             </div>
 
             <div class="service-preview">
                 <h3>AI Integration</h3>
                 <p>Unlock your business potential with custom AI solutions designed for your specific needs.</p>
-                <a href="{{ '/services#ai-integration' | relative_url }}" class="service-link">Learn More →</a>
+                <a href="{{ '/services/ai-integration' | relative_url }}" class="service-link">See Transformations →</a>
             </div>
 
             <div class="service-preview featured">

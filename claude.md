@@ -213,8 +213,12 @@ Secondary CTAs:
 - Never read `_config.private.yml` - contains sensitive API keys
 - Never read any files matching `*.private.*` pattern
 - Never access `.env` files or similar private configuration
+- Never display, copy, or provide actual API key values
+- Never include real API keys in documentation or instructions
 - If you need to reference private config structure, refer to the setup documentation instead
 - Respect gitignored files - they are private for security reasons
+- ALWAYS use placeholders like [Your API Key] instead of actual keys
+- Direct users to get keys from their local files, never provide them
 
 ### When Working on This Project
 1. **Maintain brand voice**: Professional, innovative, human-centric
