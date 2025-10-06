@@ -19,8 +19,9 @@ description: "Get answers to common questions about Abba Baba's AI automation se
                 <div class="service-card featured">
                     <div class="service-icon">🤖</div>
                     <h3>What is Abba Baba?</h3>
-                    <p>Abba Baba is a pioneering AI-human collaboration company that builds intelligent automation solutions. We specialize in workflow automation, marketing automation, AI integration consulting, and our flagship Riddlen platform.</p>
+                    <p>Abba Baba is a pioneering AI-human collaboration company that builds intelligent automation solutions. We specialize in our flagship Mycelium living AI network, workflow automation, marketing automation, AI integration consulting, and the innovative Riddlen platform.</p>
                     <div class="service-highlights">
+                        <span class="highlight-item">✓ Mycelium living AI network</span>
                         <span class="highlight-item">✓ Workflow automation</span>
                         <span class="highlight-item">✓ Marketing automation</span>
                         <span class="highlight-item">✓ AI integration consulting</span>
@@ -70,14 +71,30 @@ description: "Get answers to common questions about Abba Baba's AI automation se
                 <div class="service-card featured">
                     <div class="service-icon">⚡</div>
                     <h3>What automation services do you offer?</h3>
-                    <p>We provide three comprehensive automation services designed to transform different aspects of your business operations and drive measurable results.</p>
+                    <p>We provide comprehensive automation services designed to transform different aspects of your business operations, led by our revolutionary Mycelium living AI network.</p>
                     <div class="service-highlights">
+                        <span class="highlight-item">✓ Mycelium Living AI Network</span>
                         <span class="highlight-item">✓ Workflow Automation</span>
                         <span class="highlight-item">✓ Marketing Automation</span>
                         <span class="highlight-item">✓ AI Integration Consulting</span>
                     </div>
                     <a href="{{ '/services' | relative_url }}" class="btn btn-primary">
                         View All Services →
+                    </a>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon">🍄</div>
+                    <h3>What is Mycelium?</h3>
+                    <p>Mycelium is our revolutionary living AI network inspired by forest mycelium networks. Unlike isolated AI tools, it creates organic connections across every department, learning from every interaction and sharing intelligence instantly throughout your organization.</p>
+                    <div class="service-highlights">
+                        <span class="highlight-item">✓ Living AI network connections</span>
+                        <span class="highlight-item">✓ Cross-department intelligence</span>
+                        <span class="highlight-item">✓ Organic learning & adaptation</span>
+                        <span class="highlight-item">✓ Exponential capability growth</span>
+                    </div>
+                    <a href="{{ '/mycelium' | relative_url }}" class="btn btn-primary">
+                        Discover Mycelium →
                     </a>
                 </div>
 
@@ -308,7 +325,7 @@ description: "Get answers to common questions about Abba Baba's AI automation se
                         <span class="highlight-item">✓ Transparent development</span>
                         <span class="highlight-item">✓ Enhanced security</span>
                     </div>
-                    <a href="https://github.com/abbababa" class="btn btn-secondary" target="_blank">
+                    <a href="https://github.com/RiddlenBaba/AbbaBaba" class="btn btn-secondary" target="_blank">
                         View GitHub →
                     </a>
                 </div>

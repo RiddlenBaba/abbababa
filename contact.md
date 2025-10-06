@@ -123,6 +123,10 @@ description: "Get in touch with Abba Baba to discuss workflow automation, market
             <option value="workflow-automation">Workflow Automation</option>
             <option value="marketing-automation">Marketing Automation</option>
             <option value="ai-integration">AI Integration Consulting</option>
+            <option value="mycelium">Mycelium - Living AI Network</option>
+            <option value="mycelium-briefing">Mycelium Executive Briefing</option>
+            <option value="mycelium-pilot">Mycelium Pilot Program</option>
+            <option value="mycelium-assessment">Mycelium Free Assessment</option>
             <option value="riddlen">Riddlen Platform</option>
             <option value="general">General Inquiry</option>
         </select>
@@ -248,7 +252,7 @@ description: "Get in touch with Abba Baba to discuss workflow automation, market
                     <span class="highlight-item">✓ Automation case studies</span>
                     <span class="highlight-item">✓ Professional networking</span>
                 </div>
-                <a href="https://linkedin.com/company/abbababa" class="btn btn-secondary" target="_blank">
+                <a href="https://www.linkedin.com/company/abba-baba/" class="btn btn-secondary" target="_blank">
                     Follow on LinkedIn →
                 </a>
             </div>
@@ -261,7 +265,7 @@ description: "Get in touch with Abba Baba to discuss workflow automation, market
                     <span class="highlight-item">✓ Riddlen platform</span>
                     <span class="highlight-item">✓ Development community</span>
                 </div>
-                <a href="https://github.com/abbababa" class="btn btn-secondary" target="_blank">
+                <a href="https://github.com/RiddlenBaba/AbbaBaba" class="btn btn-secondary" target="_blank">
                     Explore GitHub →
                 </a>
             </div>

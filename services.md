@@ -121,7 +121,7 @@ description: "Discover Abba Baba's automation services: workflow optimization, m
                     <span class="highlight-item">✓ Organic orchestration</span>
                     <span class="highlight-item">✓ Adaptive ecosystem</span>
                 </div>
-                <a href="{{ '/services/mycelium' | relative_url }}" class="btn btn-primary">
+                <a href="{{ '/mycelium' | relative_url }}" class="btn btn-primary">
                     Grow Your Network →
                 </a>
             </div>

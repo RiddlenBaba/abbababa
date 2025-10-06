@@ -34,8 +34,8 @@ Following our conversation, we'll provide a detailed proposal outlining recommen
 
 ### Connect With Us
 - **Email:** [{{ site.email }}](mailto:{{ site.email }})
-- **LinkedIn:** [company/abbababa](https://linkedin.com/company/abbababa)
-- **GitHub:** [abbababa](https://github.com/abbababa)
+- **LinkedIn:** [company/abba-baba](https://www.linkedin.com/company/abba-baba/)
+- **GitHub:** [RiddlenBaba/AbbaBaba](https://github.com/RiddlenBaba/AbbaBaba)
 
 ---
 

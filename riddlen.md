@@ -135,7 +135,7 @@ description: "Discover Riddlen, Abba Baba's flagship Web3 platform combining AI-
                     <span class="highlight-item">✓ Security through openness</span>
                     <span class="highlight-item">✓ Collaborative innovation</span>
                 </div>
-                <a href="https://github.com/abbababa" class="btn btn-secondary" target="_blank">
+                <a href="https://github.com/RiddlenBaba/AbbaBaba" class="btn btn-secondary" target="_blank">
                     View on GitHub →
                 </a>
             </div>
@@ -392,7 +392,7 @@ description: "Discover Riddlen, Abba Baba's flagship Web3 platform combining AI-
                     <span class="highlight-item">✓ Community contributions</span>
                     <span class="highlight-item">✓ Comprehensive documentation</span>
                 </div>
-                <a href="https://github.com/abbababa" class="btn btn-secondary" target="_blank">
+                <a href="https://github.com/RiddlenBaba/AbbaBaba" class="btn btn-secondary" target="_blank">
                     Explore on GitHub →
                 </a>
             </div>

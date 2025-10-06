@@ -16,7 +16,7 @@
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
     {% seo %}
@@ -82,6 +82,7 @@
                         <div class="quick-questions">
                             <button class="quick-question" data-question="How does AI-human collaboration work?">🤝 AI-Human Collaboration</button>
                             <button class="quick-question" data-question="What services does Abba Baba offer?">🛠️ Our Services</button>
+                            <button class="quick-question" data-question="Tell me about Mycelium">🍄 Mycelium Network</button>
                             <button class="quick-question" data-question="Tell me about the Riddlen platform">🌐 Riddlen Platform</button>
                             <button class="quick-question" data-question="How can AI automation help my business?">📈 Business Automation</button>
                         </div>
@@ -121,10 +122,10 @@
                 this.chatIcon = document.querySelector('.chat-icon');
                 this.closeIcon = document.querySelector('.close-icon');
                 this.isOpen = false;
-                // Production version - uses contextual responses only
-                // API integration available in development version
-                this.apiKey = null;
-                this.apiProvider = 'fallback';
+                // WARNING: API keys in client-side code are visible to users
+                // For production, use server-side proxy or serverless functions
+                this.apiKey = '{{ site.openai_api_key }}' || '{{ site.claude_api_key }}';
+                this.apiProvider = '{{ site.ai_provider | default: "openai" }}';
 
                 this.init();
             }
@@ -235,7 +236,8 @@ Key Services:
 1. Workflow Automation - Streamline business processes to reclaim time
 2. Marketing Automation - Automated social engagement and marketing campaigns
 3. AI Integration - Help companies discover creative AI applications
-4. Riddlen Platform - Web3 riddle game with human oracle network for AI validation
+4. Mycelium - Living AI network that connects all departments like organic fungal networks
+5. Riddlen Platform - Web3 riddle game with human oracle network for AI validation
 
 Riddlen Details:
 - AI generates riddles, humans validate and curate
@@ -296,7 +298,8 @@ Key Services:
 1. Workflow Automation - Streamline business processes to reclaim time
 2. Marketing Automation - Automated social engagement and marketing campaigns
 3. AI Integration - Help companies discover creative AI applications
-4. Riddlen Platform - Web3 riddle game with human oracle network for AI validation
+4. Mycelium - Living AI network that connects all departments like organic fungal networks
+5. Riddlen Platform - Web3 riddle game with human oracle network for AI validation
 
 Riddlen Details:
 - AI generates riddles, humans validate and curate
@@ -328,7 +331,11 @@ Keep responses concise, helpful, and focused on our services. Encourage users to
                 const lowerMessage = message.toLowerCase();
 
                 if (lowerMessage.includes('service') || lowerMessage.includes('what do you do')) {
-                    return "Abba Baba specializes in AI-human collaboration through three main services:\n\n🔄 **Workflow Automation** - Streamline your business processes\n🎯 **Marketing Automation** - Scale your outreach intelligently\n🌐 **Riddlen Platform** - Our Web3 AI validation network\n\nWould you like to learn more about any of these areas?";
+                    return "Abba Baba specializes in AI-human collaboration through our key services:\n\n🔄 **Workflow Automation** - Streamline your business processes\n🎯 **Marketing Automation** - Scale your outreach intelligently\n🧠 **AI Integration** - Discover creative AI applications\n🍄 **Mycelium** - Living AI network connecting all departments\n🌐 **Riddlen Platform** - Our Web3 AI validation network\n\nWould you like to learn more about any of these areas?";
+                }
+
+                if (lowerMessage.includes('mycelium') || lowerMessage.includes('network') || lowerMessage.includes('living ai')) {
+                    return "Mycelium is our revolutionary living AI network system! 🍄\n\n✨ **What makes it special:**\n- Organic AI network connecting all departments\n- Grows and adapts like fungal mycelium in forests\n- Orchestrates all your AI agents seamlessly\n- Learns your company's unique processes and culture\n- Human-centric design that enhances collaboration\n\nJust like mycelium networks help forests communicate and thrive, our AI network helps your business departments work together intelligently. Ready to grow your network?";
                 }
 
                 if (lowerMessage.includes('riddlen') || lowerMessage.includes('web3')) {

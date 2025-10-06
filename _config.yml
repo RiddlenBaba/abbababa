@@ -51,6 +51,7 @@ ai_provider: "openai"  # Choose: "openai" or "claude"
 header_pages:
   - about.md
   - services.md
+  - mycelium.md
   - riddlen.md
   - blog.md
   - faq.md
@@ -61,8 +62,8 @@ email: baba@abbababa.com
 phone: "+1 (570) 212 - 9613"
 
 # Social
-github_username: RiddlenBaba
-linkedin_username: company/abbababa
+github_username: RiddlenBaba/AbbaBaba
+linkedin_username: company/abba-baba
 
 # Analytics
 google_analytics: # G-Y2BYSM8WBT
