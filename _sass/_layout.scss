@@ -368,8 +368,12 @@ main {
 
 .footer-links {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: $spacing-xl;
+
+    @media (max-width: $breakpoint-lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     @media (max-width: $breakpoint-sm) {
         grid-template-columns: 1fr;
@@ -404,14 +408,77 @@ main {
     }
 }
 
+.footer-cta {
+    p {
+        font-size: 0.9rem;
+        margin-bottom: $spacing-md;
+        color: var(--text-secondary);
+    }
+
+    .footer-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-md;
+
+        .btn {
+            text-align: center;
+            padding: $spacing-sm $spacing-md;
+            border-radius: $border-radius;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+
+            &.btn-sm {
+                padding: $spacing-xs $spacing-md;
+            }
+        }
+    }
+
+    .footer-social {
+        display: flex;
+        gap: $spacing-md;
+        margin-top: $spacing-md;
+
+        a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--accent-color);
+                text-decoration: none;
+            }
+        }
+    }
+}
+
 .footer-bottom {
     border-top: 1px solid var(--border-color);
     padding-top: $spacing-lg;
     text-align: center;
 
+    .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: $spacing-sm;
+
+        @media (max-width: $breakpoint-sm) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
     p {
         color: var(--text-muted);
         font-size: $font-size-sm;
         margin: 0;
+
+        &.footer-tagline {
+            font-weight: $font-weight-medium;
+            color: var(--accent-color);
+        }
     }
 }
