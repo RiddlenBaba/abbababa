@@ -1,33 +1,28 @@
 ---
-layout: default
-title: "AI Integration"
-subtitle: "Unlock competitive advantages through intelligent systems"
-description: "Discover how Abba Baba's AI integration transforms businesses with 40% cost reduction and game-changing competitive advantages through human-centered AI solutions."
+layout: service
+title: "AI Integration Consulting"
+subtitle: "Unlock competitive advantages through spectacular intelligent systems that transform entire business paradigms"
+description: "Transform your business with AI integration that delivers 40% cost reduction and game-changing competitive advantages through revolutionary human-centered AI solutions."
 service_icon: "🚀"
 ---
 
-<section class="service-hero">
+<section class="service-intro">
     <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="highlight">AI Integration</span><br>
-                Future-Proof Your Business
-            </h1>
-            <p class="hero-description">
-                What if AI could predict your customers' needs before they do? Our AI integration doesn't just automate—it transforms your business into an intelligent organization that anticipates, adapts, and thrives in ways your competitors can't match.
-            </p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">40%</span>
-                    <span class="stat-label">Cost Reduction</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">2-5x</span>
-                    <span class="stat-label">Faster Decisions</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">95%</span>
-                    <span class="stat-label">Prediction Accuracy</span>
+        <div class="section-header" style="text-align: center;">
+            <h2>Future-Proof Your Business</h2>
+            <p>What if AI could predict your customers' needs before they do? We transform businesses into intelligent organizations that anticipate, adapt, and thrive spectacularly</p>
+        </div>
+
+        <div class="services-main-grid">
+            <div class="service-card featured" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
+                <div class="service-icon">🚀</div>
+                <h3>AI Integration That Actually Transforms</h3>
+                <p>We don't just add AI features—we transform your business into an intelligent organization that anticipates, adapts, and thrives in ways your competitors can't match through revolutionary AI-human collaboration.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ 40% cost reduction</span>
+                    <span class="highlight-item">✓ 2-5x faster decisions</span>
+                    <span class="highlight-item">✓ 95% prediction accuracy</span>
+                    <span class="highlight-item">✓ Competitive advantages</span>
                 </div>
             </div>
         </div>

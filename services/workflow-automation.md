@@ -1,92 +1,87 @@
 ---
-layout: default
+layout: service
 title: "Workflow Automation"
-subtitle: "Get your time back with intelligent process automation"
-description: "Discover how Abba Baba's workflow automation saves businesses 10-20 hours per week through intelligent AI-human collaboration."
+subtitle: "Eliminate soul-crushing repetitive tasks with spectacular AI-human collaboration systems"
+description: "Transform your business operations with intelligent workflow automation that frees 10-20 hours weekly through badass AI-human collaboration."
 service_icon: "⚡"
 ---
 
-<section class="service-hero">
+<section class="service-intro">
     <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="highlight">Workflow Automation</span><br>
-                Get Your Time Back
-            </h1>
-            <p class="hero-description">
-                What if you could reclaim 10-20 hours every week? Our workflow automation doesn't just replace manual tasks—it intelligently orchestrates your entire business process, freeing your team to focus on what drives growth.
-            </p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">15</span>
-                    <span class="stat-label">Hours Saved Weekly</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">95%</span>
-                    <span class="stat-label">Error Reduction</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">3x</span>
-                    <span class="stat-label">Faster Processing</span>
+        <div class="section-header" style="text-align: center;">
+            <h2>Liberation Through Automation</h2>
+            <p>We don't just replace manual tasks—we revolutionize entire operational paradigms with spectacular AI-human collaboration that transforms how work gets done</p>
+        </div>
+
+        <div class="services-main-grid">
+            <div class="service-card featured" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
+                <div class="service-icon">⚡</div>
+                <h3>What If You Could Reclaim 15+ Hours Every Week?</h3>
+                <p>Our workflow automation doesn't just automate—it intelligently orchestrates your entire business process, freeing your team to focus on creative, high-impact work that actually drives exponential growth.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ 10-20 hours saved weekly</span>
+                    <span class="highlight-item">✓ 95% error reduction</span>
+                    <span class="highlight-item">✓ 3x faster processing</span>
+                    <span class="highlight-item">✓ Zero disruption implementation</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="story-section">
+<section class="capabilities-section">
     <div class="container">
         <div class="section-header">
-            <h2>Real Success Stories</h2>
-            <p>See how AI-human collaboration transformed these businesses</p>
+            <h2>What We Can Automate For You</h2>
+            <p>Discover the spectacular workflow automation possibilities we can build for your business</p>
         </div>
 
-        <div class="story-card featured">
-            <div class="story-content">
-                <h3>The Marketing Agency That Got Their Weekends Back</h3>
-                <div class="story-meta">
-                    <span class="company">Creative Spark Agency</span>
-                    <span class="challenge">Challenge: Client onboarding chaos</span>
-                </div>
-                <div class="story-text">
-                    <p><strong>The Problem:</strong> Sarah, the agency owner, was spending 25+ hours every week manually onboarding new clients. Between gathering assets, setting up project workflows, coordinating team introductions, and creating project documentation, she had no time for strategy or growth.</p>
-
-                    <p><strong>The AI + Human Solution:</strong> We built an intelligent onboarding system where AI handles the repetitive coordination while humans focus on relationship building:</p>
-                    <ul>
-                        <li><strong>AI Component:</strong> Automatically collects client assets, creates project timelines, assigns team members based on expertise, and generates personalized welcome packages</li>
-                        <li><strong>Human Component:</strong> Team members receive intelligent prompts for meaningful client conversations and creative strategy sessions</li>
-                    </ul>
-
-                    <p><strong>The Amazing Result:</strong> Sarah now spends just 2 hours per client onboarding instead of 8. That's <strong>18 hours per week saved</strong>. But here's the best part—client satisfaction scores increased by 40% because the human team now has time for strategic conversations instead of administrative tasks.</p>
-
-                    <div class="roi-highlight">
-                        <strong>ROI: $48,000 annually</strong> in time savings, plus 3 additional clients taken on due to improved capacity
-                    </div>
+        <div class="services-main-grid">
+            <div class="service-card featured">
+                <div class="service-icon">🔄</div>
+                <h3>Client Onboarding Automation</h3>
+                <p>Transform chaotic client onboarding into a smooth, intelligent process that impresses clients while saving you 15+ hours per week.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Automated asset collection</span>
+                    <span class="highlight-item">✓ Intelligent project timeline creation</span>
+                    <span class="highlight-item">✓ Team assignment optimization</span>
+                    <span class="highlight-item">✓ Personalized welcome sequences</span>
                 </div>
             </div>
-        </div>
 
-        <div class="story-card">
-            <div class="story-content">
-                <h3>The E-commerce Store That Scaled Without Stress</h3>
-                <div class="story-meta">
-                    <span class="company">Urban Threads Co.</span>
-                    <span class="challenge">Challenge: Order fulfillment bottleneck</span>
+            <div class="service-card featured">
+                <div class="service-icon">📦</div>
+                <h3>Order Processing Revolution</h3>
+                <p>Scale your e-commerce operations without scaling headaches. Handle 4x more orders with intelligent automation that preserves the human touch.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Intelligent inventory monitoring</span>
+                    <span class="highlight-item">✓ Automated order routing</span>
+                    <span class="highlight-item">✓ Smart shipping calculations</span>
+                    <span class="highlight-item">✓ Customer notification systems</span>
                 </div>
-                <div class="story-text">
-                    <p><strong>The Problem:</strong> During peak seasons, Mike's small team was drowning in order processing. Inventory checks, shipping calculations, customer notifications, and refund processing were consuming 35 hours per week of their time.</p>
+            </div>
 
-                    <p><strong>The AI + Human Solution:</strong></p>
-                    <ul>
-                        <li><strong>AI handles:</strong> Inventory monitoring, automated order routing, shipping calculations, and standard customer notifications</li>
-                        <li><strong>Humans focus on:</strong> Complex customer issues, product sourcing decisions, and customer experience improvements</li>
-                    </ul>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Data Processing & Reporting</h3>
+                <p>Transform your data chaos into intelligent insights with automated collection, processing, and report generation that frees your team for strategic thinking.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Automated data aggregation</span>
+                    <span class="highlight-item">✓ Intelligent report formatting</span>
+                    <span class="highlight-item">✓ Scheduled distribution</span>
+                    <span class="highlight-item">✓ Trend analysis & alerts</span>
+                </div>
+            </div>
 
-                    <p><strong>The Result:</strong> Processing time per order dropped from 12 minutes to 2 minutes. The team now handles 4x more orders with the same headcount. Customer satisfaction increased because the team can now provide personalized support for complex issues.</p>
-
-                    <div class="roi-highlight">
-                        <strong>300% increase</strong> in order capacity without hiring additional staff
-                    </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Financial Operations Automation</h3>
+                <p>Streamline invoicing, payment tracking, and financial reconciliation while maintaining human oversight for complex financial decisions.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Automated invoice generation</span>
+                    <span class="highlight-item">✓ Payment tracking & follow-up</span>
+                    <span class="highlight-item">✓ Expense categorization</span>
+                    <span class="highlight-item">✓ Financial reporting automation</span>
                 </div>
             </div>
         </div>
@@ -96,43 +91,44 @@ service_icon: "⚡"
 <section class="how-it-works">
     <div class="container">
         <div class="section-header">
-            <h2>How We Automate Your Workflows</h2>
-            <p>Our proven approach combines AI efficiency with human intelligence</p>
+            <h2>How We Revolutionize Your Workflows</h2>
+            <p>Our proven approach combines spectacular AI efficiency with human intelligence</p>
         </div>
 
-        <div class="workflow-steps">
-            <div class="workflow-step">
-                <div class="step-visual">🔍</div>
-                <div class="step-content">
-                    <h3>Deep Process Analysis</h3>
-                    <p>We shadow your team for a week, documenting every step of your key processes. Our AI analyzes patterns while our human experts identify opportunities for intelligent automation.</p>
-                    <div class="step-detail">
-                        <strong>AI Role:</strong> Pattern recognition, time tracking, bottleneck identification<br>
-                        <strong>Human Role:</strong> Context understanding, exception handling, strategic optimization
-                    </div>
+        <div class="services-main-grid">
+            <div class="service-card featured">
+                <div class="service-icon">🔍</div>
+                <h3>Deep Process Analysis</h3>
+                <p>We shadow your team, documenting every step while our AI analyzes patterns and our human experts identify opportunities for spectacular intelligent automation.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ AI pattern recognition & tracking</span>
+                    <span class="highlight-item">✓ Human context understanding</span>
+                    <span class="highlight-item">✓ Bottleneck identification</span>
+                    <span class="highlight-item">✓ Strategic optimization</span>
                 </div>
             </div>
 
-            <div class="workflow-step">
-                <div class="step-visual">🧠</div>
-                <div class="step-content">
-                    <h3>Intelligent Design</h3>
-                    <p>We design workflows where AI handles predictable tasks while humans make strategic decisions. Every automation preserves human agency and improves job satisfaction.</p>
-                    <div class="step-detail">
-                        <strong>AI Role:</strong> Data processing, routine decisions, pattern-based actions<br>
-                        <strong>Human Role:</strong> Complex decisions, relationship management, creative problem-solving
-                    </div>
+            <div class="service-card featured">
+                <div class="service-icon">🧠</div>
+                <h3>Intelligent Design</h3>
+                <p>We design workflows where AI handles predictable tasks while humans make strategic decisions. Every automation preserves human agency and improves job satisfaction.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ AI data processing & decisions</span>
+                    <span class="highlight-item">✓ Human strategic oversight</span>
+                    <span class="highlight-item">✓ Relationship management</span>
+                    <span class="highlight-item">✓ Creative problem-solving</span>
                 </div>
             </div>
 
-            <div class="workflow-step">
-                <div class="step-visual">⚡</div>
-                <div class="step-content">
-                    <h3>Seamless Implementation</h3>
-                    <p>We build and test your automation in parallel with your existing processes, ensuring zero disruption. Your team learns the new system while AI handles the heavy lifting.</p>
-                    <div class="step-detail">
-                        <strong>Result:</strong> Smooth transition with immediate time savings and improved accuracy
-                    </div>
+            <div class="service-card featured">
+                <div class="service-icon">⚡</div>
+                <h3>Seamless Implementation</h3>
+                <p>We build and test your automation in parallel with existing processes, ensuring zero disruption. Your team learns while AI handles the heavy lifting.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Zero disruption deployment</span>
+                    <span class="highlight-item">✓ Parallel system testing</span>
+                    <span class="highlight-item">✓ Immediate time savings</span>
+                    <span class="highlight-item">✓ Improved accuracy</span>
                 </div>
             </div>
         </div>
@@ -141,37 +137,71 @@ service_icon: "⚡"
 
 <section class="service-benefits">
     <div class="container">
-        <h2>What You Get</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">⏰</div>
-                <h3>Time Freedom</h3>
-                <p>Typical clients save 10-20 hours per week that can be reinvested in growth, strategy, and innovation.</p>
+        <div class="section-header">
+            <h2>Spectacular Results You'll Experience</h2>
+            <p>Transform your business operations with measurable, badass outcomes</p>
+        </div>
+
+        <div class="services-main-grid">
+            <div class="service-card featured">
+                <div class="service-icon">⏰</div>
+                <h3>Time Liberation</h3>
+                <p>Typical clients save 10-20 hours per week that can be reinvested in growth, strategy, and innovation instead of soul-crushing repetitive tasks.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ 10-20 hours saved weekly</span>
+                    <span class="highlight-item">✓ Focus on high-value work</span>
+                    <span class="highlight-item">✓ Strategic time investment</span>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🎯</div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
                 <h3>Perfect Accuracy</h3>
-                <p>Eliminate 95% of manual errors while maintaining human oversight for complex decisions.</p>
+                <p>Eliminate 95% of manual errors while maintaining human oversight for complex decisions that require creativity and relationship management.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ 95% error reduction</span>
+                    <span class="highlight-item">✓ Human oversight preserved</span>
+                    <span class="highlight-item">✓ Quality assurance</span>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">📈</div>
+            <div class="service-card featured">
+                <div class="service-icon">📈</div>
                 <h3>Effortless Scaling</h3>
-                <p>Handle 3x more work without proportional increases in headcount or stress levels.</p>
+                <p>Handle 3x more work without proportional increases in headcount or stress levels. Scale operations without scaling headaches.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ 3x work capacity</span>
+                    <span class="highlight-item">✓ No stress scaling</span>
+                    <span class="highlight-item">✓ Efficient operations</span>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">💡</div>
+            <div class="service-card">
+                <div class="service-icon">💡</div>
                 <h3>Enhanced Creativity</h3>
-                <p>Free your team from repetitive tasks so they can focus on problem-solving and innovation.</p>
+                <p>Free your team from repetitive tasks so they can focus on problem-solving, innovation, and the creative work that actually drives business growth.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Creative focus</span>
+                    <span class="highlight-item">✓ Problem-solving time</span>
+                    <span class="highlight-item">✓ Innovation capacity</span>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🔗</div>
+            <div class="service-card">
+                <div class="service-icon">🔗</div>
                 <h3>Seamless Integration</h3>
-                <p>Works with your existing tools and systems—no massive overhauls required.</p>
+                <p>Works with your existing tools and systems—no massive overhauls required. We build on what you have, not replace it.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Existing tool compatibility</span>
+                    <span class="highlight-item">✓ No system overhauls</span>
+                    <span class="highlight-item">✓ Build on current setup</span>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🚀</div>
+            <div class="service-card featured">
+                <div class="service-icon">🚀</div>
                 <h3>Rapid ROI</h3>
-                <p>Most automations pay for themselves within 2-3 months through time and cost savings.</p>
+                <p>Most automations pay for themselves within 2-3 months through time and cost savings, then continue delivering value exponentially.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ 2-3 month payback</span>
+                    <span class="highlight-item">✓ Exponential value</span>
+                    <span class="highlight-item">✓ Measurable savings</span>
+                </div>
             </div>
         </div>
     </div>
@@ -257,7 +287,7 @@ service_icon: "⚡"
 </section>
 
 {% include cta-section.html
-    title="Ready to Reclaim Your Time?"
-    description="See exactly how much time and money you could save with intelligent workflow automation. Our free analysis shows you the potential ROI before you commit to anything."
-    button_text="Get Your Free Automation Analysis"
+    title="Ready to Liberate Your Team?"
+    description="Experience the spectacular transformation when AI handles the tedious work and humans focus on innovation. Let's revolutionize your workflows and reclaim 15+ hours every week."
+    button_text="Start Your Liberation Journey"
     button_url="/contact" %}

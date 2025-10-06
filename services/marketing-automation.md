@@ -1,33 +1,28 @@
 ---
-layout: default
+layout: service
 title: "Marketing Automation"
-subtitle: "Scale your marketing while maintaining authentic human connection"
-description: "Discover how Abba Baba's marketing automation helps businesses generate 300% more leads while improving customer relationships through AI-human collaboration."
+subtitle: "Scale spectacular marketing campaigns while maintaining authentic human connection"
+description: "Revolutionize your marketing with AI-powered campaigns that generate 300% more qualified leads through badass AI-human collaboration."
 service_icon: "🎯"
 ---
 
-<section class="service-hero">
+<section class="service-intro">
     <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="highlight">Marketing Automation</span><br>
-                Scale Without Losing Soul
-            </h1>
-            <p class="hero-description">
-                What if you could engage with 1000 prospects as personally as you do with 10? Our marketing automation doesn't just blast messages—it creates intelligent, personalized conversations that feel authentically human because they're guided by human insight.
-            </p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">300%</span>
-                    <span class="stat-label">More Qualified Leads</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">50%</span>
-                    <span class="stat-label">Higher Conversion</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Engagement Active</span>
+        <div class="section-header" style="text-align: center;">
+            <h2>Scale Without Losing Your Soul</h2>
+            <p>What if you could engage with 1000 prospects as personally as you do with 10? Our marketing automation creates spectacular, personalized conversations that feel authentically human</p>
+        </div>
+
+        <div class="services-main-grid">
+            <div class="service-card featured" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
+                <div class="service-icon">🎯</div>
+                <h3>Marketing That Actually Engages</h3>
+                <p>We don't just blast messages—we create intelligent, personalized campaigns that feel authentically human because they're guided by human insight and AI efficiency working in spectacular harmony.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ 300% more qualified leads</span>
+                    <span class="highlight-item">✓ 50% higher conversion rates</span>
+                    <span class="highlight-item">✓ 24/7 authentic engagement</span>
+                    <span class="highlight-item">✓ Personalized at scale</span>
                 </div>
             </div>
         </div>
