@@ -112,6 +112,20 @@ description: "Discover Abba Baba's automation services: workflow optimization, m
                 </a>
             </div>
 
+            <div class="service-card featured">
+                <div class="service-icon">🍄</div>
+                <h3>Mycelium</h3>
+                <p>Cultivate your company's living AI network - an organic intelligence system that connects all departments and agents like the underground networks that help forests thrive.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Living AI network</span>
+                    <span class="highlight-item">✓ Organic orchestration</span>
+                    <span class="highlight-item">✓ Adaptive ecosystem</span>
+                </div>
+                <a href="{{ '/services/mycelium' | relative_url }}" class="btn btn-primary">
+                    Grow Your Network →
+                </a>
+            </div>
+
             <div class="service-card innovation">
                 <div class="service-icon">🔮</div>
                 <h3>Riddlen Platform</h3>
@@ -133,7 +147,7 @@ description: "Discover Abba Baba's automation services: workflow optimization, m
             style="compact"
             current_page=1
             total_pages=2
-            total_items=8
+            total_items=9
             per_page=6
             base_url="/services"
         %}
