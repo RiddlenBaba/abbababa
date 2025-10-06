@@ -1,49 +1,44 @@
 ---
-layout: page-with-header
-title: "Our Services"
-subtitle: "AI-powered solutions that transform how you work"
+layout: page
+title: "Transform Your Business"
+subtitle: "Intelligent automation designed to free your time and amplify your capabilities. Each service combines cutting-edge AI with human expertise to deliver solutions that truly understand your business."
 description: "Discover Abba Baba's automation services: workflow optimization, marketing innovation, and AI integration consulting."
 ---
 
-<section class="services-overview">
-    <div class="container">
-        <div class="section-header">
-            <p class="hero-description">
-                Transform your business with intelligent automation designed to free your time and amplify your capabilities.
-                Each service combines cutting-edge AI with human expertise to deliver solutions that truly understand your business.
-            </p>
-        </div>
-    </div>
-</section>
 
 <section class="services-grid-section">
     <div class="container">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive AI solutions designed to transform your business operations and unlock new possibilities.</p>
+        </div>
+
         <div class="services-main-grid">
             <div class="service-card featured">
                 <div class="service-icon">⚡</div>
                 <h3>Workflow Automation</h3>
-                <p>Get your time back by automating repetitive tasks and streamlining business processes. Our clients typically save 10-20 hours per week.</p>
+                <p>Get your time back by automating repetitive tasks and streamlining business processes. Transform manual workflows into intelligent systems.</p>
                 <div class="service-highlights">
-                    <span class="highlight-item">✓ 10-20 hours saved weekly</span>
-                    <span class="highlight-item">✓ 95% error reduction</span>
-                    <span class="highlight-item">✓ 3x faster processing</span>
+                    <span class="highlight-item">✓ Significant time savings</span>
+                    <span class="highlight-item">✓ Reduced human error</span>
+                    <span class="highlight-item">✓ Faster processing</span>
                 </div>
                 <a href="{{ '/services/workflow-automation' | relative_url }}" class="btn btn-primary">
-                    See Real Examples →
+                    Explore Solutions →
                 </a>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">🎯</div>
                 <h3>Marketing Automation</h3>
-                <p>Scale your marketing efforts while maintaining authentic human connection. Drive engagement and conversions on autopilot.</p>
+                <p>Scale your marketing efforts while maintaining authentic human connection. Drive engagement and conversions through intelligent automation.</p>
                 <div class="service-highlights">
-                    <span class="highlight-item">✓ 300% more leads</span>
-                    <span class="highlight-item">✓ 50% higher conversion</span>
+                    <span class="highlight-item">✓ Increased lead generation</span>
+                    <span class="highlight-item">✓ Improved conversion rates</span>
                     <span class="highlight-item">✓ 24/7 engagement</span>
                 </div>
                 <a href="{{ '/services/marketing-automation' | relative_url }}" class="btn btn-primary">
-                    See Success Stories →
+                    Discover Possibilities →
                 </a>
             </div>
 
@@ -52,12 +47,68 @@ description: "Discover Abba Baba's automation services: workflow optimization, m
                 <h3>AI Integration</h3>
                 <p>Discover creative AI applications tailored specifically to your business needs. Unlock competitive advantages through intelligent systems.</p>
                 <div class="service-highlights">
-                    <span class="highlight-item">✓ 40% cost reduction</span>
+                    <span class="highlight-item">✓ Operational cost savings</span>
                     <span class="highlight-item">✓ Predictive insights</span>
                     <span class="highlight-item">✓ Future-ready business</span>
                 </div>
                 <a href="{{ '/services/ai-integration' | relative_url }}" class="btn btn-primary">
-                    See Transformations →
+                    Learn How →
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Data Analytics & BI</h3>
+                <p>Transform raw data into actionable insights that drive growth. Custom analytics solutions that predict trends and optimize performance.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Real-time insights</span>
+                    <span class="highlight-item">✓ Predictive analytics</span>
+                    <span class="highlight-item">✓ Custom dashboards</span>
+                </div>
+                <a href="{{ '/services/data-analytics' | relative_url }}" class="btn btn-primary">
+                    Unlock Insights →
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h3>Customer Service Automation</h3>
+                <p>Deliver exceptional 24/7 support experiences at scale. Intelligent automation that maintains the human touch customers value.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ 24/7 availability</span>
+                    <span class="highlight-item">✓ Faster resolutions</span>
+                    <span class="highlight-item">✓ Higher satisfaction</span>
+                </div>
+                <a href="{{ '/services/customer-service-automation' | relative_url }}" class="btn btn-primary">
+                    Enhance Support →
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Financial Process Automation</h3>
+                <p>Streamline financial operations with precision and accuracy. Automated accounting that ensures compliance and speeds reporting.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Improved accuracy</span>
+                    <span class="highlight-item">✓ Faster close cycles</span>
+                    <span class="highlight-item">✓ Compliance ready</span>
+                </div>
+                <a href="{{ '/services/financial-automation' | relative_url }}" class="btn btn-primary">
+                    Optimize Finance →
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🗺️</div>
+                <h3>AI Strategy & Roadmap</h3>
+                <p>Chart your path to AI transformation with confidence. Strategic consulting that aligns AI initiatives with business objectives.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Clear AI roadmap</span>
+                    <span class="highlight-item">✓ Risk mitigation</span>
+                    <span class="highlight-item">✓ Strategic alignment</span>
+                </div>
+                <a href="{{ '/services/ai-strategy' | relative_url }}" class="btn btn-primary">
+                    Plan Strategy →
                 </a>
             </div>
 
@@ -75,6 +126,17 @@ description: "Discover Abba Baba's automation services: workflow optimization, m
                 </a>
             </div>
         </div>
+
+        <!-- Services Pagination - Shows navigation through service offerings -->
+        {% include pagination.html
+            type="services"
+            style="compact"
+            current_page=1
+            total_pages=2
+            total_items=8
+            per_page=6
+            base_url="/services"
+        %}
     </div>
 </section>
 
@@ -147,3 +209,6 @@ description: "Discover Abba Baba's automation services: workflow optimization, m
     description="Schedule a free consultation to discover your AI automation opportunities."
     button_text="Schedule Consultation"
     button_url="/contact" %}
+
+<!-- Site Navigation Flow - Guided walkthrough experience -->
+{% include site-navigation.html current_page="services" %}

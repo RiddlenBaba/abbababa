@@ -7,11 +7,11 @@ url: "https://abbababa.com"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate
 
 # SEO
 author: Abba Baba
@@ -68,6 +68,10 @@ linkedin_username: company/abbababa
 google_analytics: # G-Y2BYSM8WBT
 google_tag_manager: G-Y2BYSM8WBT
 
+# Pagination
+paginate: 5
+paginate_path: "/blog/page:num/"
+
 # Collections
 collections:
   services:
@@ -80,13 +84,13 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: "default"
       author: "Abba Baba Team"
   - scope:
       path: ""
       type: "services"
     values:
-      layout: "service"
+      layout: "default"
 
 # Exclude from processing
 exclude:

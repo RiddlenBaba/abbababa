@@ -1,5 +1,5 @@
 ---
-layout: service
+layout: default
 title: "AI Integration"
 subtitle: "Unlock competitive advantages through intelligent systems"
 description: "Discover how Abba Baba's AI integration transforms businesses with 40% cost reduction and game-changing competitive advantages through human-centered AI solutions."

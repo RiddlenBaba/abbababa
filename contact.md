@@ -1,50 +1,100 @@
 ---
-layout: page-with-header
+layout: page
 title: "Contact Us"
-subtitle: "Ready to transform your business with AI-human collaboration?"
+subtitle: "Whether you're looking to automate workflows, innovate your marketing, integrate AI solutions, or explore cutting-edge Web3 applications, we're here to help you harness the power of AI-human collaboration."
 description: "Get in touch with Abba Baba to discuss workflow automation, marketing innovation, AI integration, or Riddlen platform opportunities."
 ---
 
-## Let's Build Something Amazing Together
+<section class="get-started">
+    <div class="container">
+        <div class="section-header">
+            <h2>Get Started</h2>
+            <p>Two ways to begin your AI transformation journey</p>
+        </div>
 
-Whether you're looking to automate workflows, innovate your marketing, integrate AI solutions, or explore cutting-edge Web3 applications, we're here to help you harness the power of AI-human collaboration.
+        <div class="services-main-grid">
+            <div class="service-card featured">
+                <div class="service-icon">💬</div>
+                <h3>Free Consultation</h3>
+                <p>30-minute discovery call to understand your challenges and identify automation opportunities. No commitment required - just valuable insights.</p>
 
----
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Workflow pain points analysis</span>
+                    <span class="highlight-item">✓ Automation opportunities assessment</span>
+                    <span class="highlight-item">✓ Technology recommendations</span>
+                    <span class="highlight-item">✓ Implementation timeline</span>
+                    <span class="highlight-item">✓ Expected ROI analysis</span>
+                </div>
 
-## Get Started
+                <a href="#contact-form" class="btn btn-primary">
+                    Book Free Consultation →
+                </a>
+            </div>
 
-### Free Consultation
-**30-minute discovery call** to understand your challenges and identify automation opportunities.
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>Pilot Project</h3>
+                <p>Focused implementation that delivers quick wins and demonstrates the value of AI automation with measurable results in weeks, not months.</p>
 
-**What We'll Cover:**
-- Current workflow pain points
-- Automation opportunities assessment
-- Technology recommendations
-- Implementation timeline and investment
-- Expected ROI and outcomes
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Duration: 4-6 weeks</span>
+                    <span class="highlight-item">✓ Investment: $5,000 - $15,000</span>
+                    <span class="highlight-item">✓ Working automation system</span>
+                    <span class="highlight-item">✓ Measurable results</span>
+                    <span class="highlight-item">✓ Foundation for scaling</span>
+                </div>
 
-### Pilot Project
-**Focused implementation** that delivers quick wins and demonstrates the value of AI automation.
+                <a href="#contact-form" class="btn btn-secondary">
+                    Discuss Pilot Project →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-**Typical Duration:** 4-6 weeks
-**Investment:** $5,000 - $15,000
-**Deliverables:** Working automation system with measurable results
+<section class="contact-info">
+    <div class="container">
+        <div class="section-header">
+            <h2>Contact Information</h2>
+            <p>Multiple ways to connect with our AI automation experts</p>
+        </div>
 
----
+        <div class="services-main-grid">
+            <div class="service-card featured">
+                <div class="service-icon">📧</div>
+                <h3>Primary Contact</h3>
+                <p>Reach out directly for personalized AI automation solutions and consultation. We respond to all inquiries with detailed insights and recommendations.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Direct expert consultation</span>
+                    <span class="highlight-item">✓ Personalized solutions</span>
+                    <span class="highlight-item">✓ Detailed recommendations</span>
+                </div>
+                <p><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+            </div>
 
-## Contact Information
+            <div class="service-card">
+                <div class="service-icon">🕐</div>
+                <h3>Business Hours & Response</h3>
+                <p>Professional support during business hours with rapid response times. Our team is committed to providing timely, thoughtful responses to all automation inquiries.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Monday - Friday: 9 AM - 6 PM EST</span>
+                    <span class="highlight-item">✓ Within 24-hour response time</span>
+                    <span class="highlight-item">✓ Professional support team</span>
+                    <span class="highlight-item">✓ Thoughtful consultation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-### Primary Contact
-**Email:** [{{ site.email }}](mailto:{{ site.email }})
+<section class="contact-form-section" id="contact-form">
+    <div class="container">
+        <div class="section-header">
+            <h2>Contact Form</h2>
+            <p>Tell us about your AI automation goals and challenges</p>
+        </div>
 
-### Business Hours
-**Monday - Friday:** 9:00 AM - 6:00 PM EST
-**Response Time:** Within 24 hours for all inquiries
-
----
-
-## Contact Form
-
+        <div style="max-width: 600px; margin: 0 auto;">
 <form class="contact-form" action="https://formspree.io/f/xblzywnn" method="POST">
     <div class="form-group">
         <label for="name">Name *</label>
@@ -115,36 +165,123 @@ Whether you're looking to automate workflows, innovate your marketing, integrate
     <input type="hidden" name="_subject" value="New Contact Form Submission - Abba Baba">
     <input type="hidden" name="_next" value="{{ site.url }}/thank-you">
 </form>
+        </div>
+    </div>
+</section>
 
----
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Common questions about AI automation and our services</p>
+        </div>
 
-## Frequently Asked Questions
+        <div class="services-main-grid">
+            <div class="service-card featured">
+                <div class="service-icon">⚡</div>
+                <h3>How quickly can we see results?</h3>
+                <p>Most clients see initial automation benefits within 2-4 weeks of implementation. Full ROI typically materializes within 60-90 days with measurable improvements in efficiency and productivity.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Initial benefits: 2-4 weeks</span>
+                    <span class="highlight-item">✓ Full ROI: 60-90 days</span>
+                    <span class="highlight-item">✓ Measurable improvements</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Do you work with small businesses?</h3>
+                <p>Absolutely. We work with businesses of all sizes, from startups to enterprises. Our solutions scale to match your needs and budget, ensuring every business can benefit from AI automation.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Startups to enterprises</span>
+                    <span class="highlight-item">✓ Scalable solutions</span>
+                    <span class="highlight-item">✓ Budget-friendly options</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3>What if we don't have technical expertise?</h3>
+                <p>No problem. We handle all technical aspects and provide comprehensive training to ensure your team can effectively use the automation systems without requiring prior technical knowledge.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Full technical handling</span>
+                    <span class="highlight-item">✓ Comprehensive training</span>
+                    <span class="highlight-item">✓ No prior knowledge required</span>
+                </div>
+            </div>
+            <div class="service-card featured">
+                <div class="service-icon">🔗</div>
+                <h3>Can you integrate with our existing tools?</h3>
+                <p>Yes. We specialize in connecting and automating workflows across your existing software stack, minimizing disruption to current processes while maximizing automation benefits.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Existing tool integration</span>
+                    <span class="highlight-item">✓ Minimal disruption</span>
+                    <span class="highlight-item">✓ Workflow automation</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>What ongoing support do you provide?</h3>
+                <p>We offer comprehensive support including monitoring, optimization, troubleshooting, and expansion of automation systems as your business grows and evolves.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ System monitoring</span>
+                    <span class="highlight-item">✓ Continuous optimization</span>
+                    <span class="highlight-item">✓ Growth support</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-### How quickly can we see results?
-Most clients see initial automation benefits within 2-4 weeks of implementation. Full ROI typically materializes within 60-90 days.
+<section class="follow-journey">
+    <div class="container">
+        <div class="section-header">
+            <h2>Follow Our Journey</h2>
+            <p>Stay updated on our latest innovations and AI-human collaboration insights</p>
+        </div>
 
-### Do you work with small businesses?
-Absolutely. We work with businesses of all sizes, from startups to enterprises. Our solutions scale to match your needs and budget.
+        <div class="services-main-grid">
+            <div class="service-card featured">
+                <div class="service-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <p>Connect with us professionally for industry insights, automation case studies, and the latest developments in AI-human collaboration innovation.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Industry insights</span>
+                    <span class="highlight-item">✓ Automation case studies</span>
+                    <span class="highlight-item">✓ Professional networking</span>
+                </div>
+                <a href="https://linkedin.com/company/abbababa" class="btn btn-secondary" target="_blank">
+                    Follow on LinkedIn →
+                </a>
+            </div>
+            <div class="service-card featured">
+                <div class="service-icon">💻</div>
+                <h3>GitHub</h3>
+                <p>Explore our open-source contributions including the Riddlen platform and other AI validation projects. Join our development community.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Open-source projects</span>
+                    <span class="highlight-item">✓ Riddlen platform</span>
+                    <span class="highlight-item">✓ Development community</span>
+                </div>
+                <a href="https://github.com/abbababa" class="btn btn-secondary" target="_blank">
+                    Explore GitHub →
+                </a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📝</div>
+                <h3>AI Insights Blog</h3>
+                <p>Coming soon: Deep insights on AI-human collaboration, automation strategies, and the future of intelligent work. Subscribe for early access.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ AI collaboration insights</span>
+                    <span class="highlight-item">✓ Automation strategies</span>
+                    <span class="highlight-item">✓ Future of work content</span>
+                </div>
+            </div>
+        </div>
 
-### What if we don't have technical expertise?
-No problem. We handle all technical aspects and provide training to ensure your team can effectively use the automation systems.
+        <div class="vision-content" style="margin-top: 3rem; text-align: center;">
+            <p><em>Ready to join the AI-human collaboration revolution? We're excited to learn about your vision and help make it reality through intelligent automation solutions.</em></p>
+        </div>
+    </div>
+</section>
 
-### Can you integrate with our existing tools?
-Yes. We specialize in connecting and automating workflows across your existing software stack, minimizing disruption to current processes.
-
-### What ongoing support do you provide?
-We offer comprehensive support including monitoring, optimization, troubleshooting, and expansion of automation systems as your business grows.
-
----
-
-## Follow Our Journey
-
-Stay updated on our latest innovations and insights:
-
-- **LinkedIn:** [company/abbababa](https://linkedin.com/company/abbababa)
-- **GitHub:** [abbababa](https://github.com/abbababa)
-- **Blog:** Coming soon with insights on AI-human collaboration
-
----
-
-*Ready to join the AI-human collaboration revolution? We're excited to learn about your vision and help make it reality.*
+<!-- Site Navigation Flow - Guided walkthrough experience -->
+{% include site-navigation.html current_page="contact" %}

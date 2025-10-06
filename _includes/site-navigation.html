@@ -1,0 +1,125 @@
+{% comment %}
+Site Navigation Flow - Creates a guided walkthrough experience
+Provides contextual next/previous navigation between key pages
+
+Parameters:
+- current_page: Current page identifier (home, about, services, blog, faq, riddlen, contact)
+- style: "default", "minimal", "simple" (optional)
+{% endcomment %}
+
+{% assign current = include.current_page | default: "home" %}
+{% assign nav_style = include.style | default: "default" %}
+
+{% comment %} Define navigation flow {% endcomment %}
+{% assign pages = "home,about,services,blog,faq,riddlen,contact" | split: "," %}
+{% assign page_titles = "Home,About Us,Our Services,AI Insights,FAQ,Riddlen Platform,Contact" | split: "," %}
+{% assign page_urls = "/,/about,/services,/blog,/faq,/riddlen,/contact" | split: "," %}
+{% assign page_descriptions = "Start your journey,Learn our story,Explore solutions,Read insights,Get answers,See innovation,Get in touch" | split: "," %}
+
+{% comment %} Find current page index {% endcomment %}
+{% assign current_index = 0 %}
+{% for page in pages %}
+    {% if page == current %}
+        {% assign current_index = forloop.index0 %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+{% comment %} Calculate previous and next pages {% endcomment %}
+{% assign prev_index = current_index | minus: 1 %}
+{% assign next_index = current_index | plus: 1 %}
+
+<div class="site-navigation-wrapper{% if nav_style != 'default' %} site-navigation-{{ nav_style }}{% endif %}">
+    <nav class="site-navigation" aria-label="Site navigation flow">
+
+        {% unless nav_style == "simple" %}
+        <div class="navigation-progress">
+            <div class="progress-info">
+                <span class="progress-text">Step {{ current_index | plus: 1 }} of {{ pages.size }}</span>
+                <span class="progress-title">{{ page_titles[current_index] }}</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: {{ current_index | plus: 1 | times: 100 | divided_by: pages.size }}%"></div>
+            </div>
+        </div>
+        {% endunless %}
+
+        <div class="navigation-controls">
+            {% comment %} Previous Page {% endcomment %}
+            {% if prev_index >= 0 %}
+                <a href="{{ page_urls[prev_index] | relative_url }}" class="navigation-btn navigation-prev" rel="prev">
+                    <span class="nav-arrow">←</span>
+                    <div class="nav-content">
+                        <span class="nav-label">Previous</span>
+                        <span class="nav-title">{{ page_titles[prev_index] }}</span>
+                        <span class="nav-description">{{ page_descriptions[prev_index] }}</span>
+                    </div>
+                </a>
+            {% else %}
+                <div class="navigation-btn navigation-prev navigation-disabled">
+                    <span class="nav-arrow">←</span>
+                    <div class="nav-content">
+                        <span class="nav-label">Previous</span>
+                        <span class="nav-title">Start</span>
+                        <span class="nav-description">You're at the beginning</span>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% comment %} Current Page Indicator {% endcomment %}
+            {% unless nav_style == "simple" %}
+            <div class="navigation-current">
+                <div class="current-indicator">
+                    <span class="current-step">{{ current_index | plus: 1 }}</span>
+                </div>
+                <div class="current-info">
+                    <span class="current-title">{{ page_titles[current_index] }}</span>
+                    <span class="current-description">{{ page_descriptions[current_index] }}</span>
+                </div>
+            </div>
+            {% endunless %}
+
+            {% comment %} Next Page {% endcomment %}
+            {% if next_index < pages.size %}
+                <a href="{{ page_urls[next_index] | relative_url }}" class="navigation-btn navigation-next" rel="next">
+                    <div class="nav-content">
+                        <span class="nav-label">Next</span>
+                        <span class="nav-title">{{ page_titles[next_index] }}</span>
+                        <span class="nav-description">{{ page_descriptions[next_index] }}</span>
+                    </div>
+                    <span class="nav-arrow">→</span>
+                </a>
+            {% else %}
+                <div class="navigation-btn navigation-next navigation-disabled">
+                    <div class="nav-content">
+                        <span class="nav-label">Next</span>
+                        <span class="nav-title">Complete</span>
+                        <span class="nav-description">You've reached the end</span>
+                    </div>
+                    <span class="nav-arrow">→</span>
+                </div>
+            {% endif %}
+        </div>
+
+        {% comment %} Quick Jump Navigation {% endcomment %}
+        {% unless nav_style == "minimal" or nav_style == "simple" %}
+        <div class="navigation-overview">
+            <div class="overview-title">Quick Navigation</div>
+            <div class="overview-pages">
+                {% for page in pages %}
+                    {% assign page_index = forloop.index0 %}
+                    {% if page_index == current_index %}
+                        <span class="overview-page overview-current" aria-current="page">
+                            {{ page_titles[page_index] }}
+                        </span>
+                    {% else %}
+                        <a href="{{ page_urls[page_index] | relative_url }}" class="overview-page">
+                            {{ page_titles[page_index] }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endunless %}
+    </nav>
+</div>

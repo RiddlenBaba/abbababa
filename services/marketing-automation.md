@@ -1,5 +1,5 @@
 ---
-layout: service
+layout: default
 title: "Marketing Automation"
 subtitle: "Scale your marketing while maintaining authentic human connection"
 description: "Discover how Abba Baba's marketing automation helps businesses generate 300% more leads while improving customer relationships through AI-human collaboration."

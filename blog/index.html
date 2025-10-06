@@ -1,32 +1,16 @@
 ---
-layout: default
+layout: page
 title: "AI Insights Blog"
+subtitle: "Exploring the future of AI-human collaboration, automation trends, and intelligent work"
 description: "Thoughts on AI-human collaboration, automation trends, and the future of intelligent work from the Abba Baba team."
 ---
-
-<div class="blog-header">
-    <div class="container">
-        <h1 class="blog-title">AI Insights</h1>
-        <p class="blog-subtitle">Exploring the future of AI-human collaboration</p>
-
-        <div class="blog-search">
-            <input type="text" id="search-input" placeholder="Search articles..." class="search-input">
-            <button id="search-button" class="search-button">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-            </button>
-        </div>
-    </div>
-</div>
 
 <div class="blog-content">
     <div class="container">
         <div class="blog-grid">
             <main class="blog-posts">
-                {% if site.posts.size > 0 %}
-                    {% for post in site.posts %}
+                {% if paginator.posts.size > 0 %}
+                    {% for post in paginator.posts %}
                     <article class="blog-post-card">
                         <div class="post-meta">
                             <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">
@@ -55,6 +39,76 @@ description: "Thoughts on AI-human collaboration, automation trends, and the fut
                         </div>
                     </article>
                     {% endfor %}
+
+                    <!-- Pagination -->
+                    {% if paginator.total_pages > 1 %}
+                    <div class="pagination-wrapper pagination-blog">
+                        <nav class="pagination" aria-label="Blog pagination">
+                            <div class="pagination-info">
+                                <span class="pagination-summary">
+                                    Showing {{ paginator.per_page | times: paginator.page | minus: paginator.per_page | plus: 1 }}-{{ paginator.per_page | times: paginator.page | at_most: paginator.total_posts }} of {{ paginator.total_posts }} posts
+                                </span>
+                            </div>
+
+                            <div class="pagination-controls">
+                                {% if paginator.previous_page %}
+                                    <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn pagination-prev" rel="prev">
+                                        <span class="pagination-arrow">←</span>
+                                        <span class="pagination-text">Previous</span>
+                                    </a>
+                                {% else %}
+                                    <span class="pagination-btn pagination-prev pagination-disabled">
+                                        <span class="pagination-arrow">←</span>
+                                        <span class="pagination-text">Previous</span>
+                                    </span>
+                                {% endif %}
+
+                                <div class="pagination-numbers">
+                                    {% assign start_page = paginator.page | minus: 2 | at_least: 1 %}
+                                    {% assign end_page = paginator.page | plus: 2 | at_most: paginator.total_pages %}
+
+                                    {% if start_page > 1 %}
+                                        <a href="{{ site.paginate_path | replace: ':num', '1' | relative_url }}" class="pagination-number">1</a>
+                                        {% if start_page > 2 %}
+                                            <span class="pagination-ellipsis">…</span>
+                                        {% endif %}
+                                    {% endif %}
+
+                                    {% for page_num in (start_page..end_page) %}
+                                        {% if page_num == paginator.page %}
+                                            <span class="pagination-number pagination-current" aria-current="page">{{ page_num }}</span>
+                                        {% elsif page_num == 1 %}
+                                            <a href="{{ '/blog/' | relative_url }}" class="pagination-number">{{ page_num }}</a>
+                                        {% else %}
+                                            <a href="{{ site.paginate_path | replace: ':num', page_num | relative_url }}" class="pagination-number">{{ page_num }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% if end_page < paginator.total_pages %}
+                                        {% assign max_before_ellipsis = paginator.total_pages | minus: 1 %}
+                                        {% if end_page < max_before_ellipsis %}
+                                            <span class="pagination-ellipsis">…</span>
+                                        {% endif %}
+                                        <a href="{{ site.paginate_path | replace: ':num', paginator.total_pages | relative_url }}" class="pagination-number">{{ paginator.total_pages }}</a>
+                                    {% endif %}
+                                </div>
+
+                                {% if paginator.next_page %}
+                                    <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn pagination-next" rel="next">
+                                        <span class="pagination-text">Next</span>
+                                        <span class="pagination-arrow">→</span>
+                                    </a>
+                                {% else %}
+                                    <span class="pagination-btn pagination-next pagination-disabled">
+                                        <span class="pagination-text">Next</span>
+                                        <span class="pagination-arrow">→</span>
+                                    </span>
+                                {% endif %}
+                            </div>
+                        </nav>
+                    </div>
+                    {% endif %}
+
                 {% else %}
                     <div class="no-posts">
                         <h2>Coming Soon!</h2>
@@ -116,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const blogPosts = document.querySelectorAll('.blog-post-card');
 
     function performSearch() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
+        const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
 
         blogPosts.forEach(post => {
             const title = post.querySelector('.post-title a').textContent.toLowerCase();
@@ -152,12 +206,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    searchInput.addEventListener('input', performSearch);
-    searchButton.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
+    if (searchInput) {
+        searchInput.addEventListener('input', performSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
+
+    if (searchButton) {
+        searchButton.addEventListener('click', performSearch);
+    }
 });
 </script>
+
+<!-- Site Navigation Flow - Guided walkthrough experience -->
+{% include site-navigation.html current_page="blog" %}

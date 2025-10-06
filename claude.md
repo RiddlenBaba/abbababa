@@ -30,27 +30,128 @@ Our flagship web3 project featuring:
 ## Technical Stack
 
 ### Website (GitHub Pages + Jekyll)
-- **Hosting**: GitHub Pages
+- **Hosting**: GitHub Pages with auto-deployment
 - **Generator**: Jekyll static site generator
-- **Theme**: Modern, professional Jekyll theme
-- **Structure**: Marketing-focused with clear user journey and CTAs
+- **Styling**: Custom SCSS with CSS custom properties for theming
+- **Structure**: Professional marketing site with unified styled HTML approach
 
 ### Repository Structure
 ```
 abbababa/
 ├── _config.yml           # Jekyll configuration
-├── _layouts/             # Page templates
-├── _includes/            # Reusable components
+├── _layouts/             # Page templates (default.html, page.html, service.html)
+├── _includes/            # Reusable components (cta-section.html, etc.)
 ├── _sass/               # Custom styling
+│   ├── _variables.scss   # Color system and design tokens
+│   └── _components.scss  # All component styles
 ├── assets/              # Images, CSS, JS
+├── _services/           # Individual service pages
+│   ├── workflow-automation.md
+│   ├── marketing-automation.md
+│   └── ai-integration.md
 ├── _posts/              # Blog posts (optional)
-├── index.md             # Homepage
-├── about.md             # About Abba Baba
-├── services.md          # Services overview
-├── riddlen.md           # Riddlen project page
-├── contact.md           # Contact form/info
-├── claude.md            # This file
+├── index.md             # Homepage (layout: default)
+├── about.md             # About page (layout: page)
+├── services.md          # Services overview (layout: page)
+├── riddlen.md           # Riddlen project page (layout: page)
+├── contact.md           # Contact form/info (layout: page)
+├── blog.md              # Blog index (layout: page)
+├── faq.md               # FAQ page (layout: page)
+├── CLAUDE.md            # This file - project documentation
 └── README.md            # Repository documentation
+```
+
+### Current Site Architecture (Updated October 2025)
+
+#### **Unified Layout System**
+All pages now use a standardized approach:
+
+1. **Layout Hierarchy**:
+   - `default.html` → Base layout with navigation and footer
+   - `page.html` → Extends default with automatic hero section from front matter
+   - All service pages use `layout: page` for consistency
+
+2. **Hero Section System**:
+   - Single hero per page generated from front matter (title/subtitle)
+   - No duplicate hero sections in content
+   - Centered layout with professional styling
+
+3. **Styled HTML Components**:
+   - All content uses styled HTML sections instead of markdown
+   - Consistent component library with reusable CSS classes
+   - Professional card-based layouts throughout
+
+#### **CSS Architecture**
+
+**File Structure**:
+- `_variables.scss` - Design tokens, colors, spacing, typography
+- `_components.scss` - All component styles and layouts
+
+**Color System**:
+```scss
+// CSS Custom Properties for theming
+:root {
+  --bg-primary: #ffffff;      // Main background
+  --bg-secondary: #f8fafc;    // Section backgrounds
+  --bg-tertiary: #f1f5f9;     // Alternate sections
+  --text-primary: #0f172a;    // Main text
+  --text-secondary: #475569;  // Secondary text
+  --text-muted: #64748b;      // Muted text
+  --border-color: #e2e8f0;    // Borders
+  --shadow-color: rgba(15, 23, 42, 0.1); // Shadows
+}
+```
+
+**Component Classes**:
+- `.section-header` - Centered section titles and descriptions
+- `.process-steps` / `.process-step` - Numbered process flows
+- `.automation-list` / `.automation-item` - Service/feature grids
+- `.tech-grid` / `.tech-card` - Technology showcase cards
+- `.results-grid` / `.result-card` - Results/outcomes cards
+- `.timeline` / `.timeline-item` - Implementation timelines
+- `.value-card` / `.values-grid` - Value propositions
+- `.story-card` - Case studies and explanatory content
+
+**Pagination System**:
+- `.pagination-wrapper` - Container for pagination controls
+- `.pagination-blog` / `.pagination-services` / `.pagination-search` - Content-specific styling
+- `.pagination-minimal` / `.pagination-compact` / `.pagination-centered` - Layout variations
+- `.pagination-simple` / `.pagination-numbers-only` - Behavior variations
+- `.pagination-load-more` - Alternative "Load More" button pattern
+- `.pagination-infinite-scroll` - Infinite scroll loading indicator
+
+#### **Standard Page Template**
+
+Every service page follows this structure:
+```html
+---
+title: "Page Title"
+subtitle: "Page description for hero section"
+layout: page
+---
+
+<section class="service-intro">
+    <div class="container">
+        <div class="section-header">
+            <h2>Section Title</h2>
+            <p>Section description</p>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <h2>Process Title</h2>
+            <p>Process description</p>
+        </div>
+        <div class="process-steps">
+            <!-- 4 numbered process steps -->
+        </div>
+    </div>
+</section>
+
+<!-- Additional sections as needed -->
 ```
 
 ## Brand Voice & Messaging
@@ -220,6 +321,55 @@ Secondary CTAs:
 - ALWAYS use placeholders like [Your API Key] instead of actual keys
 - Direct users to get keys from their local files, never provide them
 
+## Technology Philosophy & Preferences
+
+### Core Technology Values
+**Abba Baba** strongly prefers custom, in-house solutions over third-party SaaS platforms:
+
+#### **✅ Preferred Technologies**:
+- **Claude & Claude Code** - Primary AI development platform
+- **Custom API Integrations** - Direct connections without middleman services
+- **In-House Solutions** - Proprietary systems we own and control
+- **Open Source Tools** - When external dependencies are needed
+- **Cloud Infrastructure** - For scalability and reliability
+
+#### **❌ Avoid When Possible**:
+- **Zapier, Make.com, n8n** - Prefer custom automation solutions
+- **Third-party SaaS platforms** - Unless absolutely necessary
+- **Recurring subscription services** - Build ownership instead
+- **Template-based solutions** - Custom-built for each client
+
+#### **Business Rationale**:
+- **No Recurring Fees** - Clients own their solutions outright
+- **Full Control** - No dependency on external services
+- **Custom Fit** - Solutions tailored to specific business needs
+- **AI-Powered** - Leverage Claude's capabilities for intelligent automation
+- **Future-Proof** - Solutions that evolve with business needs
+
+### Development Standards
+
+#### **Site Architecture Rules**
+1. **Single Layout System**: All pages use `layout: page` for consistency
+2. **Styled HTML Only**: No mixing markdown and HTML - use styled sections
+3. **Component Reuse**: Use established CSS classes for all new content
+4. **Hero Section**: One per page, generated from front matter
+5. **Mobile-First**: All components must be responsive
+6. **Performance**: Optimize images, minimize dependencies
+
+#### **Content Guidelines**
+1. **Authentic Claims Only**: No fabricated statistics or fake testimonials
+2. **Capability-Focused**: Showcase what we can build, not false achievements
+3. **Technology Honest**: Emphasize custom solutions and Claude integration
+4. **Human-Centric**: AI enhances humans, doesn't replace them
+5. **Professional Tone**: Innovative but approachable, never overly technical
+
+#### **CSS Standards**
+1. **Use CSS Custom Properties**: `var(--text-primary)` not hardcoded colors
+2. **Consistent Components**: Follow established patterns for new sections
+3. **Proper Contrast**: All text must meet accessibility standards
+4. **Hover Effects**: Consistent interaction patterns across components
+5. **Grid Layouts**: Use CSS Grid for responsive card layouts
+
 ### When Working on This Project
 1. **Maintain brand voice**: Professional, innovative, human-centric
 2. **Focus on benefits**: Always translate features to user value
@@ -229,6 +379,8 @@ Secondary CTAs:
 6. **Clear CTAs**: Every page should guide users to action
 7. **SEO awareness**: Use semantic HTML, proper headings, meta descriptions
 8. **Security first**: Never expose or log sensitive information
+9. **Technology alignment**: Emphasize custom solutions and Claude integration
+10. **Consistency**: Use established component patterns and CSS classes
 
 ### File Organization
 - Keep layouts modular and reusable
@@ -242,6 +394,90 @@ Secondary CTAs:
 - Set up analytics (Google Analytics or alternative)
 - Enable contact form (Formspree, Netlify Forms, or similar)
 
+## Adding New Service Pages
+
+### Creating a New Service Page
+
+1. **Create the file**: `_services/service-name.md`
+2. **Use the standard template**:
+```yaml
+---
+title: "Service Name"
+subtitle: "Brief description for hero section"
+layout: page
+benefits:
+  - "Benefit 1"
+  - "Benefit 2"
+  - "Benefit 3"
+  - "Benefit 4"
+---
+```
+
+3. **Follow the standard section structure**:
+   - Service Intro (with section-header)
+   - How It Works/Our Approach (with process-steps)
+   - Services/Solutions (with automation-list)
+   - Technology Section (with tech-grid)
+   - Results Section (with results-grid)
+   - Implementation Timeline (with timeline)
+   - Story/Why Choose (with value-card or story-card)
+
+4. **Update services.md**: Add new service to the main services grid
+
+5. **Technology Focus**: Always emphasize:
+   - Claude & Claude Code integration
+   - Custom in-house solutions
+   - No recurring fees or SaaS dependencies
+   - Direct API integrations
+   - AI-powered automation
+
+### Pagination Usage
+
+#### **Using the Pagination Include**
+```liquid
+{% include pagination.html
+   type="blog"
+   style="default"
+   current_page=2
+   total_pages=5
+   total_items=23
+   per_page=5
+   base_url="/blog"
+%}
+```
+
+#### **Available Pagination Options**:
+- **Types**: `blog`, `services`, `search` (adds contextual icons and styling)
+- **Styles**: `default`, `minimal`, `compact`, `centered`, `simple`, `numbers-only`
+- **Alternative Patterns**: Load more buttons, infinite scroll indicators
+
+#### **Jekyll Pagination Setup**:
+- Plugin: `jekyll-paginate` (installed)
+- Configuration: 5 posts per page at `/blog/page:num/`
+- Requirements: Must use `index.html` file (not `.md`) for pagination to work
+
+### Maintenance Guidelines
+
+#### **Regular Updates**
+- Review content quarterly for accuracy
+- Update technology mentions to reflect current tools
+- Ensure all CTAs work and lead to appropriate pages
+- Test mobile responsiveness on new content
+- Validate contrast ratios and accessibility
+- Test pagination on different screen sizes
+
+#### **Content Consistency**
+- All statistics should be capability-focused, not fabricated
+- Technology sections should emphasize custom solutions
+- Process timelines should be realistic and achievable
+- Benefits should be specific and measurable
+
+#### **Design System Maintenance**
+- New components should extend existing CSS classes
+- Color changes should be made in `_variables.scss`
+- Component updates should be made in `_components.scss`
+- Test changes across all service pages for consistency
+
 ## Questions to Consider
 
 When expanding the site or adding features, ask:
@@ -251,16 +487,19 @@ When expanding the site or adding features, ask:
 4. Is it optimized for performance?
 5. Does it include appropriate CTAs?
 6. Is it accessible and responsive?
+7. Does it emphasize our custom/in-house approach?
+8. Are we avoiding third-party platform dependencies?
 
 ## Future Enhancements
 
 Consider adding:
-- Blog for thought leadership
-- Case studies/portfolio
+- Additional service pages for specialized offerings
+- Interactive demos or calculators
 - Resource center (guides, whitepapers)
-- Riddlen demo or interactive element
-- Newsletter signup
-- Chatbot for initial engagement
+- Client portal/dashboard demos
+- Enhanced Riddlen integration showcase
+- Performance case studies (without fabricated data)
+- Technology comparison guides (custom vs SaaS)
 
 ---
 

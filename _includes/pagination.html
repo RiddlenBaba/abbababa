@@ -1,0 +1,137 @@
+{% comment %}
+Reusable pagination component
+Usage:
+{% include pagination.html
+   type="blog"
+   style="default"
+   current_page=1
+   total_pages=5
+   total_items=23
+   per_page=5
+   base_url="/blog"
+%}
+
+Parameters:
+- type: "blog", "services", "search" (adds contextual styling)
+- style: "default", "minimal", "compact", "centered", "simple", "numbers-only"
+- current_page: Current page number
+- total_pages: Total number of pages
+- total_items: Total number of items
+- per_page: Items per page
+- base_url: Base URL for pagination links
+- prev_url: Previous page URL (optional, auto-generated if not provided)
+- next_url: Next page URL (optional, auto-generated if not provided)
+{% endcomment %}
+
+{% assign pagination_type = include.type | default: "default" %}
+{% assign pagination_style = include.style | default: "default" %}
+{% assign current_page = include.current_page | default: 1 %}
+{% assign total_pages = include.total_pages | default: 1 %}
+{% assign total_items = include.total_items | default: 0 %}
+{% assign per_page = include.per_page | default: 10 %}
+{% assign base_url = include.base_url | default: "" %}
+
+{% if total_pages > 1 %}
+<div class="pagination-wrapper{% if pagination_type != 'default' %} pagination-{{ pagination_type }}{% endif %}{% if pagination_style != 'default' %} pagination-{{ pagination_style }}{% endif %}">
+    <nav class="pagination{% if pagination_style != 'default' %} pagination-{{ pagination_style }}{% endif %}" aria-label="{{ pagination_type | capitalize }} pagination">
+
+        {% unless pagination_style == "numbers-only" %}
+        <div class="pagination-info">
+            <span class="pagination-summary">
+                {% assign start_item = per_page | times: current_page | minus: per_page | plus: 1 %}
+                {% assign end_item = per_page | times: current_page | at_most: total_items %}
+                Showing {{ start_item }}-{{ end_item }} of {{ total_items }}
+                {% case pagination_type %}
+                    {% when "blog" %}posts
+                    {% when "services" %}services
+                    {% when "search" %}results
+                    {% else %}items
+                {% endcase %}
+            </span>
+        </div>
+        {% endunless %}
+
+        <div class="pagination-controls">
+            {% comment %} Previous button {% endcomment %}
+            {% unless pagination_style == "numbers-only" %}
+                {% if current_page > 1 %}
+                    {% if include.prev_url %}
+                        {% assign prev_url = include.prev_url %}
+                    {% elsif current_page == 2 %}
+                        {% assign prev_url = base_url %}
+                    {% else %}
+                        {% assign prev_page_num = current_page | minus: 1 %}
+                        {% assign prev_url = base_url | append: "/page" | append: prev_page_num %}
+                    {% endif %}
+                    <a href="{{ prev_url | relative_url }}" class="pagination-btn pagination-prev" rel="prev">
+                        <span class="pagination-arrow">←</span>
+                        <span class="pagination-text">Previous</span>
+                    </a>
+                {% else %}
+                    <span class="pagination-btn pagination-prev pagination-disabled">
+                        <span class="pagination-arrow">←</span>
+                        <span class="pagination-text">Previous</span>
+                    </span>
+                {% endif %}
+            {% endunless %}
+
+            {% comment %} Page numbers {% endcomment %}
+            {% unless pagination_style == "simple" %}
+            <div class="pagination-numbers">
+                {% assign start_page = current_page | minus: 2 | at_least: 1 %}
+                {% assign end_page = current_page | plus: 2 | at_most: total_pages %}
+
+                {% comment %} First page and ellipsis {% endcomment %}
+                {% if start_page > 1 %}
+                    <a href="{{ base_url | relative_url }}" class="pagination-number">1</a>
+                    {% if start_page > 2 %}
+                        <span class="pagination-ellipsis">…</span>
+                    {% endif %}
+                {% endif %}
+
+                {% comment %} Page range {% endcomment %}
+                {% for page_num in (start_page..end_page) %}
+                    {% if page_num == current_page %}
+                        <span class="pagination-number pagination-current" aria-current="page">{{ page_num }}</span>
+                    {% elsif page_num == 1 %}
+                        <a href="{{ base_url | relative_url }}" class="pagination-number">{{ page_num }}</a>
+                    {% else %}
+                        <a href="{{ base_url | append: '/page' | append: page_num | relative_url }}" class="pagination-number">{{ page_num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% comment %} Last page and ellipsis {% endcomment %}
+                {% if end_page < total_pages %}
+                    {% assign max_before_ellipsis = total_pages | minus: 1 %}
+                    {% if end_page < max_before_ellipsis %}
+                        <span class="pagination-ellipsis">…</span>
+                    {% endif %}
+                    <a href="{{ base_url | append: '/page' | append: total_pages | relative_url }}" class="pagination-number">{{ total_pages }}</a>
+                {% endif %}
+            </div>
+            {% endunless %}
+
+            {% comment %} Next button {% endcomment %}
+            {% unless pagination_style == "numbers-only" %}
+                {% if current_page < total_pages %}
+                    {% if include.next_url %}
+                        {% assign next_url = include.next_url %}
+                    {% else %}
+                        {% assign next_page_num = current_page | plus: 1 %}
+                        {% assign next_url = base_url | append: "/page" | append: next_page_num %}
+                    {% endif %}
+                    <a href="{{ next_url | relative_url }}" class="pagination-btn pagination-next" rel="next">
+                        <span class="pagination-text">Next</span>
+                        <span class="pagination-arrow">→</span>
+                    </a>
+                {% else %}
+                    <span class="pagination-btn pagination-next pagination-disabled">
+                        <span class="pagination-text">Next</span>
+                        <span class="pagination-arrow">→</span>
+                    </span>
+                {% endif %}
+            {% endunless %}
+        </div>
+    </nav>
+</div>
+{% endif %}

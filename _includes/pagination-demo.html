@@ -1,0 +1,109 @@
+{% comment %}
+Pagination Demo - Shows all available pagination styles
+Use this to test different pagination layouts
+{% endcomment %}
+
+<section class="pagination-demos" style="padding: 2rem 0; background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-header">
+            <h2>Pagination Styles Demo</h2>
+            <p>Available pagination components for your site</p>
+        </div>
+
+        <!-- Default Blog Pagination -->
+        <div style="margin-bottom: 3rem;">
+            <h3>Blog Pagination (Default)</h3>
+            {% include pagination.html
+                type="blog"
+                current_page=2
+                total_pages=5
+                total_items=23
+                per_page=5
+                base_url="/blog"
+            %}
+        </div>
+
+        <!-- Services Pagination (Compact) -->
+        <div style="margin-bottom: 3rem;">
+            <h3>Services Pagination (Compact)</h3>
+            {% include pagination.html
+                type="services"
+                style="compact"
+                current_page=1
+                total_pages=3
+                total_items=15
+                per_page=6
+                base_url="/services"
+            %}
+        </div>
+
+        <!-- Search Results (Minimal) -->
+        <div style="margin-bottom: 3rem;">
+            <h3>Search Results (Minimal)</h3>
+            {% include pagination.html
+                type="search"
+                style="minimal"
+                current_page=3
+                total_pages=8
+                total_items=76
+                per_page=10
+                base_url="/search"
+            %}
+        </div>
+
+        <!-- Simple Pagination (Prev/Next Only) -->
+        <div style="margin-bottom: 3rem;">
+            <h3>Simple Pagination (Prev/Next Only)</h3>
+            {% include pagination.html
+                style="simple"
+                current_page=2
+                total_pages=4
+                total_items=38
+                per_page=10
+                base_url="/content"
+            %}
+        </div>
+
+        <!-- Numbers Only -->
+        <div style="margin-bottom: 3rem;">
+            <h3>Numbers Only Pagination</h3>
+            {% include pagination.html
+                style="numbers-only"
+                current_page=4
+                total_pages=7
+                total_items=65
+                per_page=10
+                base_url="/archive"
+            %}
+        </div>
+
+        <!-- Centered Pagination -->
+        <div style="margin-bottom: 3rem;">
+            <h3>Centered Pagination</h3>
+            {% include pagination.html
+                style="centered"
+                current_page=1
+                total_pages=3
+                total_items=22
+                per_page=8
+                base_url="/gallery"
+            %}
+        </div>
+
+        <!-- Load More Button Example -->
+        <div style="margin-bottom: 3rem;">
+            <h3>Load More Button</h3>
+            <div class="pagination-load-more">
+                <button class="load-more-btn">Load More Content</button>
+            </div>
+        </div>
+
+        <!-- Infinite Scroll Indicator -->
+        <div style="margin-bottom: 3rem;">
+            <h3>Infinite Scroll Indicator</h3>
+            <div class="pagination-infinite-scroll">
+                <div class="infinite-scroll-indicator">Loading more content...</div>
+            </div>
+        </div>
+    </div>
+</section>

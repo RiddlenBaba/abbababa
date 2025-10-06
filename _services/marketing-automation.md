@@ -1,6 +1,7 @@
 ---
 title: "Marketing Automation"
 subtitle: "Scale authentic engagement across all channels"
+layout: page
 benefits:
   - "Maintain consistent brand presence across all platforms"
   - "Personalize customer experiences at scale"
@@ -8,89 +9,205 @@ benefits:
   - "Maximize marketing ROI through intelligent optimization"
 ---
 
-## Authentic Marketing at Scale
+<section class="service-intro">
+    <div class="container">
+        <div class="section-header">
+            <h2>Authentic Marketing at Scale</h2>
+            <p>Marketing automation shouldn't feel robotic. Our solutions help you scale personal, authentic engagement while maintaining the human touch that builds real relationships with your audience.</p>
+        </div>
+    </div>
+</section>
 
-Marketing automation shouldn't feel robotic. Our solutions help you scale personal, authentic engagement while maintaining the human touch that builds real relationships with your audience.
+<section class="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Approach</h2>
+            <p>Human-first automation that enhances rather than replaces your creativity</p>
+        </div>
 
-### Our Approach
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Human-First Automation</h3>
+                <p>We design systems that enhance rather than replace human creativity and intuition in marketing.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Multi-Channel Orchestration</h3>
+                <p>Coordinate campaigns across email, social media, content marketing, and advertising for maximum impact.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>AI-Powered Personalization</h3>
+                <p>Deliver the right message to the right person at the right time, automatically.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Continuous Optimization</h3>
+                <p>Learn from every interaction to improve future campaign performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-**Human-First Automation**
-We design systems that enhance rather than replace human creativity and intuition in marketing.
+<section class="common-automations">
+    <div class="container">
+        <div class="section-header">
+            <h2>Services We Provide</h2>
+            <p>Comprehensive marketing automation across all channels</p>
+        </div>
 
-**Multi-Channel Orchestration**
-Coordinate campaigns across email, social media, content marketing, and advertising for maximum impact.
+        <div class="automation-list">
+            <div class="automation-item">
+                <h3>Campaign Development</h3>
+                <p>• Multi-touch campaign design</p>
+                <p>• Customer journey mapping</p>
+                <p>• Content calendar creation</p>
+                <p>• A/B testing strategy</p>
+            </div>
 
-**AI-Powered Personalization**
-Deliver the right message to the right person at the right time, automatically.
+            <div class="automation-item">
+                <h3>Email Marketing Automation</h3>
+                <p>• Welcome sequences and onboarding</p>
+                <p>• Behavioral trigger campaigns</p>
+                <p>• Lead nurturing workflows</p>
+                <p>• Re-engagement campaigns</p>
+            </div>
 
-**Continuous Optimization**
-Learn from every interaction to improve future campaign performance.
+            <div class="automation-item">
+                <h3>Social Media Management</h3>
+                <p>• Content scheduling and posting</p>
+                <p>• Engagement monitoring and response</p>
+                <p>• Community management automation</p>
+                <p>• Social listening and sentiment analysis</p>
+            </div>
 
-### Services We Provide
+            <div class="automation-item">
+                <h3>Lead Generation & Qualification</h3>
+                <p>• Landing page optimization</p>
+                <p>• Lead scoring and segmentation</p>
+                <p>• Automated follow-up sequences</p>
+                <p>• Sales-ready lead delivery</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-**Campaign Development**
-- Multi-touch campaign design
-- Customer journey mapping
-- Content calendar creation
-- A/B testing strategy
+<section class="technology-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Technology We Use</h2>
+            <p>Custom-built solutions powered by AI intelligence</p>
+        </div>
 
-**Email Marketing Automation**
-- Welcome sequences and onboarding
-- Behavioral trigger campaigns
-- Lead nurturing workflows
-- Re-engagement campaigns
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon">🤖</div>
+                <h3>Claude-Powered Content Generation</h3>
+                <p>AI-driven content creation that maintains your brand voice and authenticity at scale.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">📧</div>
+                <h3>Custom Email Systems</h3>
+                <p>Proprietary email automation without platform dependencies or recurring subscription fees.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">📱</div>
+                <h3>Social Media APIs</h3>
+                <p>Direct integration with social platforms for authentic, real-time engagement and posting.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">📊</div>
+                <h3>Custom Analytics Dashboard</h3>
+                <p>In-house analytics and reporting systems that track what matters most to your business.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-**Social Media Management**
-- Content scheduling and posting
-- Engagement monitoring and response
-- Community management automation
-- Social listening and sentiment analysis
+<section class="results-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Results You Can Expect</h2>
+            <p>Measurable improvements in engagement and conversion</p>
+        </div>
 
-**Lead Generation & Qualification**
-- Landing page optimization
-- Lead scoring and segmentation
-- Automated follow-up sequences
-- Sales-ready lead delivery
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-icon">📈</div>
+                <h3>Increased Lead Generation</h3>
+                <p>Systematic approach to attracting and qualifying prospects through multiple channels.</p>
+            </div>
+            <div class="result-card">
+                <div class="result-icon">💌</div>
+                <h3>Improved Email Engagement</h3>
+                <p>Higher open rates and click-through rates with personalized, relevant messaging.</p>
+            </div>
+            <div class="result-card">
+                <div class="result-icon">⏰</div>
+                <h3>Significant Time Savings</h3>
+                <p>Reduce manual marketing tasks while maintaining authentic customer relationships.</p>
+            </div>
+            <div class="result-card">
+                <div class="result-icon">💰</div>
+                <h3>Better Customer Lifetime Value</h3>
+                <p>Nurture relationships that turn prospects into loyal, long-term customers.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-### Technology Stack
+<section class="implementation-timeline">
+    <div class="container">
+        <div class="section-header">
+            <h2>Implementation Timeline</h2>
+            <p>Your path to automated marketing success</p>
+        </div>
 
-**Email Platforms**: Mailchimp, ConvertKit, ActiveCampaign
-**Social Management**: Buffer, Hootsuite, Sprout Social
-**CRM Integration**: HubSpot, Salesforce, Pipedrive
-**Analytics**: Google Analytics, Facebook Insights, custom dashboards
-**AI Tools**: Custom recommendation engines, sentiment analysis, predictive modeling
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker">Week 1-2</div>
+                <div class="timeline-content">
+                    <h3>Strategy Development</h3>
+                    <p>Comprehensive marketing audit, audience analysis, and custom automation strategy design tailored to your business goals.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">Week 3-4</div>
+                <div class="timeline-content">
+                    <h3>Campaign Creation</h3>
+                    <p>Build custom automation workflows, create compelling content, and set up tracking systems for comprehensive campaign management.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">Week 5-6</div>
+                <div class="timeline-content">
+                    <h3>Launch & Testing</h3>
+                    <p>Deploy campaigns with careful monitoring, A/B testing, and initial optimization based on real-world performance data.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">Ongoing</div>
+                <div class="timeline-content">
+                    <h3>Performance Monitoring</h3>
+                    <p>Continuous campaign optimization, performance analysis, and strategic adjustments to maximize ROI and engagement.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-### Measurable Results
+<section class="story-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>What We Can Build</h2>
+            <p>Custom marketing automation that preserves your authentic voice</p>
+        </div>
 
-Our marketing automation typically delivers:
-- **3-5x increase** in lead generation
-- **25-40% improvement** in email open rates
-- **50-75% reduction** in manual marketing tasks
-- **2-3x better** customer lifetime value through nurturing
+        <div class="story-card">
+            <p>We design marketing automation that maintains your authentic brand voice while scaling your reach. Our systems can handle multi-platform posting, lead nurturing sequences, and customer segmentation while preserving the human touch that builds real relationships.</p>
 
-### Implementation Timeline
-
-**Phase 1 (Week 1-2)**: Strategy development and tool setup
-**Phase 2 (Week 3-4)**: Campaign creation and testing
-**Phase 3 (Week 5-6)**: Launch and initial optimization
-**Phase 4 (Ongoing)**: Performance monitoring and continuous improvement
-
-### Industries We Serve
-
-**SaaS & Technology**
-Customer onboarding, feature adoption, and expansion campaigns
-
-**Professional Services**
-Thought leadership content, lead nurturing, and client retention
-
-**E-commerce**
-Abandoned cart recovery, customer segmentation, and retention marketing
-
-**Healthcare & Wellness**
-Patient education, appointment reminders, and community building
-
-### Success Stories
-
-*"Abba Baba's marketing automation increased our qualified leads by 300% while reducing our manual work by 60%. The personal touch in automated sequences has actually improved our customer relationships."*
-
-*"Their social media automation maintains our brand voice perfectly while posting consistently across 5 platforms. We've seen 150% growth in engagement."*
+            <p>Unlike template-based solutions, every automation we build is custom-designed for your specific audience, industry, and business goals. The result is marketing that feels personal and authentic, even when it's running automatically.</p>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,5 @@
 ---
-layout: service
+layout: default
 title: "Workflow Automation"
 subtitle: "Get your time back with intelligent process automation"
 description: "Discover how Abba Baba's workflow automation saves businesses 10-20 hours per week through intelligent AI-human collaboration."
