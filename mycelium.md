@@ -60,6 +60,14 @@ description: "Discover Mycelium - Abba Baba's revolutionary AI network system th
                 </div>
             </div>
         </div>
+
+        <div class="early-cta">
+            <div class="cta-content">
+                <h3>Ready to See Your Organization as One Intelligent Network?</h3>
+                <p>Get a free assessment of your current systems and discover your Mycelium transformation potential.</p>
+                <a href="/contact?service=mycelium-assessment" class="btn btn-primary">Get Free Assessment →</a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -161,6 +169,17 @@ description: "Discover Mycelium - Abba Baba's revolutionary AI network system th
                         <div class="metric-value">Exponential Growth</div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="inline-cta">
+            <div class="cta-highlight">
+                <div class="cta-icon">💡</div>
+                <div class="cta-text">
+                    <strong>Want to see this in action for your business?</strong>
+                    <p>Schedule a 30-minute executive briefing to explore how Mycelium can transform your specific organization.</p>
+                </div>
+                <a href="/contact?service=mycelium-briefing" class="btn btn-secondary">Schedule Briefing</a>
             </div>
         </div>
     </div>
@@ -416,6 +435,21 @@ description: "Discover Mycelium - Abba Baba's revolutionary AI network system th
                 </div>
             </div>
         </div>
+
+        <div class="demo-cta">
+            <div class="cta-banner">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <h4>See What This Could Look Like in Your Organization</h4>
+                        <p>Every business is unique. Let's design your custom Mycelium network together.</p>
+                    </div>
+                    <div class="banner-actions">
+                        <a href="/contact?service=mycelium-pilot" class="btn btn-primary">Start Pilot Program</a>
+                        <a href="/contact?service=mycelium-briefing" class="btn btn-outline">Executive Briefing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -490,6 +524,19 @@ description: "Discover Mycelium - Abba Baba's revolutionary AI network system th
                     <span class="feature-tag">Human Augmentation</span>
                     <span class="feature-tag">Decision Support</span>
                     <span class="feature-tag">Creative Partnership</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="capability-cta">
+            <div class="cta-card">
+                <div class="cta-header">
+                    <div class="cta-title">Ready to Multiply Your Organization's Intelligence?</div>
+                    <div class="cta-subtitle">Join the companies already building their competitive moats with Mycelium</div>
+                </div>
+                <div class="cta-actions">
+                    <a href="/contact?service=mycelium-assessment" class="btn btn-primary btn-large">Get Your Free Assessment</a>
+                    <div class="cta-note">No commitment • 30-minute analysis • Custom roadmap included</div>
                 </div>
             </div>
         </div>
@@ -584,6 +631,18 @@ description: "Discover Mycelium - Abba Baba's revolutionary AI network system th
                 </div>
             </div>
         </div>
+
+        <div class="journey-cta">
+            <div class="urgency-cta">
+                <div class="urgency-content">
+                    <div class="urgency-text">
+                        <h4>🚀 Start Your Transformation in Week 1</h4>
+                        <p>While competitors struggle with coordination, you could be building compound intelligence. Every day matters.</p>
+                    </div>
+                    <a href="/contact?service=mycelium-briefing" class="btn btn-primary">Begin Your Journey →</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -629,6 +688,21 @@ description: "Discover Mycelium - Abba Baba's revolutionary AI network system th
                 <div class="vision-icon">🏗️</div>
                 <h3>Custom-Built for You</h3>
                 <p>No generic templates or one-size-fits-all solutions. Every Mycelium network is designed around your unique business processes, culture, and goals. You own the entire system and its intellectual property.</p>
+            </div>
+        </div>
+
+        <div class="vision-cta">
+            <div class="competitive-cta">
+                <div class="competitive-content">
+                    <div class="competitive-text">
+                        <h4>⚡ Don't Let Competitors Build This First</h4>
+                        <p>The first companies to implement Mycelium don't just gain efficiency—they redefine their markets. Be among the pioneers.</p>
+                    </div>
+                    <div class="competitive-actions">
+                        <a href="/contact?service=mycelium-pilot" class="btn btn-primary">Secure Your Advantage</a>
+                        <a href="/contact?service=mycelium-assessment" class="btn btn-outline">Assess Readiness</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -924,6 +998,9 @@ document.addEventListener('DOMContentLoaded', function() {
     border-radius: var(--border-radius-xl);
     padding: 2rem;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dept-bubble, .connected-dept {
@@ -978,17 +1055,19 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .isolation-barriers::before {
-    top: 45%;
-    left: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
     height: 3px;
 }
 
 .isolation-barriers::after {
-    top: 0;
-    bottom: 0;
-    left: 45%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 3px;
+    height: 80%;
 }
 
 .connection-web {
@@ -1110,8 +1189,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .network-animation {
     position: relative;
-    height: 400px;
-    margin: 3rem 0;
+    height: 500px;
+    margin: 3rem auto;
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dept-node {
@@ -1147,10 +1230,10 @@ document.addEventListener('DOMContentLoaded', function() {
     height: 180px;
 }
 
-.dept-node[data-dept="sales"] { top: 10%; left: 20%; }
-.dept-node[data-dept="marketing"] { top: 10%; right: 20%; }
-.dept-node[data-dept="support"] { bottom: 10%; left: 20%; }
-.dept-node[data-dept="operations"] { bottom: 10%; right: 20%; }
+.dept-node[data-dept="sales"] { top: 5%; left: 5%; }
+.dept-node[data-dept="marketing"] { top: 5%; right: 5%; }
+.dept-node[data-dept="support"] { bottom: 5%; left: 5%; }
+.dept-node[data-dept="operations"] { bottom: 5%; right: 5%; }
 
 .node-icon {
     font-size: 1.8rem;
@@ -1225,6 +1308,212 @@ document.addEventListener('DOMContentLoaded', function() {
 @keyframes pulse-connection {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 0.8; }
+}
+
+/* Conversion-focused CTAs */
+.early-cta, .inline-cta, .demo-cta, .capability-cta, .journey-cta, .vision-cta {
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+.cta-content {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 128, 0.1));
+    padding: 2rem;
+    border-radius: var(--border-radius-xl);
+    text-align: center;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.cta-highlight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid #00d4ff;
+}
+
+.cta-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.cta-text {
+    flex: 1;
+    text-align: left;
+}
+
+.cta-text p {
+    margin: 0.5rem 0 0 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.cta-banner {
+    background: linear-gradient(135deg, #00d4ff, #ff0080);
+    padding: 2rem;
+    border-radius: var(--border-radius-xl);
+    color: white;
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.banner-text {
+    text-align: left;
+}
+
+.banner-text h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.banner-text p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.banner-actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.cta-card {
+    background: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: var(--border-radius-xl);
+    text-align: center;
+    border: 2px solid #00d4ff;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00d4ff, #ff0080, #00d4ff);
+    animation: shimmer 3s infinite;
+}
+
+.cta-header {
+    margin-bottom: 2rem;
+}
+
+.cta-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #00d4ff;
+}
+
+.cta-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cta-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.urgency-cta {
+    background: rgba(255, 0, 128, 0.1);
+    border: 1px solid rgba(255, 0, 128, 0.3);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+}
+
+.urgency-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.urgency-text h4 {
+    margin: 0 0 0.5rem 0;
+    color: #ff0080;
+    font-size: 1.2rem;
+}
+
+.urgency-text p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.competitive-cta {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 165, 0, 0.1));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+}
+
+.competitive-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.competitive-text h4 {
+    margin: 0 0 0.5rem 0;
+    color: #00d4ff;
+    font-size: 1.3rem;
+}
+
+.competitive-text p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.competitive-actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Mobile responsiveness for CTAs */
+@media (max-width: 768px) {
+    .banner-content, .urgency-content, .competitive-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner-actions, .competitive-actions {
+        justify-content: center;
+    }
+
+    .cta-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-text {
+        text-align: center;
+    }
 }
 
 .comparison-grid {
@@ -1936,17 +2225,59 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     .network-animation {
-        height: 300px;
+        height: 400px;
+        position: relative;
     }
 
     .dept-node {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
+        font-size: 0.8rem;
     }
 
     .dept-node.central {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
+        top: 45%;
+        left: 50%;
+    }
+
+    .dept-node[data-dept="sales"] {
+        top: 5%;
+        left: 10%;
+    }
+
+    .dept-node[data-dept="marketing"] {
+        top: 5%;
+        right: 10%;
+        left: auto;
+    }
+
+    .dept-node[data-dept="support"] {
+        bottom: 5%;
+        left: 10%;
+        top: auto;
+    }
+
+    .dept-node[data-dept="operations"] {
+        bottom: 5%;
+        right: 10%;
+        left: auto;
+        top: auto;
+    }
+
+    .node-data {
+        font-size: 0.65rem;
+        line-height: 1.2;
+        max-width: 80px;
+    }
+
+    .node-icon {
+        font-size: 1.2rem;
+    }
+
+    .node-label {
+        font-size: 0.85rem;
     }
 
     .transformation-impact {
@@ -1966,6 +2297,57 @@ document.addEventListener('DOMContentLoaded', function() {
     .urgency-content {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .network-animation {
+        height: 350px;
+    }
+
+    .dept-node {
+        width: 85px;
+        height: 85px;
+        padding: 0.5rem;
+    }
+
+    .dept-node.central {
+        width: 100px;
+        height: 100px;
+    }
+
+    .dept-node[data-dept="sales"] {
+        top: 8%;
+        left: 2%;
+    }
+
+    .dept-node[data-dept="marketing"] {
+        top: 8%;
+        right: 2%;
+    }
+
+    .dept-node[data-dept="support"] {
+        bottom: 8%;
+        left: 2%;
+    }
+
+    .dept-node[data-dept="operations"] {
+        bottom: 8%;
+        right: 2%;
+    }
+
+    .node-data {
+        font-size: 0.6rem;
+        max-width: 60px;
+        line-height: 1.1;
+    }
+
+    .node-label {
+        font-size: 0.8rem;
+    }
+
+    .node-icon {
+        font-size: 1rem;
     }
 }
 </style>
