@@ -1,0 +1,48 @@
+{
+  "name": "mycelium",
+  "version": "0.1.0",
+  "description": "The Living AI Network - Phase 1 MVP Implementation",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "test": "node --test tests/*.test.js",
+    "test:watch": "node --test --watch tests/*.test.js",
+    "build": "echo 'Build script placeholder'",
+    "setup": "node scripts/setup.js",
+    "agent:create": "node scripts/create-agent.js",
+    "network:start": "node src/network-start.js",
+    "network:status": "node src/network-status.js"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "automation",
+    "distributed-intelligence",
+    "mycelium",
+    "claude-code"
+  ],
+  "author": "Abba Baba Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2",
+    "redis": "^4.6.8",
+    "node-cron": "^3.0.2",
+    "chalk": "^5.3.0",
+    "uuid": "^9.0.0",
+    "dotenv": "^16.3.1",
+    "axios": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "private"
+  }
+}

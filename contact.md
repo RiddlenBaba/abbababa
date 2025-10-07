@@ -123,11 +123,13 @@ description: "Get in touch with Abba Baba to discuss workflow automation, market
             <option value="workflow-automation">Workflow Automation</option>
             <option value="marketing-automation">Marketing Automation</option>
             <option value="ai-integration">AI Integration Consulting</option>
+            <option value="business-intelligence">Business Intelligence & Analytics</option>
+            <option value="process-optimization">Process Optimization</option>
+            <option value="ai-strategy">AI Strategy & Implementation</option>
+            <option value="custom-development">Custom AI Development</option>
             <option value="mycelium">Mycelium - Living AI Network</option>
-            <option value="mycelium-briefing">Mycelium Executive Briefing</option>
-            <option value="mycelium-pilot">Mycelium Pilot Program</option>
-            <option value="mycelium-assessment">Mycelium Free Assessment</option>
             <option value="riddlen">Riddlen Platform</option>
+            <option value="consulting">Strategic Technology Consulting</option>
             <option value="general">General Inquiry</option>
         </select>
     </div>
