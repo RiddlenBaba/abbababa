@@ -3,6 +3,8 @@
     max-width: $container-max-width;
     margin: 0 auto;
     padding: 0 $container-padding;
+    width: 100%;
+    box-sizing: border-box;
 
     @media (max-width: $breakpoint-sm) {
         padding: 0 $spacing-md;

@@ -1,0 +1,165 @@
+---
+layout: page
+title: "Browse by Tag"
+subtitle: "Find posts by topic and technology"
+---
+
+<div class="blog-content">
+    <div class="container">
+        <div class="blog-grid">
+            <main class="blog-posts">
+                <div class="tag-filter-controls">
+                    <h3>Filter by Tag:</h3>
+                    <div class="tag-buttons">
+                        <button class="tag-filter-btn active" data-tag="all">All Posts</button>
+                        {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+                        {% for tag in all_tags %}
+                            {% unless tag == blank %}
+                            {% assign clean_tag = tag | strip %}
+                            {% unless clean_tag == empty %}
+                            <button class="tag-filter-btn" data-tag="{{ clean_tag }}">{{ clean_tag }}</button>
+                            {% endunless %}
+                            {% endunless %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div id="filtered-posts">
+                    {% for post in site.posts %}
+                    <article class="blog-post-card" data-tags="{{ post.tags | join: ',' }}">
+                        <div class="post-meta">
+                            <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">
+                                {{ post.date | date: "%B %d, %Y" }}
+                            </time>
+                            {% if post.categories %}
+                            <div class="post-categories">
+                                {% for category in post.categories %}
+                                <span class="category">{{ category }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <h2 class="post-title">
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h2>
+
+                        <div class="post-excerpt">
+                            {{ post.excerpt | strip_html | truncatewords: 30 }}
+                        </div>
+
+                        <div class="post-tags">
+                            {% for tag in post.tags %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+
+                        <div class="post-footer">
+                            <span class="read-time">{{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+                            <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+
+                <div id="no-results" style="display: none;" class="no-posts">
+                    <h2>No posts found</h2>
+                    <p>No posts found with the selected tag.</p>
+                    <button class="btn btn-primary" onclick="showAllPosts()">Show All Posts</button>
+                </div>
+            </main>
+
+            <aside class="blog-sidebar">
+                <div class="sidebar-widget">
+                    <h3>Popular Tags</h3>
+                    <div class="tag-cloud">
+                        {% assign popular_tags = "AI agents,automation,Mycelium,Web3,workflow automation,business transformation,AI validation,human oracles,SaaS,productivity" | split: "," %}
+                        {% for tag in popular_tags %}
+                        <button class="tag tag-clickable" data-tag="{{ tag | strip }}">{{ tag | strip }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Categories</h3>
+                    <ul class="category-list">
+                        <li><a href="{{ '/blog/category/ai-automation/' | relative_url }}">AI Automation</a></li>
+                        <li><a href="{{ '/blog/category/business-strategy/' | relative_url }}">Business Strategy</a></li>
+                        <li><a href="{{ '/blog/category/thought-leadership/' | relative_url }}">Thought Leadership</a></li>
+                        <li><a href="{{ '/blog/category/ai-architecture/' | relative_url }}">AI Architecture</a></li>
+                        <li><a href="{{ '/blog/category/data-integration/' | relative_url }}">Data Integration</a></li>
+                        <li><a href="{{ '/blog/category/riddlen/' | relative_url }}">Riddlen Updates</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Back to Blog</h3>
+                    <p><a href="{{ '/blog' | relative_url }}" class="btn btn-secondary">View All Posts</a></p>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.tag-filter-btn, .tag-clickable');
+    const posts = document.querySelectorAll('.blog-post-card');
+    const noResults = document.getElementById('no-results');
+
+    function filterPosts(selectedTag) {
+        let visibleCount = 0;
+
+        posts.forEach(post => {
+            const postTags = post.dataset.tags ? post.dataset.tags.toLowerCase() : '';
+            const shouldShow = selectedTag === 'all' || postTags.includes(selectedTag.toLowerCase());
+
+            post.style.display = shouldShow ? 'block' : 'none';
+            if (shouldShow) visibleCount++;
+        });
+
+        // Update button states
+        filterBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.tag === selectedTag) {
+                btn.classList.add('active');
+            }
+        });
+
+        // Show/hide no results message
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    // Check for URL parameter on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const tagParam = urlParams.get('tag');
+    if (tagParam) {
+        filterPosts(tagParam);
+    }
+
+    // Add click handlers
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tag = btn.dataset.tag;
+            filterPosts(tag);
+
+            // Update URL without reload
+            const url = new URL(window.location);
+            if (tag === 'all') {
+                url.searchParams.delete('tag');
+            } else {
+                url.searchParams.set('tag', tag);
+            }
+            window.history.pushState({}, '', url);
+        });
+    });
+
+    // Global function to show all posts
+    window.showAllPosts = function() {
+        filterPosts('all');
+        const url = new URL(window.location);
+        url.searchParams.delete('tag');
+        window.history.pushState({}, '', url);
+    };
+});
+</script>

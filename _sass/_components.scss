@@ -1358,16 +1358,27 @@ p a,
 
 .blog-content {
     padding: $spacing-3xl 0;
+    overflow-x: hidden;
 }
 
 .blog-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: $spacing-3xl;
+    max-width: 100%;
 
-    @media (max-width: $breakpoint-lg) {
+    @media (max-width: $breakpoint-md) {
         grid-template-columns: 1fr;
         gap: $spacing-2xl;
+
+        // Reverse the order so posts come first, then sidebar
+        .blog-posts {
+            order: 1;
+        }
+
+        .blog-sidebar {
+            order: 2;
+        }
     }
 }
 
@@ -1375,6 +1386,8 @@ p a,
     display: flex;
     flex-direction: column;
     gap: $spacing-2xl;
+    min-width: 0; // Prevents flex items from overflowing
+    max-width: 100%;
 }
 
 .blog-post-card {
@@ -1384,6 +1397,12 @@ p a,
     padding: $spacing-xl;
     backdrop-filter: blur(20px);
     transition: all 0.3s ease;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    @media (max-width: $breakpoint-sm) {
+        padding: $spacing-lg;
+    }
 
     &:hover {
         transform: translateY(-4px);
@@ -1420,6 +1439,86 @@ p a,
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: $font-weight-semibold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+        text-decoration: none;
+        color: white;
+    }
+}
+
+// Tag filtering styles
+.tag-filter-controls {
+    margin-bottom: $spacing-2xl;
+
+    h3 {
+        margin-bottom: $spacing-md;
+        color: var(--text-primary);
+    }
+}
+
+.tag-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+}
+
+.tag-filter-btn {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: var(--bg-tertiary);
+        border-color: $primary-color;
+        color: var(--text-primary);
+    }
+
+    &.active {
+        background: linear-gradient(135deg, $primary-color, $accent-color);
+        color: white;
+        border-color: transparent;
+    }
+}
+
+.tag-clickable {
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+    }
+}
+
+.category-list {
+    a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        padding: $spacing-xs 0;
+        display: block;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $primary-color;
+            border-bottom-color: $primary-color;
+            padding-left: $spacing-sm;
+        }
+
+        &.active {
+            color: $primary-color;
+            font-weight: $font-weight-semibold;
+        }
+    }
 }
 
 .post-title {
@@ -1472,6 +1571,28 @@ p a,
     display: flex;
     flex-direction: column;
     gap: $spacing-xl;
+    max-width: 100%;
+
+    @media (max-width: $breakpoint-md) {
+        margin-top: $spacing-2xl;
+    }
+
+    // Hide RSS/feed related elements on mobile
+    @media (max-width: $breakpoint-md) {
+        .sidebar-widget:nth-child(2) {
+            display: none !important; // Hides the Subscribe widget (typically 2nd widget)
+        }
+
+        .rss-feed,
+        .feed-widget,
+        .subscribe-widget,
+        .sidebar-widget:has([href*="feed.xml"]),
+        .sidebar-widget:has([href*="rss"]),
+        [href*="feed.xml"],
+        [href*="rss"] {
+            display: none !important;
+        }
+    }
 }
 
 .sidebar-widget {
@@ -1480,6 +1601,12 @@ p a,
     border-radius: $border-radius-xl;
     padding: $spacing-xl;
     backdrop-filter: blur(20px);
+    max-width: 100%;
+    box-sizing: border-box;
+
+    @media (max-width: $breakpoint-sm) {
+        padding: $spacing-lg;
+    }
 
     h3 {
         margin-bottom: $spacing-md;

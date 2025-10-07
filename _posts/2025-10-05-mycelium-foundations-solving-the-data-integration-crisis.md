@@ -2,7 +2,7 @@
 layout: post
 title: "Mycelium Foundations: Solving the Data Integration Crisis That's Killing Business Intelligence"
 subtitle: "Why connecting your data is the prerequisite for AI success, and how we're building the living network that grows with your business"
-date: 2024-10-05
+date: 2025-10-05
 author: "Abba Baba Team"
 categories: [data-integration, business-strategy]
 tags: [Mycelium, data integration, business intelligence, AI foundations, data fabric, enterprise systems]

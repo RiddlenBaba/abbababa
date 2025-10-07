@@ -70,8 +70,9 @@ google_analytics: # G-Y2BYSM8WBT
 google_tag_manager: G-Y2BYSM8WBT
 
 # Pagination
-paginate: 5
+paginate: 15
 paginate_path: "/blog/page:num/"
+future: true
 
 # Collections
 collections:
