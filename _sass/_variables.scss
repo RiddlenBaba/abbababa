@@ -19,6 +19,19 @@ $error-color: #ff4466;        // Red
   --shadow-color: rgba(15, 23, 42, 0.1);
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
+
+  // Theme colors as CSS custom properties
+  --primary-color: #00d4ff;
+  --secondary-color: #0099cc;
+  --accent-color: #ff0080;
+  --highlight-color: #ffff00;
+  --success-color: #00ff88;
+  --warning-color: #ff8800;
+  --error-color: #ff4466;
+
+  // RGB values for alpha transparency
+  --primary-color-rgb: 0, 212, 255;
+  --accent-color-rgb: 255, 0, 128;
 }
 
 // Dark theme colors
@@ -33,6 +46,19 @@ $error-color: #ff4466;        // Red
   --shadow-color: rgba(0, 0, 0, 0.5);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
+
+  // Theme colors for dark mode (same values work well)
+  --primary-color: #00d4ff;
+  --secondary-color: #0099cc;
+  --accent-color: #ff0080;
+  --highlight-color: #ffff00;
+  --success-color: #00ff88;
+  --warning-color: #ff8800;
+  --error-color: #ff4466;
+
+  // RGB values for alpha transparency
+  --primary-color-rgb: 0, 212, 255;
+  --accent-color-rgb: 255, 0, 128;
 }
 
 // Legacy color definitions for compatibility

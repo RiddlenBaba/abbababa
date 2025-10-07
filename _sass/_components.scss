@@ -540,6 +540,80 @@ p a,
     strong {
         font-weight: $font-weight-bold;
     }
+
+    // Chat message links styling
+    a {
+        color: var(--primary-color);
+        text-decoration: underline;
+        text-decoration-color: var(--accent-color);
+        text-underline-offset: 2px;
+        transition: all 0.2s ease;
+        font-weight: 500;
+
+        &:hover {
+            color: var(--accent-color);
+            text-decoration-color: var(--primary-color);
+            background-color: rgba(var(--accent-color-rgb), 0.1);
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+
+        &:visited {
+            color: var(--text-secondary);
+            text-decoration-color: var(--text-muted);
+        }
+    }
+
+    // Special styling for user messages (white background)
+    .user-message & {
+        a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration-color: rgba(255, 255, 255, 0.6);
+
+            &:hover {
+                color: white;
+                text-decoration-color: white;
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+
+    // Inline code styling for formatted chat messages
+    code {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        font-size: 13px;
+    }
+
+    // Code block styling
+    pre {
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        padding: 12px;
+        margin: 8px 0;
+        overflow-x: auto;
+
+        code {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+        }
+    }
+
+    // List styling for formatted chat messages
+    ul, ol {
+        margin: 8px 0;
+        padding-left: 20px;
+
+        li {
+            margin: 4px 0;
+            line-height: 1.4;
+        }
+    }
 }
 
 .quick-questions {

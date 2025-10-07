@@ -414,7 +414,7 @@
                     this.removeMessage(typingId);
                     this.addMessage(response, 'bot');
 
-                    // Smart scroll: only auto-scroll if user was near bottom
+                    // Always scroll to bottom for new messages
                     setTimeout(() => this.scrollToBottom(), 100);
 
                     // After 3+ messages, offer simple contact collection
@@ -434,7 +434,17 @@
                 } catch (error) {
                     console.error('Chat error:', error);
                     this.removeMessage(typingId);
-                    this.addMessage("I'm having trouble connecting right now. Please try again or contact us directly through our contact page.", 'bot');
+
+                    // More specific error message based on the error type
+                    let errorMessage = "I'm having trouble connecting right now. ";
+                    if (error.message.includes('timeout')) {
+                        errorMessage += "The request timed out. ";
+                    } else if (error.message.includes('CORS')) {
+                        errorMessage += "There's a connection issue. ";
+                    }
+                    errorMessage += "Please try again or contact us directly through our contact page.";
+
+                    this.addMessage(errorMessage, 'bot');
                 } finally {
                     // Always re-enable the button and restore original state
                     sendButton.disabled = false;
@@ -450,9 +460,11 @@
                 // Use real API if key is available, otherwise fallback to contextual responses
                 if (this.apiKey && this.apiKey !== '' && this.apiKey.length > 10) {
                     try {
+                        console.log('Attempting API call with provider:', this.apiProvider);
+
                         // Add timeout to prevent hanging
                         const timeoutPromise = new Promise((_, reject) =>
-                            setTimeout(() => reject(new Error('Request timeout')), 10000)
+                            setTimeout(() => reject(new Error('Request timeout')), 15000)
                         );
 
                         let apiCall;
@@ -464,11 +476,16 @@
                             throw new Error('Unknown API provider');
                         }
 
-                        return await Promise.race([apiCall, timeoutPromise]);
+                        const result = await Promise.race([apiCall, timeoutPromise]);
+                        console.log('API call successful');
+                        return result;
                     } catch (error) {
                         console.error('API call failed:', error);
+                        console.log('Falling back to contextual response');
                         // Fallback to contextual response
                     }
+                } else {
+                    console.log('No API key available, using contextual responses');
                 }
                 return this.getContextualResponse(message);
             }
@@ -631,7 +648,7 @@ Keep responses concise, helpful, and focused on our services. Encourage users to
 
                 messageEl.innerHTML = `
                     <div class="message-content">
-                        <p>${content.replace(/\n/g, '<br>')}</p>
+                        <div>${this.formatMessage(content)}</div>
                     </div>
                 `;
 
@@ -677,15 +694,37 @@ Keep responses concise, helpful, and focused on our services. Encourage users to
             }
 
             scrollToBottom() {
-                // Only auto-scroll if user was already near the bottom
-                if (this.shouldAutoScroll()) {
+                // Always scroll to bottom for chatbot behavior
+                requestAnimationFrame(() => {
                     this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
-                }
+                });
             }
 
             forceScrollToBottom() {
-                // Force scroll to bottom (used when user sends a message)
+                // Force scroll to bottom immediately
                 this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+            }
+
+            formatMessage(content) {
+                // Convert common markdown to HTML for better readability
+                return content
+                    // Bold text: **text** or __text__
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/__(.*?)__/g, '<strong>$1</strong>')
+                    // Italic text: *text* or _text_
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/_(.*?)_/g, '<em>$1</em>')
+                    // Code blocks: ```code```
+                    .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+                    // Inline code: `code`
+                    .replace(/`([^`]+)`/g, '<code>$1</code>')
+                    // Line breaks
+                    .replace(/\n/g, '<br>')
+                    // Links: [text](url)
+                    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+                    // Lists: - item or * item
+                    .replace(/^[*-]\s+(.+)$/gm, '<li>$1</li>')
+                    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
             }
         }
 
