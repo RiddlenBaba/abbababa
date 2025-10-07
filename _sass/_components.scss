@@ -1,3 +1,42 @@
+// Global Link Styles
+a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: $transition-fast;
+
+    &:hover {
+        color: $secondary-color;
+        text-decoration: underline;
+    }
+
+    &:focus {
+        color: $secondary-color;
+        outline: 2px solid rgba($primary-color, 0.3);
+        outline-offset: 2px;
+    }
+
+    &:active {
+        color: $accent-color;
+    }
+}
+
+// Ensure links in text content are visible
+p a,
+.content a,
+.text-content a {
+    color: $primary-color;
+    font-weight: $font-weight-medium;
+    border-bottom: 1px solid rgba($primary-color, 0.3);
+
+    &:hover {
+        color: $secondary-color;
+        border-bottom-color: $secondary-color;
+        background-color: rgba($primary-color, 0.1);
+        padding: 2px 4px;
+        border-radius: $border-radius-sm;
+    }
+}
+
 // Custom Abba AI Chat Widget
 .chat-widget {
     position: fixed;
@@ -5,6 +44,45 @@
     right: 24px;
     z-index: 1000;
     font-family: $font-family-base;
+
+    // Override global link styles within chat
+    a {
+        color: var(--text-primary) !important;
+        text-decoration: none !important;
+
+        &:hover {
+            color: var(--text-primary) !important;
+            text-decoration: none !important;
+            background-color: transparent !important;
+            padding: 0 !important;
+            border: none !important;
+        }
+    }
+
+    // Ensure all text in chat stays properly colored
+    * {
+        color: inherit;
+
+        &:hover {
+            color: inherit !important;
+        }
+    }
+
+    // Chat specific text colors
+    .message-content {
+        color: var(--text-primary);
+
+        a {
+            color: $primary-color;
+
+            &:hover {
+                color: $secondary-color;
+                background-color: rgba($primary-color, 0.1);
+                padding: 2px 4px;
+                border-radius: $border-radius-sm;
+            }
+        }
+    }
 }
 
 .chat-toggle {
@@ -22,6 +100,8 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 
     &::before {
         content: '';
@@ -45,6 +125,30 @@
 
     &:active {
         transform: translateY(0) scale(0.95);
+    }
+
+    .chat-icon, .close-icon {
+        z-index: 2;
+        position: relative;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .close-icon {
+        color: white;
+        stroke-width: 2.5;
+    }
+
+    @media (max-width: 768px) {
+        width: 56px;
+        height: 56px;
+        bottom: 20px;
+        right: 20px;
+
+        .chat-icon, .close-icon {
+            width: 22px;
+            height: 22px;
+        }
     }
 }
 
@@ -94,6 +198,36 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    position: relative;
+
+    .chat-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 50%;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        z-index: 10;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
 }
 
 .chat-avatar {
@@ -176,6 +310,210 @@
 
     &.typing .message-content {
         padding: 12px 16px;
+    }
+}
+
+.chat-input-form {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 14px;
+    resize: none;
+    min-height: 20px;
+    max-height: 100px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+
+    &:focus {
+        outline: none;
+        border-color: var(--accent-color);
+    }
+
+    &::placeholder {
+        color: var(--text-muted);
+    }
+}
+
+.chat-send {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+
+    &:hover:not(:disabled) {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.3);
+    }
+
+    &:active:not(:disabled) {
+        transform: scale(0.95);
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none !important;
+
+        svg {
+            animation: spin 1s linear infinite;
+        }
+    }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.contact-collection {
+    padding: 24px;
+    border-top: 1px solid var(--border-color);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(0, 212, 255, 0.02) 100%);
+    border-radius: 0 0 20px 20px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+
+    .contact-close {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: var(--text-muted);
+        color: white;
+        border-radius: 50%;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        z-index: 10;
+
+        &:hover {
+            background: var(--text-primary);
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    .emoji-wave {
+        font-size: 2rem;
+        margin-bottom: 12px;
+        animation: wave 2s ease-in-out infinite;
+    }
+
+    h4 {
+        margin: 0 0 12px 0;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.5;
+    }
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.contact-details-form {
+    .form-group {
+        margin-bottom: 12px;
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 14px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+
+            &:focus {
+                outline: none;
+                border-color: var(--accent-color);
+            }
+
+            &::placeholder {
+                color: var(--text-muted);
+            }
+        }
+    }
+
+    .form-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.3);
+            }
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: var(--bg-primary);
+                color: var(--text-primary);
+            }
+        }
     }
 }
 
