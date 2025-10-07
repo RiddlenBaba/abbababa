@@ -1,20 +1,60 @@
 {% comment %}
 Site Navigation Flow - Creates a guided walkthrough experience
 Provides contextual next/previous navigation between key pages
+Dynamically builds navigation from site.header_pages configuration
 
 Parameters:
-- current_page: Current page identifier (home, about, services, blog, faq, riddlen, contact)
+- current_page: Current page identifier (home, about, services, mycelium, riddlen, blog, faq, contact)
 - style: "default", "minimal", "simple" (optional)
+
+Navigation order: Home → [header_pages from _config.yml]
 {% endcomment %}
 
 {% assign current = include.current_page | default: "home" %}
 {% assign nav_style = include.style | default: "default" %}
 
-{% comment %} Define navigation flow {% endcomment %}
-{% assign pages = "home,about,services,blog,faq,riddlen,contact" | split: "," %}
-{% assign page_titles = "Home,About Us,Our Services,AI Insights,FAQ,Riddlen Platform,Contact" | split: "," %}
-{% assign page_urls = "/,/about,/services,/blog,/faq,/riddlen,/contact" | split: "," %}
-{% assign page_descriptions = "Start your journey,Learn our story,Explore solutions,Read insights,Get answers,See innovation,Get in touch" | split: "," %}
+{% comment %} Build navigation flow dynamically from config {% endcomment %}
+{% assign pages = "home" | split: "," %}
+{% assign page_titles = "Home" | split: "," %}
+{% assign page_urls = "/" | split: "," %}
+{% assign page_descriptions = "Start your journey" | split: "," %}
+
+{% comment %} Add pages from header_pages config {% endcomment %}
+{% for header_page in site.header_pages %}
+    {% assign page_path = header_page | remove: '.md' %}
+    {% assign pages = pages | push: page_path %}
+    {% assign page_url = "/" | append: page_path %}
+    {% assign page_urls = page_urls | push: page_url %}
+
+    {% comment %} Get page title from the actual page {% endcomment %}
+    {% assign page_obj = site.pages | where: "path", header_page | first %}
+    {% if page_obj.title %}
+        {% assign page_titles = page_titles | push: page_obj.title %}
+    {% else %}
+        {% assign clean_title = page_path | replace: "-", " " | capitalize %}
+        {% assign page_titles = page_titles | push: clean_title %}
+    {% endif %}
+
+    {% comment %} Set appropriate descriptions {% endcomment %}
+    {% case page_path %}
+        {% when 'about' %}
+            {% assign page_descriptions = page_descriptions | push: "Learn our story" %}
+        {% when 'services' %}
+            {% assign page_descriptions = page_descriptions | push: "Explore solutions" %}
+        {% when 'mycelium' %}
+            {% assign page_descriptions = page_descriptions | push: "Discover our AI network" %}
+        {% when 'riddlen' %}
+            {% assign page_descriptions = page_descriptions | push: "See innovation" %}
+        {% when 'blog' %}
+            {% assign page_descriptions = page_descriptions | push: "Read insights" %}
+        {% when 'faq' %}
+            {% assign page_descriptions = page_descriptions | push: "Get answers" %}
+        {% when 'contact' %}
+            {% assign page_descriptions = page_descriptions | push: "Get in touch" %}
+        {% else %}
+            {% assign page_descriptions = page_descriptions | push: "Explore more" %}
+    {% endcase %}
+{% endfor %}
 
 {% comment %} Find current page index {% endcomment %}
 {% assign current_index = 0 %}

@@ -46,14 +46,10 @@ jobs:
           google_tag_manager: "${{ secrets.GOOGLE_TAG_MANAGER }}"
           EOF
 
-      - name: Restore AI chat layout
+      - name: Verify AI chat layout
         run: |
-          if [ -f "_layouts/default-with-ai.html.backup" ]; then
-            cp _layouts/default-with-ai.html.backup _layouts/default.html
-            echo "✅ AI chat layout restored"
-          else
-            echo "⚠️ AI backup not found, using fallback chat"
-          fi
+          echo "✅ Using current default.html with latest chat interface"
+          ls -la _layouts/default.html
 
       - name: Build with Jekyll
         run: |
