@@ -2,7 +2,7 @@
 layout: post
 title: "Open Source Mycelium: How Growing Intelligence Networks Like Biological Systems Creates Unstoppable Business Value"
 subtitle: "Why we're open-sourcing our AI agent framework and how distributed intelligence networks become more powerful through shared growth"
-date: 2025-01-15
+date: 2024-10-07
 author: "Abba Baba Team"
 categories: [open-source, network-effects]
 tags: [open source, Mycelium, network effects, AI agents, distributed intelligence, community building, biological systems]

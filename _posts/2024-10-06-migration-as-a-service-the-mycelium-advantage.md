@@ -2,7 +2,7 @@
 layout: post
 title: "Migration-as-a-Service: How Mycelium Turns Your Most Painful IT Project Into a Competitive Advantage"
 subtitle: "Why system migrations are the perfect entry point for AI-powered business transformation, and how to avoid the $200K consulting nightmare"
-date: 2025-01-14
+date: 2024-10-06
 author: "Abba Baba Team"
 categories: [migration-strategy, business-transformation]
 tags: [migration-as-a-service, system migration, business continuity, AI automation, Mycelium, data migration, IT transformation]
