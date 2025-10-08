@@ -19,7 +19,7 @@ description: "Thoughts on AI-human collaboration, automation trends, and the fut
                             {% if post.categories %}
                             <div class="post-categories">
                                 {% for category in post.categories %}
-                                <span class="category">{{ category }}</span>
+                                <a href="{{ '/blog/category/' | append: category | relative_url }}" class="category">{{ category }}</a>
                                 {% endfor %}
                             </div>
                             {% endif %}

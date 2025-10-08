@@ -22,7 +22,7 @@ layout: page
                             {% if post.categories %}
                             <div class="post-categories">
                                 {% for category in post.categories %}
-                                <span class="category">{{ category }}</span>
+                                <a href="{{ '/blog/category/' | append: category | relative_url }}" class="category">{{ category }}</a>
                                 {% endfor %}
                             </div>
                             {% endif %}
@@ -58,7 +58,7 @@ layout: page
                         {% assign categories = site.categories | sort %}
                         {% for category in categories %}
                         <li>
-                            <a href="{{ '/blog/category/' | append: category[0] | append: '/' | relative_url }}"
+                            <a href="{{ '/blog/category/' | append: category[0] | relative_url }}"
                                {% if page.category == category[0] %}class="active"{% endif %}>
                                 {{ category[0] | replace: '-', ' ' | capitalize }} ({{ category[1].size }})
                             </a>

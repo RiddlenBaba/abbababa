@@ -478,6 +478,239 @@ benefits:
 - Component updates should be made in `_components.scss`
 - Test changes across all service pages for consistency
 
+## Blog Post Creation Guidelines
+
+### Standard Blog Post Format
+
+#### **File Location & Naming**
+- **Directory**: `_posts/`
+- **Filename format**: `YYYY-MM-DD-title-with-hyphens.md`
+- **Example**: `_posts/2025-10-08-mycelium-networks-organic-ai-growth.md`
+
+#### **Front Matter Template**
+```yaml
+---
+layout: post
+title: "Compelling Title That Speaks to Business Value"
+subtitle: "Actionable subtitle that explains the benefit or outcome"
+date: YYYY-MM-DD  # Use today's actual date, check current date
+author: "Abba Baba Team"
+categories: [primary-category, secondary-category]  # 1-3 categories max
+tags: [specific-tech, business-outcome, relevant-topics]  # 3-8 tags
+excerpt: "One-sentence summary that compels readers to continue. Focus on value and outcome."
+featured: true  # Only for exceptional posts
+---
+```
+
+#### **Date Guidelines**
+- **ALWAYS check today's actual date** - don't assume or guess
+- Use format: `YYYY-MM-DD` (e.g., `2025-10-08`)
+- Post dates should be logical and sequential
+- Don't backdate posts unnecessarily
+
+#### **Category and Tag Strategy**
+
+**Categories** (1-3 per post):
+- Use existing categories when possible (check `blog/category/` for available options)
+- If creating new category, it will auto-generate a category page
+- Categories represent main themes: `mycelium`, `ai-architecture`, `business-strategy`, etc.
+
+**Tags** (3-8 per post):
+- More specific than categories
+- Include technology names, specific concepts, business outcomes
+- Use existing tag format (check other posts for consistency)
+- Tags automatically filter on the `/blog/tags` page
+
+#### **Linking to Categories**
+When mentioning categories in content, link to them:
+```markdown
+This relates to our [Mycelium AI](/blog/category/mycelium) approach...
+```
+
+### Content Philosophy & Voice
+
+#### **Authentic Claims Only**
+- ❌ **Never fabricate**: Statistics, client numbers, revenue figures, case study results
+- ❌ **Avoid**: "We helped 50+ companies...", "Clients save $100K annually...", "95% success rate..."
+- ✅ **Focus on**: Capabilities, vision, technology, methodologies, potential outcomes
+
+#### **Vision-Forward Messaging**
+- **What we're building**: Mycelium networks, human-AI collaboration, organic growth systems
+- **What we're trying to do**: Transform businesses through intelligent automation
+- **Our goals**: Enhance human capabilities, create symbiotic AI relationships
+- **Our vision**: AI networks that grow like living ecosystems
+
+#### **Technology Honesty**
+- Emphasize Claude & Claude Code integration
+- Highlight open-source and custom solutions
+- Discuss methodologies and approaches we actually use
+- Share genuine insights from development work
+
+### Content Structure Template
+
+#### **Opening Hook** (150-200 words)
+- Start with a compelling business challenge or insight
+- Connect to broader market trends or human experiences
+- Avoid jargon-heavy technical introductions
+- Make it relatable to business decision-makers
+
+#### **Problem/Opportunity** (300-400 words)
+- Define the challenge in business terms
+- Explain why current approaches fall short
+- Set up the value of your solution approach
+- Use real industry context, not fabricated scenarios
+
+#### **Our Approach/Solution** (400-600 words)
+- Explain methodology or technology philosophy
+- Connect to Mycelium/organic growth concepts when relevant
+- Detail the human-AI collaboration aspects
+- Focus on "how we think about this problem"
+
+#### **Implementation Insights** (400-500 words)
+- Practical guidance readers can apply
+- Step-by-step thinking or framework
+- Real considerations and challenges
+- Honest about complexity and requirements
+
+#### **Vision/Future** (200-300 words)
+- Where this approach leads
+- Long-term transformation potential
+- Connection to broader Abba Baba mission
+- Call-to-action that invites collaboration
+
+### Writing Style Guidelines
+
+#### **Tone & Voice**
+- **Professional yet approachable**: Knowledgeable without being condescending
+- **Human-centric**: Technology serves people, not the other way around
+- **Visionary but grounded**: Big picture thinking with practical application
+- **Collaborative**: "Let's explore..." rather than "We have solved..."
+
+#### **Technical Depth**
+- Explain concepts clearly for business audiences
+- Use technical terms but define them
+- Focus on business implications of technical choices
+- Avoid implementation details unless relevant to decision-making
+
+#### **Avoid These Patterns**
+- Success metrics without verification
+- Client testimonials or case studies (unless real and verified)
+- Competitive comparisons with specific claims
+- Revenue/ROI promises or guarantees
+- Industry statistics unless from verified sources
+
+### Call-to-Action Strategy: Leading, Guiding, Closing
+
+#### **Three-CTA Structure (Required for all posts)**
+
+**1. Leading CTA (Early in post - after hook/problem setup)**
+- **Purpose**: Early engagement, build interest
+- **Placement**: End of problem/opportunity section (300-400 words in)
+- **Tone**: Curiosity-driven, low commitment
+- **Examples**:
+  - "Curious how this applies to your business? [Let's explore the possibilities](/contact?interest=mycelium-discovery)."
+  - "Want to see how organic AI growth could transform your operations? [Start the conversation](/contact?interest=ai-transformation)."
+  - "Ready to move beyond traditional automation? [Discover what's possible](/contact?interest=intelligent-automation)."
+
+**2. Guiding CTA (Mid-content - after solution explanation)**
+- **Purpose**: Deepen engagement, provide value
+- **Placement**: After approach/solution section (700-800 words in)
+- **Tone**: Educational, value-focused
+- **Examples**:
+  - "Want to dive deeper into Mycelium implementation strategies? [Our team can walk you through the framework](/contact?interest=mycelium-framework)."
+  - "Interested in seeing how this methodology applies to your specific industry? [Let's discuss your unique situation](/contact?interest=industry-specific)."
+  - "Ready to map out what organic AI growth could look like for your team? [Schedule a discovery session](/contact?interest=discovery-session)."
+
+**3. Closing CTA (End of post - after vision/future section)**
+- **Purpose**: Final conversion, next steps
+- **Placement**: Final paragraph before sign-off
+- **Tone**: Collaborative, forward-looking
+- **Examples**:
+  - "Ready to begin your journey toward intelligent, organic AI networks? [Our team specializes in helping organizations build Mycelium systems that grow with their business](/contact?interest=mycelium-consultation). Let's explore what this transformation could look like for you."
+  - "Excited about the possibilities of human-AI collaboration at this level? [We'd love to discuss how these concepts could revolutionize your specific operations](/contact?interest=collaboration-consultation). Together, we can design AI networks that enhance your team's capabilities."
+  - "Inspired to rethink your approach to AI implementation? [Let's start a conversation about building living, adaptive AI systems](/contact?interest=adaptive-ai) that evolve with your business needs."
+
+#### **CTA Linking Strategy**
+
+**URL Parameters for Tracking**:
+- Use contact form parameters: `/contact?interest=specific-topic`
+- **Available parameters**:
+  - `mycelium-discovery` - General Mycelium interest
+  - `ai-transformation` - Business transformation focus
+  - `intelligent-automation` - Advanced automation needs
+  - `mycelium-framework` - Implementation methodology
+  - `industry-specific` - Industry-focused consultation
+  - `discovery-session` - General discovery meeting
+  - `mycelium-consultation` - Comprehensive Mycelium consultation
+  - `collaboration-consultation` - Human-AI collaboration focus
+  - `adaptive-ai` - Adaptive AI systems interest
+
+**Category-Specific CTAs**:
+When linking to category pages in content:
+```markdown
+This relates to our [Mycelium AI](/blog/category/mycelium) philosophy of organic growth...
+```
+
+#### **CTA Voice & Tone Guidelines**
+
+**Effective CTA Characteristics**:
+- **Collaborative**: "Let's explore..." "Together we can..."
+- **Curiosity-driven**: "Curious about..." "Want to see..."
+- **Value-focused**: "Discover how..." "Learn about..."
+- **Specific**: Reference actual concepts from the post
+- **Non-aggressive**: Invite rather than demand
+
+**Avoid These CTA Patterns**:
+- Aggressive sales language ("Buy now", "Limited time")
+- Promises of specific outcomes ("Guaranteed results")
+- Urgency-based messaging ("Act fast", "Don't miss out")
+- Generic calls ("Contact us", "Learn more")
+- Claims about guaranteed results
+
+#### **CTA Integration Examples**
+
+**Leading CTA Example**:
+```markdown
+The traditional approach to AI implementation—buying tools and hoping they work—often leads to disappointing results and wasted resources.
+
+*Curious how a more organic, collaborative approach could transform your business operations? [Let's explore what Mycelium AI networks could do for your team](/contact?interest=mycelium-discovery).*
+
+But what if there was a fundamentally different way to think about AI...
+```
+
+**Guiding CTA Example**:
+```markdown
+This is where the Mycelium approach shines—by treating AI as a living network that grows and adapts with your business needs.
+
+*Ready to see how this methodology could apply to your specific industry challenges? [Our team can walk you through real-world implementation strategies](/contact?interest=mycelium-framework) tailored to your unique situation.*
+
+The implementation process follows four key phases...
+```
+
+**Closing CTA Example**:
+```markdown
+The future belongs to organizations that master the art of human-AI collaboration—not as master and tool, but as partners in creating something neither could achieve alone.
+
+*Ready to begin building AI networks that grow and evolve with your business? [Our team specializes in designing Mycelium systems that transform operations while enhancing human capabilities](/contact?interest=mycelium-consultation). Let's explore what this organic approach to AI could unlock for your organization.*
+```
+
+### Quality Checklist
+
+Before publishing, verify:
+- [ ] Date is accurate and current
+- [ ] Categories exist or will auto-generate appropriately
+- [ ] No fabricated statistics or client claims
+- [ ] Content focuses on vision/capability rather than false achievements
+- [ ] Technical accuracy in all statements
+- [ ] Brand voice consistency throughout
+- [ ] Clear value proposition for readers
+- [ ] **All three CTAs included**: Leading (early), Guiding (mid), Closing (end)
+- [ ] **CTA parameters**: Each CTA uses appropriate `/contact?interest=` tracking
+- [ ] **CTA voice**: Collaborative, curious, value-focused (not aggressive)
+- [ ] Proper linking to existing category pages where relevant
+- [ ] Mobile-friendly formatting and readability
+- [ ] CTAs flow naturally with content (not forced or jarring)
+
 ## Questions to Consider
 
 When expanding the site or adding features, ask:

@@ -12,7 +12,7 @@ layout: default
                 {% if page.categories %}
                 <div class="post-categories">
                     {% for category in page.categories %}
-                    <span class="category">{{ category }}</span>
+                    <a href="{{ '/blog/category/' | append: category | relative_url }}" class="category">{{ category }}</a>
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -41,7 +41,7 @@ layout: default
             <div class="post-tags">
                 <span class="tags-label">Tags:</span>
                 {% for tag in page.tags %}
-                <span class="tag">{{ tag }}</span>
+                <a href="{{ '/blog/tags?tag=' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
                 {% endfor %}
             </div>
             {% endif %}

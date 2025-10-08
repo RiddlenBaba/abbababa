@@ -13,6 +13,8 @@ The enterprise AI market has reached an inflection point. While proprietary plat
 
 **The question for technology leaders:** Do you want to rent AI capabilities, or own them?
 
+*Tired of AI vendor dependency and unpredictable costs? [Let's explore how open-source AI could give your organization](/contact?interest=open-source-strategy) complete control over your AI infrastructure while reducing long-term costs.*
+
 ## The Hidden Costs of Proprietary AI Platforms
 
 Most enterprises begin their AI journey with proprietary solutions—understandably so. The promise is simple: plug-and-play AI capabilities without the complexity of building systems from scratch. But as AI becomes central to business operations, the limitations become apparent.
@@ -80,6 +82,8 @@ Open-source AI systems can be audited, tested, and validated in ways that black-
 ### 5. **Innovation Speed**
 
 Internal teams can modify and extend open-source AI systems immediately, rather than waiting for vendor roadmaps or submitting feature requests.
+
+*Ready to break free from vendor limitations and build AI that serves your exact needs? [Our team specializes in open-source AI implementations](/contact?interest=ai-sovereignty) that give you complete control, customization, and cost predictability.*
 
 ## Enterprise Implementation Strategies
 
@@ -229,6 +233,6 @@ The organizations that master open-source AI implementation will have sustainabl
 
 ---
 
-*Ready to explore open-source AI for your enterprise? We specialize in helping organizations build sophisticated AI capabilities on open-source foundations while maintaining enterprise security and reliability. [Let's discuss](/contact) how to develop your AI strategy around owned, controllable technology.*
+*Ready to build AI capabilities you actually own and control? [Our team helps enterprises transition from vendor dependency to AI sovereignty](/contact?interest=enterprise-ai-ownership) through custom open-source implementations that scale with your business, not your licensing fees. Let's design AI infrastructure that works for you, not against you.*
 
 *For more insights on enterprise AI architecture and implementation strategies, [follow our research blog](/blog) where we share practical lessons from real-world deployments.*

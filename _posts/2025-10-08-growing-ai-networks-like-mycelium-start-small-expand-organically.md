@@ -32,6 +32,8 @@ The network expands to connect with other systems, creating the "wood wide web" 
 
 **Here's the crucial insight:** Nature never skips phases. A forest doesn't try to build the entire network on day one. It starts with perfect conditions for one spore, then expands systematically.
 
+*Curious how this organic approach could transform your business operations? [Let's explore what Mycelium AI networks could do for your team](/contact?interest=mycelium-discovery).*
+
 ## Phase 1: AI Spore Germination - Finding Your First Perfect Match
 
 Your AI network journey begins with **one employee, one task, one AI agent.**
@@ -168,6 +170,8 @@ Once you've identified the perfect first collaboration, it's time to **establish
 - **Suggest expansions**: AI agents identify new collaboration opportunities
 - **Maintain quality**: The network self-monitors and corrects issues
 
+*Ready to map out what organic AI growth could look like for your team? [Our team can walk you through the four-phase Mycelium framework](/contact?interest=mycelium-framework) and help you identify the perfect starting point for your business.*
+
 ## The Symbiotic Relationship: Human + AI Partnership
 
 Throughout every phase, **remember that you're building partnership, not replacement.**
@@ -299,8 +303,8 @@ The question isn't whether AI will transform your industry—it's whether you'll
 
 The forest begins with a single spore. Your AI ecosystem begins with one perfect collaboration.
 
+*Ready to begin building AI networks that grow and evolve with your business? [Our team specializes in designing Mycelium systems that transform operations while enhancing human capabilities](/contact?interest=mycelium-consultation). Let's explore what this organic approach to AI could unlock for your organization.*
+
 ---
 
-*Ready to begin growing your AI network organically? Our team specializes in identifying the perfect starting points for mycelium-style AI implementations. We help you find your ideal first employee, design your foundation agents, and build the framework for sustainable AI growth. [Let's start your pilot project](/contact?service=mycelium-pilot) and discover what organic AI expansion can do for your business.*
-
-*For more insights on building living AI networks and human-AI collaboration, [follow our blog](/blog) where we share practical lessons from successful mycelium implementations.*
+*For more insights on building living AI networks and human-AI collaboration, [follow our blog](/blog) where we share practical lessons from successful [mycelium](/blog/category/mycelium) implementations.*
