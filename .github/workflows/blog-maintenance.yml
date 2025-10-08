@@ -1,0 +1,147 @@
+name: Blog Maintenance & Auto-Updates
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '_posts/**'
+      - 'blog/**'
+  schedule:
+    # Run weekly on Sundays at 2 AM UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  blog-maintenance:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Auto-generate missing category pages
+      run: |
+        echo "🔍 Scanning for missing category pages..."
+        mkdir -p blog/category
+
+        # Extract categories using a more robust method
+        categories=$(find _posts -name "*.md" -exec grep -l "^categories:" {} \; | \
+          xargs grep "^categories:" | \
+          sed 's/.*categories: *\[\([^]]*\)\].*/\1/' | \
+          tr ',' '\n' | \
+          sed 's/^ *//;s/ *$//;s/"//g;s/'\''//g' | \
+          sort -u | \
+          grep -v '^$')
+
+        echo "Found categories: $categories"
+
+        for category in $categories; do
+          category_file="blog/category/${category}.md"
+
+          if [ ! -f "$category_file" ]; then
+            echo "📝 Creating category page: $category"
+
+            # Smart title generation
+            case "$category" in
+              "ai-"*) title=$(echo "$category" | sed 's/ai-/AI /' | sed 's/-/ /g' | sed 's/\b\w/\U&/g') ;;
+              *) title=$(echo "$category" | sed 's/-/ /g' | sed 's/\b\w/\U&/g') ;;
+            esac
+
+            # Category-specific descriptions
+            case "$category" in
+              "ai-security") subtitle="Enterprise AI security challenges, governance, and best practices" ;;
+              "enterprise-strategy") subtitle="Strategic insights for enterprise AI adoption and digital transformation" ;;
+              "document-processing") subtitle="Intelligent document processing, OCR, and automation workflows" ;;
+              "ai-workflow") subtitle="AI-powered workflows, process automation, and intelligent systems" ;;
+              "open-source") subtitle="Open source AI solutions, technologies, and implementation strategies" ;;
+              "business-strategy") subtitle="Strategic insights for business transformation and growth" ;;
+              "data-integration") subtitle="Data integration patterns, solutions, and architecture best practices" ;;
+              "ai-architecture") subtitle="AI system design, architecture patterns, and implementation strategies" ;;
+              "mycelium") subtitle="Living AI networks, distributed intelligence, and organic AI systems" ;;
+              "riddlen") subtitle="Web3 AI validation platform and human-AI collaboration insights" ;;
+              "innovation") subtitle="Innovation in AI, automation, and human-computer collaboration" ;;
+              "automation") subtitle="Business process automation and intelligent workflow solutions" ;;
+              "web3") subtitle="Web3 technologies, blockchain integration, and decentralized systems" ;;
+              "thought-leadership") subtitle="Industry insights and thought leadership on AI and automation" ;;
+              *) subtitle="Insights and analysis on $(echo "$category" | sed 's/-/ /g')" ;;
+            esac
+
+            cat > "$category_file" << EOF
+---
+layout: category
+title: "$title"
+subtitle: "$subtitle"
+category: $category
+---
+EOF
+
+            echo "✅ Created: $category_file"
+          fi
+        done
+
+    - name: Auto-generate tag pages (if needed)
+      run: |
+        echo "🏷️ Checking for tag pages..."
+        mkdir -p blog/tags
+
+        # Extract tags from posts
+        if find _posts -name "*.md" -exec grep -l "^tags:" {} \; | head -1 | xargs grep "^tags:" | head -1; then
+          echo "Tags found in posts, tag system is active"
+          # Could add tag page generation here if needed
+        fi
+
+    - name: Update blog index metadata
+      run: |
+        echo "📊 Updating blog metadata..."
+
+        # Count posts
+        post_count=$(find _posts -name "*.md" | wc -l)
+        echo "Total posts: $post_count"
+
+        # Could update blog/index.html with metadata if needed
+
+    - name: Validate blog structure
+      run: |
+        echo "🔍 Validating blog structure..."
+
+        # Check for posts without categories
+        posts_without_categories=$(find _posts -name "*.md" -exec grep -L "^categories:" {} \; | wc -l)
+        if [ "$posts_without_categories" -gt 0 ]; then
+          echo "⚠️ Found $posts_without_categories posts without categories"
+          find _posts -name "*.md" -exec grep -L "^categories:" {} \;
+        fi
+
+        # Check for broken front matter
+        for post in _posts/*.md; do
+          if ! grep -q "^---" "$post"; then
+            echo "⚠️ Possible broken front matter in: $post"
+          fi
+        done
+
+    - name: Check for changes and commit
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "📝 Changes detected, committing..."
+          git config --local user.email "action@github.com"
+          git config --local user.name "Blog Maintenance Bot"
+
+          git add .
+          git commit -m "🤖 Automated blog maintenance
+
+          $(if [ -n "$(git diff --cached --name-only | grep 'blog/category')" ]; then
+            echo "• Auto-generated missing category pages:"
+            git diff --cached --name-only | grep 'blog/category' | sed 's|blog/category/||' | sed 's|\.md||' | sed 's/^/  - /'
+          fi)
+          $(if [ -n "$(git diff --cached --name-only | grep -v 'blog/category')" ]; then
+            echo "• Other maintenance updates"
+          fi)
+
+          Performed by automated blog maintenance workflow"
+
+          git push
+          echo "✅ Changes committed and pushed"
+        else
+          echo "✅ No changes needed"
+        fi
