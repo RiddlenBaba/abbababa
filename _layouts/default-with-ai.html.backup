@@ -70,21 +70,71 @@
                     </div>
                 </div>
                 <div class="chat-title">
-                    <h3>Abba AI</h3>
-                    <p>Your AI automation assistant</p>
+                    <h3>Abba AI ✨</h3>
+                    <p>Ready to unlock potential?</p>
                 </div>
+                <button type="button" class="chat-close" onclick="AbbaChat.toggleChat()" aria-label="Close chat">×</button>
             </div>
 
             <div id="chat-messages" class="chat-messages">
                 <div class="message bot-message">
                     <div class="message-content">
-                        <p>Hello! I'm Abba AI, your intelligent assistant. I can help you learn about:</p>
+                        <p>Hey there! 👋 I'm Abba AI, and I'm genuinely excited you're here! I love helping businesses discover how AI can give them their time back and unlock amazing possibilities.</p>
+                        <p>What sounds most interesting to you right now?</p>
                         <div class="quick-questions">
-                            <button class="quick-question" data-question="How does AI-human collaboration work?">🤝 AI-Human Collaboration</button>
-                            <button class="quick-question" data-question="What services does Abba Baba offer?">🛠️ Our Services</button>
-                            <button class="quick-question" data-question="Tell me about the Riddlen platform">🌐 Riddlen Platform</button>
-                            <button class="quick-question" data-question="How can AI automation help my business?">📈 Business Automation</button>
+                            <button class="quick-question" data-question="How does AI-human collaboration actually work?">🤝 AI + Human magic</button>
+                            <button class="quick-question" data-question="What could you help my business with?">🚀 Transform my business</button>
+                            <button class="quick-question" data-question="Tell me about this Mycelium thing">🍄 The Mycelium network</button>
+                            <button class="quick-question" data-question="What's Riddlen about?">🎮 Riddlen platform</button>
+                            <button class="quick-question" data-question="Show me some automation wins">⚡ Automation success stories</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact info collection form (initially hidden) -->
+            <div id="contact-form" class="contact-collection" style="display: none;">
+                <div class="contact-header">
+                    <button type="button" class="contact-close" onclick="AbbaChat.skipContactForm()" aria-label="Close contact form">×</button>
+                    <div class="emoji-wave">👋</div>
+                    <h4>I'd love to introduce you to our team!</h4>
+                    <p>Share a few quick details and we'll send you personalized AI automation ideas for your business. No spam, just valuable insights! ✨</p>
+                </div>
+                <form id="contact-details-form" class="contact-details-form">
+                    <div class="form-group">
+                        <label class="form-label">👋 What should we call you?</label>
+                        <input type="text" id="user-name" placeholder="Your first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">📧 Where can we reach you?</label>
+                        <input type="email" id="user-email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">🏢 What company are you with?</label>
+                        <input type="text" id="user-company" placeholder="Your awesome company (optional)">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <span class="btn-icon">🚀</span>
+                            Get my personalized recommendations
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="AbbaChat.skipContactForm()">
+                            Maybe later, let's keep chatting
+                        </button>
+                    </div>
+                </form>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">🔒</span>
+                        <span class="trust-text">Your info is safe with us</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">⚡</span>
+                        <span class="trust-text">Quick 5-minute response</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">💡</span>
+                        <span class="trust-text">Custom automation ideas</span>
                     </div>
                 </div>
             </div>
@@ -118,9 +168,25 @@
                 this.chatMessages = document.getElementById('chat-messages');
                 this.chatForm = document.getElementById('chat-form');
                 this.chatInput = document.getElementById('chat-input');
+                this.contactForm = document.getElementById('contact-form');
+                this.contactDetailsForm = document.getElementById('contact-details-form');
                 this.chatIcon = document.querySelector('.chat-icon');
                 this.closeIcon = document.querySelector('.close-icon');
                 this.isOpen = false;
+                this.userInfo = {
+                    name: '',
+                    email: '',
+                    company: '',
+                    hasProvidedInfo: false
+                };
+                this.messageCount = 0;
+                this.shouldPromptForInfo = true;
+                this.contactCollection = {
+                    active: false,
+                    step: 'none', // 'name', 'email', 'done'
+                    name: '',
+                    email: ''
+                };
                 // WARNING: API keys in client-side code are visible to users
                 // For production, use server-side proxy or serverless functions
                 this.apiKey = '{{ site.openai_api_key }}' || '{{ site.claude_api_key }}';
@@ -132,6 +198,7 @@
             init() {
                 this.chatToggle.addEventListener('click', () => this.toggleChat());
                 this.chatForm.addEventListener('submit', (e) => this.handleSubmit(e));
+                this.contactDetailsForm.addEventListener('submit', (e) => this.handleContactSubmit(e));
 
                 // Quick question buttons
                 document.addEventListener('click', (e) => {
@@ -147,6 +214,144 @@
                         this.toggleChat();
                     }
                 });
+            }
+
+            async handleContactSubmit(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('user-name').value.trim();
+                const email = document.getElementById('user-email').value.trim();
+                const company = document.getElementById('user-company').value.trim();
+
+                if (!name || !email) {
+                    this.addMessage("Please provide both your name and email to continue.", 'bot');
+                    return;
+                }
+
+                // Store user info
+                this.userInfo = {
+                    name: name,
+                    email: email,
+                    company: company,
+                    hasProvidedInfo: true
+                };
+
+                // Submit to your contact form system
+                await this.submitToContactForm(name, email, company);
+
+                // Hide contact form and show success message
+                this.contactForm.style.display = 'none';
+                this.chatForm.style.display = 'block';
+
+                this.addMessage(`Thanks ${name}! I've connected you with our team. They'll follow up with personalized automation recommendations for ${company || 'your business'}. In the meantime, feel free to ask me anything else!`, 'bot');
+
+                this.shouldPromptForInfo = false;
+            }
+
+            async submitToContactForm(name, email, company) {
+                try {
+                    // Submit to Formspree (your existing contact form endpoint)
+                    const formData = new FormData();
+                    formData.append('name', name);
+                    formData.append('email', email);
+                    formData.append('company', company || '');
+                    formData.append('interest', 'ai-integration'); // Default service
+                    formData.append('message', `Chat widget lead: ${name} from ${company || 'their company'} is interested in AI automation. Email: ${email}`);
+                    formData.append('_subject', 'New Chat Widget Lead - Abba Baba');
+
+                    await fetch('https://formspree.io/f/xblzywnn', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                } catch (error) {
+                    console.error('Failed to submit contact form:', error);
+                    // Continue anyway - we still have their info in the chat
+                }
+            }
+
+            skipContactForm() {
+                this.contactForm.style.display = 'none';
+                this.chatForm.style.display = 'block';
+                this.shouldPromptForInfo = false;
+                this.addMessage("No problem! Feel free to continue our conversation. If you'd like personalized recommendations later, just let me know!", 'bot');
+            }
+
+            showContactForm() {
+                // Only show contact form if chat form is currently visible
+                if (this.chatForm.style.display !== 'none') {
+                    this.contactForm.style.display = 'block';
+                    this.chatForm.style.display = 'none';
+                }
+            }
+
+            ensureChatFormVisible() {
+                // Safety method to ensure chat form is always visible
+                if (this.chatForm.style.display === 'none' && this.contactForm.style.display === 'none') {
+                    this.chatForm.style.display = 'block';
+                }
+            }
+
+            startSimpleContactCollection() {
+                if (!this.contactCollection.active && !this.userInfo.hasProvidedInfo) {
+                    this.contactCollection.active = true;
+                    this.contactCollection.step = 'name';
+                    this.shouldPromptForInfo = false;
+
+                    this.addMessage("I'd love to send you some personalized recommendations! 😊 What's your first name?", 'bot');
+                }
+            }
+
+            handleContactCollection(message) {
+                if (!this.contactCollection.active) return false;
+
+                const trimmedMessage = message.trim();
+
+                if (this.contactCollection.step === 'name') {
+                    this.contactCollection.name = trimmedMessage;
+                    this.contactCollection.step = 'email';
+                    this.addMessage(`Nice to meet you, ${trimmedMessage}! 👋 What's your email address so I can send you those recommendations?`, 'bot');
+                    return true;
+                } else if (this.contactCollection.step === 'email') {
+                    // Simple email validation
+                    if (trimmedMessage.includes('@') && trimmedMessage.includes('.')) {
+                        this.contactCollection.email = trimmedMessage;
+                        this.contactCollection.step = 'done';
+                        this.contactCollection.active = false;
+
+                        // Submit to contact form
+                        this.submitSimpleContact(this.contactCollection.name, this.contactCollection.email);
+
+                        this.addMessage(`Perfect! Thanks ${this.contactCollection.name}! 🚀 I'll send personalized automation recommendations to ${trimmedMessage}. Our team will follow up with you soon!\n\nIn the meantime, feel free to ask me anything else!`, 'bot');
+
+                        this.userInfo.hasProvidedInfo = true;
+                        return true;
+                    } else {
+                        this.addMessage("That doesn't look like a valid email address. Could you please share your email? (example: you@company.com)", 'bot');
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+
+            async submitSimpleContact(name, email) {
+                try {
+                    const formData = new FormData();
+                    formData.append('name', name);
+                    formData.append('email', email);
+                    formData.append('interest', 'Simple Chat Collection');
+                    formData.append('_subject', 'Simple Chat Contact Collection - Abba Baba');
+
+                    await fetch('https://formspree.io/f/xblzywnn', {
+                        method: 'POST',
+                        body: formData
+                    });
+                } catch (error) {
+                    console.error('Failed to submit simple contact:', error);
+                }
             }
 
             toggleChat() {
@@ -173,9 +378,33 @@
             }
 
             async sendMessage(message) {
-                // Add user message
+                // Disable form to prevent multiple submissions
+                const sendButton = this.chatForm.querySelector('.chat-send');
+                const originalButtonHTML = sendButton.innerHTML;
+
+                sendButton.disabled = true;
+                sendButton.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 6v6l4 2"></path>
+                    </svg>
+                `;
+
+                // Add user message and force scroll to bottom (user initiated action)
                 this.addMessage(message, 'user');
+                this.forceScrollToBottom();
                 this.chatInput.value = '';
+                this.messageCount++;
+
+                // Check if we're in contact collection mode
+                if (this.handleContactCollection(message)) {
+                    // Contact collection handled the message, no need for AI response
+                    sendButton.disabled = false;
+                    sendButton.innerHTML = originalButtonHTML;
+                    this.chatInput.focus();
+                    this.ensureChatFormVisible();
+                    return;
+                }
 
                 // Show typing indicator
                 const typingId = this.addTypingIndicator();
@@ -184,9 +413,36 @@
                     const response = await this.callAI(message);
                     this.removeMessage(typingId);
                     this.addMessage(response, 'bot');
+
+                    // Smart scroll: only auto-scroll if user was near bottom
+                    setTimeout(() => this.scrollToBottom(), 100);
+
+                    // After 3+ messages, offer simple contact collection
+                    if (this.messageCount >= 3 && this.shouldPromptForInfo && !this.userInfo.hasProvidedInfo) {
+                        const lowerMessage = message.toLowerCase();
+
+                        // Check if they're showing interest in services (simple trigger)
+                        if (lowerMessage.includes('consultation') || lowerMessage.includes('get started') ||
+                            lowerMessage.includes('pricing') || lowerMessage.includes('cost') ||
+                            lowerMessage.includes('services') || lowerMessage.includes('help me')) {
+
+                            setTimeout(() => {
+                                this.startSimpleContactCollection();
+                            }, 1500);
+                        }
+                    }
                 } catch (error) {
+                    console.error('Chat error:', error);
                     this.removeMessage(typingId);
                     this.addMessage("I'm having trouble connecting right now. Please try again or contact us directly through our contact page.", 'bot');
+                } finally {
+                    // Always re-enable the button and restore original state
+                    sendButton.disabled = false;
+                    sendButton.innerHTML = originalButtonHTML;
+                    this.chatInput.focus();
+
+                    // Safety check to ensure chat form is visible
+                    this.ensureChatFormVisible();
                 }
             }
 
@@ -194,11 +450,21 @@
                 // Use real API if key is available, otherwise fallback to contextual responses
                 if (this.apiKey && this.apiKey !== '' && this.apiKey.length > 10) {
                     try {
+                        // Add timeout to prevent hanging
+                        const timeoutPromise = new Promise((_, reject) =>
+                            setTimeout(() => reject(new Error('Request timeout')), 10000)
+                        );
+
+                        let apiCall;
                         if (this.apiProvider === 'openai') {
-                            return await this.callOpenAI(message);
+                            apiCall = this.callOpenAI(message);
                         } else if (this.apiProvider === 'claude') {
-                            return await this.callClaude(message);
+                            apiCall = this.callClaude(message);
+                        } else {
+                            throw new Error('Unknown API provider');
                         }
+
+                        return await Promise.race([apiCall, timeoutPromise]);
                     } catch (error) {
                         console.error('API call failed:', error);
                         // Fallback to contextual response
@@ -235,7 +501,8 @@ Key Services:
 1. Workflow Automation - Streamline business processes to reclaim time
 2. Marketing Automation - Automated social engagement and marketing campaigns
 3. AI Integration - Help companies discover creative AI applications
-4. Riddlen Platform - Web3 riddle game with human oracle network for AI validation
+4. Mycelium - Living AI network that connects all departments like organic fungal networks
+5. Riddlen Platform - Web3 riddle game with human oracle network for AI validation
 
 Riddlen Details:
 - AI generates riddles, humans validate and curate
@@ -296,7 +563,8 @@ Key Services:
 1. Workflow Automation - Streamline business processes to reclaim time
 2. Marketing Automation - Automated social engagement and marketing campaigns
 3. AI Integration - Help companies discover creative AI applications
-4. Riddlen Platform - Web3 riddle game with human oracle network for AI validation
+4. Mycelium - Living AI network that connects all departments like organic fungal networks
+5. Riddlen Platform - Web3 riddle game with human oracle network for AI validation
 
 Riddlen Details:
 - AI generates riddles, humans validate and curate
@@ -327,28 +595,32 @@ Keep responses concise, helpful, and focused on our services. Encourage users to
             getContextualResponse(message) {
                 const lowerMessage = message.toLowerCase();
 
-                if (lowerMessage.includes('service') || lowerMessage.includes('what do you do')) {
-                    return "Abba Baba specializes in AI-human collaboration through three main services:\n\n🔄 **Workflow Automation** - Streamline your business processes\n🎯 **Marketing Automation** - Scale your outreach intelligently\n🌐 **Riddlen Platform** - Our Web3 AI validation network\n\nWould you like to learn more about any of these areas?";
+                if (lowerMessage.includes('service') || lowerMessage.includes('what do you do') || lowerMessage.includes('help my business') || lowerMessage.includes('transform my business')) {
+                    return "Oh, this is exciting! 🎉 We're basically the matchmakers between humans and AI - we help them work together beautifully instead of fighting each other!\n\nHere's what we love doing:\n\n🔄 **Workflow Automation** - Get your time back by automating the boring stuff\n🎯 **Marketing Magic** - Scale your outreach without losing that human touch\n🧠 **AI Integration** - Find creative ways AI can supercharge your business\n🍄 **Mycelium Network** - Connect all your departments like a living, breathing organism\n🎮 **Riddlen Platform** - Our fun Web3 project where AI and humans collaborate on riddles!\n\nWhat caught your eye? I'd love to dive deeper into what could help your business most! 💫";
+                }
+
+                if (lowerMessage.includes('mycelium') || lowerMessage.includes('network') || lowerMessage.includes('living ai')) {
+                    return "OMG, Mycelium is my absolute favorite thing to talk about! 🍄✨\n\nSo you know how in forests, there's this incredible underground network called mycelium that connects all the trees and plants? They literally share nutrients, communicate about threats, and help each other thrive!\n\nWe thought: \"What if businesses could work like that?\" 💡\n\n**Here's the magic:**\n🌱 Your departments become interconnected (no more silos!)\n🧠 Information flows naturally between teams\n⚡ Decisions happen faster because everyone has context\n🚀 Your whole organization gets smarter over time\n\nImagine your sales team instantly knowing what support learned about a customer, or marketing automatically adjusting based on operations capacity. That's Mycelium!\n\nWant me to show you what this could look like for your business? I get so excited about the possibilities! 🎉";
                 }
 
                 if (lowerMessage.includes('riddlen') || lowerMessage.includes('web3')) {
-                    return "Riddlen is our flagship Web3 platform that combines AI generation with human validation! 🌐\n\n✨ **How it works:**\n- AI generates riddles and content\n- Human oracles validate and curate\n- Gasless blockchain transactions\n- Rewards for quality validation\n\nIt's a perfect example of AI + Human collaboration in action. Want to learn more about how you could participate?";
+                    return "Oh, Riddlen is such a fun project! 🎮✨ It's like the perfect playground where AI and humans collaborate!\n\nHere's the cool part:\n🤖 AI creates these amazing riddles and puzzles\n👥 Humans (our oracle network) validate and curate the best ones\n💫 Everything happens on blockchain but it's completely gasless (no fees!)\n🎁 People get rewarded for quality contributions\n\nIt's basically proof that AI + humans = pure magic! Instead of AI trying to replace humans or humans fighting AI, they work together to create something neither could do alone.\n\nYou can actually try it out and see the collaboration in action! Want me to show you how to get involved? 🚀";
                 }
 
-                if (lowerMessage.includes('collaboration') || lowerMessage.includes('ai human')) {
-                    return "AI-Human collaboration is at the heart of everything we do! 🤝\n\n**Our Philosophy:**\n- AI handles repetitive tasks\n- Humans provide creativity & judgment\n- Together we achieve more than either could alone\n\n**Benefits:**\n- Preserve human agency\n- Amplify capabilities\n- Maintain quality control\n- Scale intelligently\n\nThis approach ensures AI enhances rather than replaces human expertise. How can we help you implement this in your business?";
+                if (lowerMessage.includes('collaboration') || lowerMessage.includes('ai human') || lowerMessage.includes('magic')) {
+                    return "YES! AI-human collaboration is literally what gets me out of bed in the morning! ☀️✨\n\nHere's why I'm obsessed with this:\n\n🤖 **AI is brilliant at:** Processing tons of data, working 24/7, never getting tired, spotting patterns\n👨‍💼 **Humans are brilliant at:** Creativity, empathy, judgment calls, understanding context, making meaning\n\n**Together?** UNSTOPPABLE! 🚀\n\nWe don't want AI to replace humans - that's boring! We want them to be the ultimate power couple:\n✨ AI handles the tedious stuff so humans can focus on what they love\n🎯 Humans guide AI to make better decisions\n💡 Creativity explodes when you combine human imagination with AI capability\n\nThe businesses that figure this out first? They're going to absolutely dominate their markets! Want to be one of them? 😉";
                 }
 
-                if (lowerMessage.includes('automation') || lowerMessage.includes('help my business')) {
-                    return "AI automation can transform your business in several ways: 📈\n\n🚀 **Immediate Benefits:**\n- Free up 20-40% of your time\n- Reduce manual errors\n- Scale without proportional costs\n- Improve customer response times\n\n💡 **Common Use Cases:**\n- Customer service automation\n- Content generation & curation\n- Data processing & analysis\n- Lead qualification\n\nWant to discuss your specific automation opportunities? I'd recommend scheduling a free consultation with our team!";
+                if (lowerMessage.includes('automation') || lowerMessage.includes('wins') || lowerMessage.includes('success')) {
+                    return "Oh, I LOVE sharing automation wins! 🎉 These stories always give me chills because you can literally feel the relief and excitement in people's voices when they get their time back!\n\n**Real transformations we've seen:**\n⏰ **Time Freedom:** One client went from 60-hour weeks to 35 hours while growing their business 40%\n😅 **Stress Relief:** No more staying up at night worrying about missed follow-ups or dropped leads\n🚀 **Growth Explosion:** Companies scaling from 5 to 50 employees without the chaos\n💰 **Money Magic:** Saving $30k+ annually on tasks that now happen automatically\n\n**The secret sauce?** We don't just automate tasks - we create intelligent systems that get smarter over time!\n\nWhat's eating up most of your time right now? I bet we could free up at least 10-15 hours a week for you! 😊";
                 }
 
-                if (lowerMessage.includes('contact') || lowerMessage.includes('consultation') || lowerMessage.includes('get started')) {
-                    return "Great! I'd love to connect you with our team. 🎯\n\n**Next Steps:**\n1. Visit our [Contact Page](/contact) for immediate assistance\n2. Schedule a free consultation to discuss your specific needs\n3. We'll analyze your automation opportunities\n\n**What we'll cover:**\n- Assessment of current processes\n- Automation roadmap\n- ROI projections\n- Implementation timeline\n\nReady to transform your business with AI-human collaboration?";
+                if (lowerMessage.includes('contact') || lowerMessage.includes('consultation') || lowerMessage.includes('get started') || lowerMessage.includes('interested')) {
+                    return "This is the best part! 🎉 I'm getting excited just thinking about what we could create together!\n\n**Here's how we make magic happen:**\n\n🎯 **Free Discovery Call** - We spend 30 minutes understanding your business and spotting automation gold mines\n💡 **Custom Roadmap** - We'll design a plan specifically for YOUR unique situation\n🚀 **Quick Wins First** - We start with automations that give you immediate relief\n📈 **Scale to Success** - Then we build the bigger vision that transforms everything\n\n**What you'll walk away with:**\n✅ Clear picture of your automation potential\n✅ Specific time savings estimates\n✅ ROI projections that'll make you smile\n✅ A roadmap to get your life back!\n\nReady to get started? I can barely contain my excitement! 🌟";
                 }
 
                 // Default response
-                return `Thanks for your question! I'm here to help you learn about Abba Baba's AI automation services, our human-AI collaboration approach, and the Riddlen platform.\n\nFor detailed answers or to discuss your specific needs, I'd recommend:\n- Exploring our [Services page](/services)\n- Reading our [FAQ](/faq)\n- Contacting our team directly\n\nWhat would you like to know more about?`;
+                return `Hey! I love that you're curious! 😊 I'm here to help you discover how AI and humans can work together to transform your business and give you your time back!\n\n**I'm especially excited to chat about:**\n🚀 How automation could free up hours of your time each week\n🍄 Our Mycelium network that connects your whole business intelligently\n🎮 Riddlen - our fun collaboration platform\n🤝 The magic that happens when AI and humans team up\n\n**Want to dive deeper?** Check out our [Services page](/services) for the full picture, or ask me anything! I genuinely love talking about this stuff! ✨\n\nWhat's got you most curious about AI automation?`;
             }
 
             addMessage(content, type) {
@@ -396,14 +668,31 @@ Keep responses concise, helpful, and focused on our services. Encourage users to
                 }
             }
 
+            shouldAutoScroll() {
+                // Check if user is near the bottom (within 100px)
+                const scrollTop = this.chatMessages.scrollTop;
+                const scrollHeight = this.chatMessages.scrollHeight;
+                const clientHeight = this.chatMessages.clientHeight;
+                return scrollTop + clientHeight >= scrollHeight - 100;
+            }
+
             scrollToBottom() {
+                // Only auto-scroll if user was already near the bottom
+                if (this.shouldAutoScroll()) {
+                    this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+                }
+            }
+
+            forceScrollToBottom() {
+                // Force scroll to bottom (used when user sends a message)
                 this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
             }
         }
 
         // Initialize chat widget when DOM is loaded
+        let AbbaChat;
         document.addEventListener('DOMContentLoaded', function() {
-            new AbbaAIChat();
+            AbbaChat = new AbbaAIChat();
         });
     </script>
 
