@@ -34,7 +34,7 @@ featured: true
                 <p>Research indicates that nearly three-quarters of hourly legal work can be automated, freeing professionals for high-value strategic activities.</p>
             </div>
             <div class="automation-item">
-                <h3>$37 Billion Market by 2024</h3>
+                <h3>$3.7 Billion Market by 2030</h3>
                 <p>Global investment in legal AI tools reflects unprecedented confidence in technology's ability to transform legal operations.</p>
             </div>
             <div class="automation-item">
