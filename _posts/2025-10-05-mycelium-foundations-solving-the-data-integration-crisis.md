@@ -13,7 +13,7 @@ Every business leader knows the frustration: your customer data lives in Salesfo
 
 **This isn't just an inconvenience—it's a competitive crisis.**
 
-According to Harvard Business Review, companies with connected data are 5x more likely to make faster decisions and 3x more likely to execute decisions as intended. Yet 87% of senior business leaders say data silos are preventing them from fully understanding their customers. The promises of AI and automation remain unfulfilled because the foundation—integrated, accessible data—simply doesn't exist.
+Companies with connected data consistently make faster, more informed decisions and execute more effectively. Yet most senior business leaders report that data silos prevent them from fully understanding their customers. The promises of AI and automation remain unfulfilled because the foundation—integrated, accessible data—simply doesn't exist.
 
 This is why we built Mycelium: to solve the data integration problem that's prerequisite to everything else.
 

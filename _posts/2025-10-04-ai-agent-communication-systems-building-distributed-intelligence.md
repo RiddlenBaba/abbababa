@@ -11,7 +11,7 @@ excerpt: "Explore the architecture behind effective AI agent communication syste
 
 Building a single AI agent is impressive. Building a network of AI agents that communicate, coordinate, and learn together? That's transformative business intelligence. As we've developed Mycelium, our living AI network system, we've discovered that the **communication layer** between agents is where the real magic happens.
 
-According to recent research from Stanford's HAI institute, distributed AI systems show 340% better performance than isolated agents when handling complex business workflows. But here's what the research doesn't tell you: **the communication architecture determines whether your agents collaborate or just create expensive chaos.**
+Research shows that distributed AI systems significantly outperform isolated agents when handling complex business workflows. But here's what many implementations miss: **the communication architecture determines whether your agents collaborate or just create expensive chaos.**
 
 ## The Evolution from Single Agents to Agent Networks
 

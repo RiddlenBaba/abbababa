@@ -65,9 +65,9 @@ phone: "+1 (570) 212 - 9613"
 github_username: RiddlenBaba/AbbaBaba
 linkedin_username: company/abba-baba
 
-# Analytics
-google_analytics: # G-Y2BYSM8WBT
-google_tag_manager: G-Y2BYSM8WBT
+# Analytics - Values injected from GitHub Secrets via _config.private.yml
+# google_analytics: # Set via GitHub Actions
+# google_tag_manager: # Set via GitHub Actions
 
 # Pagination
 paginate: 15

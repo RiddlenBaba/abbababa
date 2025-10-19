@@ -32,6 +32,8 @@ We've successfully deployed our oracle network across multiple blockchain networ
 
 This multi-chain approach ensures that Riddlen's validation services can serve diverse enterprise needs while maintaining security and decentralization.
 
+> **Interested in enterprise AI validation?** [Discover how Riddlen's oracle network can enhance your AI systems →](/contact?interest=riddlen-enterprise)
+
 ### Gasless Transaction System
 
 One of our proudest innovations is the completely gasless user experience. Players can:
@@ -132,6 +134,8 @@ Core components of Riddlen are open source, including:
 
 This transparency builds trust and allows the broader community to contribute to the ecosystem.
 
+**[Explore Riddlen's Open Source Approach →](/riddlen)**
+
 ## What's Next: 2025 Roadmap
 
 ### Q1 2025: Enhanced Gaming Experience
@@ -226,4 +230,16 @@ The journey from concept to working platform has taught us invaluable lessons ab
 
 ---
 
-*Interested in Riddlen's development or want to explore how our oracle network could benefit your business? [Reach out to our team]({{ '/contact' | relative_url }}) – we'd love to discuss the possibilities.*
+## Be Part of the AI Validation Revolution
+
+**Riddlen isn't just a game—it's the future of AI validation.** Every riddle solved, every validation made, and every oracle decision contributes to a growing network that's redefining how humans and AI work together.
+
+Whether you're a gamer, validator, enterprise, or developer, there's a place for you in the Riddlen ecosystem. Help us build the infrastructure that makes AI safer, smarter, and more reliable for everyone.
+
+**Ready to shape the future of human-AI collaboration?**
+
+**[Play Riddlen Now →](https://riddlen.com)**
+
+**[Explore Enterprise Oracle Services →](/contact?interest=riddlen-enterprise)**
+
+**[Learn More About Riddlen →](/riddlen)**

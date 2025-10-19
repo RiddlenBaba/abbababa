@@ -11,7 +11,7 @@ excerpt: "System migrations don't have to be six-figure nightmares that disrupt 
 
 Every business leader has lived through this nightmare: migrating from one critical system to another. Maybe it's Salesforce to HubSpot, QuickBooks to NetSuite, or finally moving that legacy system to the cloud. The project that was supposed to take 3 months stretches to 12. The budget that started at $50K balloons to $200K. And somewhere in month 8, you're seriously considering just giving up and staying with the old system forever.
 
-**Here's the uncomfortable truth:** 68% of enterprise system migrations fail to meet their objectives, and 23% are abandoned entirely, according to recent McKinsey research. The average enterprise migration takes 14 months longer than planned and costs 178% more than budgeted.
+**Here's the uncomfortable truth:** Most enterprise system migrations fail to meet their objectives, with many projects being abandoned entirely. The average enterprise migration takes significantly longer than planned and costs substantially more than budgeted.
 
 But what if migrations didn't have to be projects from hell? What if they could become the foundation for ongoing business transformation? This is the insight that led us to develop Mycelium's Migration-as-a-Service approach—turning your most painful IT project into your biggest competitive advantage.
 
