@@ -483,4 +483,21 @@ main {
             color: var(--accent-color);
         }
     }
+
+    .footer-legal {
+        display: flex;
+        gap: $spacing-md;
+
+        a {
+            color: var(--text-muted);
+            font-size: $font-size-sm;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $accent-color;
+                text-decoration: underline;
+            }
+        }
+    }
 }
