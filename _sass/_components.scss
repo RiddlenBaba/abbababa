@@ -484,7 +484,7 @@ p a,
         margin-top: 16px;
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            background: linear-gradient(135deg, #006b87, #004d5c);
             color: white;
             border: none;
             padding: 12px 20px;
@@ -495,7 +495,8 @@ p a,
 
             &:hover {
                 transform: translateY(-1px);
-                box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.3);
+                box-shadow: 0 4px 12px rgba(0, 107, 135, 0.3);
+                background: linear-gradient(135deg, #004d5c, #003a45);
             }
         }
 
@@ -850,9 +851,9 @@ p a,
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    background: linear-gradient(135deg, #006b87, #004d5c);
     color: white;
-    border: 2px solid $primary-color;
+    border: 2px solid #006b87;
     position: relative;
 
     &::after {
@@ -862,7 +863,7 @@ p a,
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, $secondary-color, $primary-color);
+        background: linear-gradient(135deg, #004d5c, #003a45);
         opacity: 0;
         transition: opacity 0.3s ease;
         border-radius: inherit;
@@ -871,7 +872,7 @@ p a,
 
     &:hover {
         color: white;
-        box-shadow: 0 0 30px rgba($primary-color, 0.5);
+        box-shadow: 0 0 30px rgba(0, 107, 135, 0.5);
 
         &::after {
             opacity: 1;
@@ -881,8 +882,8 @@ p a,
 
 .btn-secondary {
     background: transparent;
-    color: $primary-color;
-    border: 2px solid $primary-color;
+    color: #006b87;
+    border: 2px solid #006b87;
     position: relative;
 
     &::after {
@@ -892,7 +893,7 @@ p a,
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, $primary-color, $accent-color);
+        background: linear-gradient(135deg, #006b87, #004d5c);
         opacity: 0;
         transition: opacity 0.3s ease;
         border-radius: inherit;
