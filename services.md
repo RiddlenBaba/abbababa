@@ -113,6 +113,20 @@ description: "Discover Abba Baba's automation services: workflow optimization, m
             </div>
 
             <div class="service-card featured">
+                <div class="service-icon">🎓</div>
+                <h3>AI Workshops for Local Business</h3>
+                <p>Transform your team's capabilities with practical, hands-on AI training designed specifically for NEPA businesses. Expert-led workshops that deliver immediate results.</p>
+                <div class="service-highlights">
+                    <span class="highlight-item">✓ Immediate productivity gains</span>
+                    <span class="highlight-item">✓ Industry-specific training</span>
+                    <span class="highlight-item">✓ Expert-led instruction</span>
+                </div>
+                <a href="{{ '/services/ai-workshops' | relative_url }}" class="btn btn-primary">
+                    Transform Your Team →
+                </a>
+            </div>
+
+            <div class="service-card featured">
                 <div class="service-icon">🍄</div>
                 <h3>Mycelium</h3>
                 <p>Cultivate your company's living AI network - an organic intelligence system that connects all departments and agents like the underground networks that help forests thrive.</p>
